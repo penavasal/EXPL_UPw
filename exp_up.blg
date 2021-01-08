@@ -1,0 +1,60 @@
+This is BibTeX, Version 0.99d (TeX Live 2020)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: exp_up.aux
+The style file: spmpsci.bst
+Database file #1: lib2020.bib
+I was expecting a `,' or a `}'---line 7160 of file lib2020.bib
+ : 
+ : @article{Tasiopoulou2016a,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 8028 of file lib2020.bib
+ : @book{Zienkiewicz99
+ :                    ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "Biot1956poro"
+Warning--I didn't find a database entry for "Navas:17"
+Warning--I didn't find a database entry for "Soga:15"
+Warning--I didn't find a database entry for "Bonet:97"
+You've used 29 entries,
+            2945 wiz_defined-function locations,
+            820 strings with 11090 characters,
+and the built_in function-call counts, 14789 in all, are:
+= -- 1262
+> -- 448
+< -- 3
++ -- 185
+- -- 156
+* -- 964
+:= -- 1983
+add.period$ -- 49
+call.type$ -- 29
+change.case$ -- 163
+chr.to.int$ -- 0
+cite$ -- 29
+duplicate$ -- 1287
+empty$ -- 1327
+format.name$ -- 182
+if$ -- 3108
+int.to.chr$ -- 0
+int.to.str$ -- 29
+missing$ -- 303
+newline$ -- 144
+num.names$ -- 58
+pop$ -- 460
+preamble$ -- 1
+purify$ -- 136
+quote$ -- 0
+skip$ -- 283
+stack$ -- 0
+substring$ -- 853
+swap$ -- 751
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 112
+warning$ -- 0
+while$ -- 115
+width$ -- 31
+write$ -- 335
+(There were 2 error messages)

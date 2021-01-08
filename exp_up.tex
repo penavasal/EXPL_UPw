@@ -1,0 +1,627 @@
+%%%%%%%%%%%%%%%%%%%%%%% file template.tex %%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is a general template file for the LaTeX package SVJour3
+% for Springer journals.          Springer Heidelberg 2010/09/16
+%
+% Copy it to a new file with a new name and use it as the basis
+% for your article. Delete % signs as needed.
+%
+% This template includes a few options for different layouts and
+% content for various journals. Please consult a previous issue of
+% your journal as needed.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\documentclass{svjour3}                     % onecolumn (standard format)
+%\documentclass[smallcondensed]{svjour3}     % onecolumn (ditto)
+%\documentclass[smallextended]{svjour3}       % onecolumn (second format)
+\documentclass[twocolumn]{svjour3}          % twocolumn
+%
+\smartqed  % flush right qed marks, e.g. at end of proof
+%
+\usepackage{graphicx}
+%
+% \usepackage{mathptmx}      % use Times fonts if available on your TeX system
+%
+% insert here the call for the packages your document requires
+%\usepackage{latexsym}
+% etc.
+
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{setspace}
+
+\usepackage{epsfig}
+\usepackage{epstopdf}
+\usepackage{subfigure}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{supertabular}
+\usepackage{fancyheadings}
+\usepackage{multirow}
+\usepackage{color}
+\usepackage{cancel}
+\usepackage{lineno}
+
+\usepackage{mathrsfs} % para formato de letra
+\usepackage{enumitem}
+
+\usepackage{ulem} % by LS to to strike through some text
+
+%
+% please place your own definitions here and don't use \def but
+% \newcommand{}{}
+%
+% Insert the name of "your journal" with
+% \journalname{myjournal}
+
+%
+\begin{document}
+
+\title{Explicit meshfree $u-p_w$ solution of the dynamic Biot formulation at large strain%\thanks{Grants or other notes
+%about the article that should go on the front page should be
+%placed here. General acknowledgments should be placed at the end of the article.}
+}
+%\subtitle{Do you have a subtitle?\\ If so, write it here}
+
+%\titlerunning{Short form of title}        % if too long for running head
+
+\author{Pedro Navas       \and
+        Miguel Molinos \and
+        Miguel M. Stickle \and
+        Diego Manzanal \and
+        Angel Yag\"ue \and
+        Manuel Pastor
+         %etc.
+}
+
+%\authorrunning{Short form of author list} % if too long for running head
+
+\institute{P. Navas, D. Manzanal and A. Yag\"ue \at
+              Dep. Continuum Mechanics and Theory of Structures, Technical Univ. of Madrid \\
+              \email{pedro.navas@upm.es, d.manzanal@upm.es, angel.yague@upm.es}           %  \\
+%             \emph{Present address:} of F. Author  %  if needed
+           \and
+           M.Molinos, M. M. Stickle and M. Pastor \at
+              Dep. Mathematics Applied to Civil Engineering, Technical Univ. of Madrid \\
+              \email{m.molinos@alumnos.upm.es, m.martins@upm.es, manuel.pastor@upm.es}  
+}
+
+\date{Received: date / Accepted: date}
+% The correct dates will be entered by the editor
+
+
+\maketitle
+
+\begin{abstract}
+In this paper an efficient and robust methodology to simulate saturated soils subjected to low frequency dynamic loadings under large deformation regime is presented. The coupling between solid and fluid phases is solved through the dynamic reduced formulation of the Biot's equations. The additional novelty lies in the employment of an explicit time integration scheme of the $u-p_w$ (solid displacement -- pore water pressure) formulation which enables us to take advantage of such explicit schemes. Shape functions based on the elegant Local Maximum Entropy approach, through the framework of Optimal Transportation Meshfree schem, are utilized to solve fluid saturated dynamic problems.
+\keywords{Biot's equations \and Meshfree \and Newmark Predictor-Corrector \and Explicit approach \and Large strains}
+% \PACS{PACS code1 \and PACS code2 \and more}
+% \subclass{MSC code1 \and MSC code2 \and more}
+\end{abstract}
+
+\section{Introduction}
+\label{intro}
+{\color{red}
+Modeling saturated soils under dynamic loads is an interesting issue, particularly when dynamic consolidation or quick settlements of soils under large deformations are concerned. However, the research focused on this aspect is scant,  the literature being even more limited when finite deformations are involved. This is mainly due to the fact that, on the one hand, the $u-p_w$ (solid displacement -- fluid pressure) formulation is widely used in dynamics to solve the coupled problem due to its simplicity (e.g. \cite{CaoSanavia:16,zienkiewicz1990a,Zienkiewicz99}), and on the other hand, since fluid accelerations are neglected in this formulation, this makes it impossible to capture high frequency movements when the coupling between soil and water needs to be dealt with \cite{zienkiewicz1980}.
+
+Along the years, depending on the employed formulation for coupled problems (either simplified or complete), on the assumptions (if the accelerations are considered or not) and on the way that the equations are solved (explicit or implicit),  different techniques to solve the coupled problem have been developed.  The governing equations   of the coupled  problem were first introduced by Biot \cite{Biot1956poro}, then reviewed by   Zienkiewicz and co-workers \cite{Zienkiewicz99,zienkiewicz1980,zienkiewicz1984,zienkiewicz1990a}. There were two alternatives  to achieve the same set of equations:  one by  Zienkiewicz, Chang and Bettes~\cite{zienkiewicz1980}, or Zienkiewicz and Shiomi~\cite{zienkiewicz1984,zienkiewicz1990a} applied at macroscopic scale,   the other   by Lewis and Schrefler \cite{LewisSchrefler98} within the Hybrid Mixture Theory starting from the microscopic scale. 
+ Both showed that an accurate enough solution can be achieved for low frequency dynamic problems by neglecting the convective and acceleration terms in the complete formulation, deriving the $u-p_w$ formulation.
+ 
+Regarding the application of $u-p_w$ formulation under large deformation regime, the first works were  carried out by Diebels and Ehlers ~\cite{DiebelsE:96}, Borja \textit{et al.}~\cite{borja95,borja98} and Armero~\cite{Armero99} who tested their models by simulating the constitutive behavior of the the solid phases with linear elastic, Cam-Clay and Drucker-Prager theories respectively.  Around the same period of time, Ehlers and Eipper ~\cite{Ehlers:99} applied a new Neo-Hookean constitutive model to represent the compaction of the soil up to the solid compaction point. All of these researches were solved using implicit schemes where the linearization of the derivatives of the $u-p_w$ equations was necessary. This linearization was also made by Sanavia~\textit{et al.}\cite{Sanavia:01} who considered several neglected terms of the previous works and extended the methodology to unsaturated soils~\cite{Sanavia:02}.
+
+By contrast, the complete formulation valid for all frequencies movements is known to be essential for solving dynamic problems~\cite{Jeremic08,Muraleetharan09}.  Nevertheless, the formulation employing the total displacement of the water, $U$, as a nodal unknown is unstable when large deformations of the fluid phase occur. As an alternative,  the employment of the relative water displacements, $w$, has been proved to be successful~\cite{LopezQuerolB2006,Navas2016}. Traditional manner to solve the complete formulation is the utilization of implicit schemes~\cite{borja95,borja98,Armero99,Ehlers:99} except the recent work of Ye {\it et al.}~\cite{Ye10}. Thus, the current work represents the first one that solves the complete formulation with relative water displacements, $u-w$, using an explicit scheme. Since there is no necessity in formulating the tangent stiffness matrix in an explicit procedure,  the complex process of  linearization of the governing equations is avoided. In addition,  as no matrix inversion is involved, the computational effort is minimized and code parallelization is facilitated.
+
+Moreover, it bears emphasis that the proposed methodology, as it is thought for the finite strain regime, is carried out within a meshfree scheme due to its numerous advantages when large deformations are involved. In particular,  the shape functions developed by Arroyo and Ortiz~\cite{arroyo2006} based on the principle of maximum entropy~\cite{Sukumar2004} are employed.  The  spacial domain has been discretized into nodes and material points following the Optimal Transportation Meshfree (OTM) scheme of Li {\it et al.}~\cite{li2010}. The Drucker-Prager yield criterion, the good performance of which has been demonstrated for large deformation problems ~\cite{Navas:17}, is herein adopted.
+
+In contrast to the work of Bandara and Soga~\cite{Soga:15} or Ceccato and Simonini ~\cite{Ceccato:16}, who made use of two material sets for solid and water phases in their Material Point Method (MPM) schemes, a single set of materials for the coupling between water and solid phases is employed in this work since the relative water displacement  is considered. This leads to significant savings on the computational effort. In addition, this formulation is stronger than some others such as the Smooth Particle Hydrodynamics (SPH) since the pore pressure is also computed in the material points. The  SPH formulation presents a tensile instability since only one nodal set is employed to contain displacement and stress fields.
+ 
+The rest of the paper is organized as follows. The Biot's equations are presented next. The constitutive models employed to model the solid behavior are summarized in Section \ref{sec:3}. The explicit methodology implemented is elucidated in Section \ref{sec:4}. Applications to various problems are illustrated in Section \ref{sec:5}. Relevant conclusions are drawn in Section \ref{sec:6}. The definitions of all symbols used in the equations are provided in the nomenclature appendix.    
+}
+
+\section{Biot's equations: u-$p_w$ formulation}
+\label{sec:2}
+The Biot's equations~\cite{Biot1956} are based on formulating the mechanical behavior of a solid-fluid mixture, the coupling between different phases, and the continuity of flux through a differential domain of saturated porous media. Hereinafter, the balance equations will be derived from Lewis and Schrefler~\cite{LewisSchrefler98} in the spatial setting (see \cite{LewisSchrefler98} or \cite{Sanavia:02b,Sanavia:02} for the kinematic equations), departing from the more general equation, and, in order to reach the compact $u-p_w$ form, making the necessary hypotheses.
+
+Concerning the notation, bold symbols are employed herein for vectors and matrices as well as regular letters for scalar variables.  Let   $\boldsymbol{u}$ and   $\boldsymbol{U}$ represent  the displacement vector of the solid skeleton   and the absolute displacement of the fluid phase respectively. Since in porous media theory is common to describe the fluid motion with respect to the solid, the
+relative displacement of the fluid phase with respect to the solid one, $\boldsymbol{w}$, is introduced and expressed as~\cite{LopezQuerol2008}
+\begin{equation}\label{eq_uw1}
+\boldsymbol{ w }=n S_w\, \boldsymbol{  \left(U-u\right) },
+\end{equation}
+where $S_w$ is the degree of water saturation and $n$ the soil porosity.  Note that $\boldsymbol{  \left(U-u\right) }$ is usually  termed as $\boldsymbol{u}^{ws}$ in the literature~\cite{LewisSchrefler98}. 
+
+In the calculation of the internal forces of the soil, the Terzaghi's effective stress theory  \cite{Terzaghi1925} will be followed, which is defined as follows:
+\begin{equation}\label{eq_uw5}
+ \boldsymbol{ \sigma} =\boldsymbol{ \sigma'} - p_{w}\textbf{I},
+\end{equation}
+where $ \boldsymbol{ \sigma'} $ and  $\boldsymbol{ \sigma}$ are the respective effective and total Cauchy stress tensors (positive in tension), whereas $\textbf{I}$ is the second order unit tensor.  Contrary, pore pressure $p_w$, is assumed positive for compression.
+
+Let $\rho$, $\rho_{w}$ and $\rho_{s}$ respectively represent the mixture, fluid phase and solid particle densities,   the mixture density can be  defined as function of the porosity:
+\begin{equation}\label{eq_uw2}
+\rho=n S_w \rho_{w}+(1-n) \rho_s.
+\end{equation}
+In the above equations, the porosity, $n$, is the ratio  between the voids volume, $V_v$, and the total volume, $V_T$:
+\begin{equation}\label{eq_uw3}
+n=\frac{V_v}{V_T}=\frac{V_v}{V_v+V_s},
+\end{equation}
+where $V_s$ is the volume of the solid grains.
+
+In the current work, the soil is assumed to be totally saturated, i.e. $V_v$ coincides with the water volume, which results  $S_w$ equals to one. 
+Meanwhile, the volumetric compressibility of the mixture, $Q$ \cite{Zienkiewicz99} is calculated as
+\begin{equation}\label{eq_uw4}
+Q = \left[ \frac{1-n}{K_s} + \frac{n}{K_w} \right]^{-1},
+\end{equation}
+where $K_s$ is the bulk modulus of  the solid grains, whereas  $K_w$ is  the compressive modulus of the fluid phase (usually water).
+
+Next, we first  explain in detail the derivation of mass balance and linear momentum equations for a fluid saturated multiphase media. Then the final $u-p_w$ formulation is presented. The following equations are first given by Lewis and Schrefler~\cite{LewisSchrefler98}. In this research, $D^s/Dt$ denotes the material time derivative with respect to the solid, considering:
+$$
+\boldsymbol{a}^s =  \ddot{\boldsymbol{u}} = \frac{D^s \dot{\boldsymbol{u}}}{Dt} = \frac{D^{2s} \boldsymbol{u}}{Dt^2}
+$$
+$$
+n S_w \boldsymbol{a}^{ws} =  \ddot{\boldsymbol{w}} = \frac{D^s \dot{\boldsymbol{w}}}{Dt} = \frac{D^{2s} \boldsymbol{w}}{Dt^2}
+$$
+
+where  $\boldsymbol{a}^s$ and $\boldsymbol{a}^{ws}$ are the solid acceleration and the relative water acceleration with respect to the solid respectively, being the proposed expressions based on the relationships $\boldsymbol{\dot{u}} \equiv \boldsymbol{v}^{s}$ and $\boldsymbol{\dot{w}} \approx nS_w \boldsymbol{v}^{ws}$.
+
+%%%
+
+%%%%
+\subsection{Derivation of the mass balance equation}\label{subsec:21}
+The general mass balance equation in a multiphase media for compressible grains is presented next. 
+Let $p_w$, $p_g$ represent the water and gas pressures respectively, $T$, the temperature, %\sout{$\dot{m}$, the evaporation rate,} 
+then this general mass balance equation is written as follows,
+
+\begin{eqnarray}\label{eq_uw6}
+\left( \frac{\alpha-n}{K_s}S_w^2+\frac{nS_w}{K_w}\right)\frac{D^s p_w}{D t} + \frac{\alpha-n}{K_s}S_wS_g\frac{D^s p_g}{D t} -&&  \nonumber \\ 
+ \beta_{sw}\frac{D^s T}{D t} +  \left(\frac{\alpha-n}{K_s}S_w p_w-\frac{\alpha-n}{K_s}S_w p_g+n\right)\frac{D^s S_w}{D t}  +&&  \nonumber \\ 
+\alpha S_w  \mbox{div } \dot{\boldsymbol{u}}  + \frac{1}{\rho_w} \mbox{div } (\rho_w \dot{\boldsymbol{w}}) = - n e^w, &&  %\frac{\dot{m}}{\rho_w}
+\end{eqnarray}
+
+where the right hand side term represents the quantity of water lost through evaporation for unit time and volume. The  thermal expansion coefficient of the solid-fluid mixture, $\beta_{sw}$, is a combination of that of the solid, $\beta_s$, and  the fluid, $\beta_w$:
+\begin{equation}
+\beta_{sw} = S_w [(\alpha-n)\beta_s +n \beta_w].
+\end{equation}
+
+In addition, $\alpha$ is the Biot's coefficient:
+\begin{equation}\label{eq_uw7}
+\alpha=1-\frac{K_T}{K_s}.
+\end{equation}
+where $K_T$ denotes the %\sout{tangential bulk modulus of an isotropic elastic material}
+ bulk modulus of the solid skeleton.  Biot's coefficient may be usually assumed equal to one in soils as the grains are much more rigid than the mixture. 
+   
+As we consider a totally saturated, iso-thermal multiphase media,  $D^s T/D t =0, S_g=0, S_w=1, k^{rw}=1$, $e^w=0$, consequently, %\sout{$\dot{m}=0$,} 
+$D^s S_w/D t =0$. If  additionally  the fluid density variation is neglected and we take into consideration Eq.~(\ref{eq_uw4}),  Eq.~(\ref{eq_uw6}) is simplified as,
+\begin{equation}
+\frac{\dot{p_w}}{Q} +  \mbox{div }  \boldsymbol{\dot{u}} + \mbox{div } \boldsymbol{\dot{w}} = 0 \label{eq_uw10},
+\end{equation}
+
+%%%
+
+\subsection{Linear momentum balance equations}
+\label{subsec:22}
+On the one hand, the relative velocity of the fluid, %\sout{$\dot{\boldsymbol{w}}/n$, represented by}
+   $\dot{\boldsymbol{w}}$, in Eq.~(\ref{eq_uw6})  is defined through the generalized Darcy law as~\cite{LewisSchrefler98}
+\begin{equation}\label{eq_uw8}
+\dot{\boldsymbol{w}}=\frac{k^{rw}\boldsymbol{k}}{\mu_w}\left[ -\mbox{grad} \,p_w + \rho_w(\boldsymbol{g}-\ddot{\boldsymbol{u}}-\frac{\ddot{\boldsymbol{u}}}{n})\right] ,
+\end{equation}
+where $\boldsymbol{g}$ represents the gravity acceleration vector,  $\boldsymbol{k}$, the intrinsic permeability tensor of the porous matrix in water saturated condition, $k^{rw}$ is the water relative permeability parameter (a dimensionless parameter varying from zero to one) and $\mu_w$ is the dynamic viscosity of the water [Pa $\cdot$ s].  For the case of isotropic permeability,   the {\it intrinsic}  permeability, expressed in  [m$^{2}$], is related with the  notion of  hydraulic conductivity,  $\kappa$ [m/s],  by the following equation
+\begin{equation}\label{eq_uw9}
+\frac{k}{\mu_w}=\frac{\kappa}{\rho_w g}.
+\end{equation}
+
+On the other hand, according to Lewis and Schrefler~\cite{LewisSchrefler98},   the linear momentum balance equation for the multiphase system  can also be expressed as the summation of the dynamic equations for the individual constituents relative to the solid as, i.e.,
+\begin{equation}\label{eq_uw13}
+-\rho\ddot{\boldsymbol{u}} - \rho_w\ddot{\boldsymbol{w}}-nS_g\rho_g\boldsymbol{a}^{gs}+ \mbox{div } \boldsymbol{\sigma}+\rho\boldsymbol{g}=\boldsymbol{0},
+\end{equation}
+where the convective terms, related to the acceleration terms, have been neglected, which is normal in soils. Since in the present research there is no gassy phase, as the soil will be considered as totally saturated ($S_g=0$), and plugging Eq.~(\ref{eq_uw5}) into Eq.~(\ref{eq_uw13}), the linear momentum equation can be written as follows
+\begin{equation}\label{eq_uw14}
+\mbox{div }\left[ \boldsymbol{ \sigma'} - p_{w} \, \textbf{I} \right]-\rho\boldsymbol{\ddot{u}}-\rho_w\boldsymbol{\ddot{w}}+\rho\boldsymbol{g}=\boldsymbol{0}.
+\end{equation}
+%%%%%%%%%%%%%%%
+\subsection{The $u-p_w$ formulation}
+\label{subsec:23}
+Considering the three Biot's equations, the $\boldsymbol{u}-p_w$ assumes that accelerations of the fluid phase are negligible. Thus, Eq.~\eqref{eq_uw14} yields:
+\begin{equation}\label{eq_uw15}
+\mbox{div }\left[ \boldsymbol{ \sigma'} - p_{w} \, \textbf{I} \right]-\rho\boldsymbol{\ddot{u}}+\rho\boldsymbol{g}=\boldsymbol{0}.
+\end{equation}
+
+Moreover, in order to avoid the employment of $\boldsymbol{w}$ as a degree of freedom of our problem, Eqs.~\eqref{eq_uw10} and~\eqref{eq_uw8} can be combined and the mass equation can be expressed as
+\begin{equation}\label{eq_uw11}
+\dot{p_w} = -Q\left [ \mbox{div } \dot{\boldsymbol{u}} + \frac{\boldsymbol{k}}{\mu_w} \mbox{div}\left(   \rho_w \boldsymbol{g} - \rho_w \ddot{\boldsymbol{u}} - \mbox{grad }p_w\right)\right ].
+\end{equation}
+
+{\color{red}
+\section{Constitutive models for the solid phase} \label{sec:3}
+In this Section, we describe the two types of material models implemented to assess the performance of the   formulation presented in Section~\ref{sec:2}. One is for  elastic behavior, the other one involves  plastic deformation which follows the Drucker-Prager failure criterion.  
+%%%%%%
+\subsection{Neo-Hookean material model extended to compressible range} \label{subsec:31}
+One of the widely used material model for predicting non-linear elastic behavior for solids undergoing large deformations   is the Neo-Hookean model extended to compressible range. Under spacial configurations,   it is expressed as follows~\cite{Bonet:97}:
+\begin{equation}\label{eq_nh1}
+\boldsymbol{\tau}'=J\boldsymbol{\sigma}'=G(\boldsymbol{b}-\textbf{I})+(\lambda \,\ln J)\textbf{I},
+\end{equation}
+where $\boldsymbol{\tau}'$ and  $\boldsymbol{b}$ are the effective Kirchhoff stress tensor and the left Cauchy-Green tensor respectively, whereas $J$ is the   Jacobian determinant, $G$ and $\lambda$ are the Lam\'e constants.  
+
+In order to take into consideration the compaction point of the soil, Ehlers and Eipper~\cite{Ehlers:99} presented a modification of the Neo-Hookean law taking into account the influence of  the initial porosity  $n_0$ and the Jacobian, i.e.
+\begin{equation}\label{eq_nh2}
+\boldsymbol{\tau}'=G(\boldsymbol{b}-\textbf{I})+\lambda \, n_0^2\left(  \frac{J}{n_0}-\frac{J}{J-1+n_0} \right)\textbf{I},
+\end{equation}
+which is going to be used for the validation examples in Section~\ref{sec:5}.
+%%%%%%%%%
+\subsection{Drucker-Prager yield criterion}
+\label{subsec:32}
+For the calculation of  plastic deformations, we follow the work of Cuiti\~no and Ortiz \cite{cuitino:92} to relate the right Cauchy-Green strain tensor $\mathbf{C}$ and the small strain tensor $\boldsymbol{\varepsilon}$, during the trial step. In other words, for the current loading step, $k+1$, 
+the trial elastic deformations, pressure ($p^{trial}_{k+1}$)  and the deviatoric stress tensor ($\mathbf{s}^{trial}_{k+1} $) are computed as the elastic deformations, pressure  and the deviatoric stress tensor are computed as:
+\begin{eqnarray}
+\label{eq_dp1}
+\mathbf{C}^{e\;trial}_{k+1} &=& (\mathbf{F}^p_{k})^{-T}\mathbf{C}_{k+1}(\mathbf{F}^p_{k})^{-1}, \\
+ \label{eq_dp2}
+\boldsymbol{\varepsilon}^{e\; trial}_{k+1} &=& \frac{1}{2}\,\log\mathbf{C}^{e\; trial}_{k+1},
+\\ \label{eq_dp3}
+p^{trial}_{k+1} &=& K \left(\varepsilon^{e}_{vol}\right)^{trial}_{k+1},
+\\ \label{eq_dp4}
+\mathbf{s}^{trial}_{k+1} &=& 2G\,\left(\boldsymbol{\varepsilon}^{e}_{dev}\right)^{trial}_{k+1}.
+\end{eqnarray}
+where K and G represent the bulk and shear moduli of the solid respectively. Once the incremental plastic strain tensor is known, the plastic deformation gradient can be derived as:
+\begin{eqnarray}\label{eq_dp5}
+\Delta \mathbf{F}_{k+1}^{p} &=&\exp (\Delta\boldsymbol{\varepsilon}_{k+1}^{p}), \\
+ \label{eq_dp6}
+\mathbf{F}_{k+1}^{p} &=&\Delta \mathbf{F}_{k+1}^{p} \mathbf{F}_{k}^{p}.
+\end{eqnarray}
+ Regarding the Drucker-Prager yield criterion, the methodology of Sanavia  {\it et al.}~\cite{Sanavia:02,Sanavia:06} is employed for  its reduced computational effort and its capacity to distinguish if the location of the stress  state is on the cone or apex before calculating the plastic strain.
+The current cohesion, $c_{k+1}$, and its derivative, the hardening modulus, $H$, are calculated following Camacho and Ortiz research~\cite{Camacho:97} from the reference value, $c_{0}$, the reference plastic strain, $\varepsilon_0$, and  the hardening exponent, $N^\varepsilon$, as follows:
+\begin{eqnarray}\label{eq_dp7}
+c_{k+1} &=& c_{0}\left( 1+\frac{\overline{\varepsilon}^p_{k+1}}{\varepsilon_0}\right)^{\frac{1}{N^\varepsilon}},
+\nonumber\\
+\frac{\partial c}{\partial\overline{\varepsilon}^p} &=& H = \frac{c_{0}}{N^\varepsilon \varepsilon_0}\left( 1+\frac{\overline{\varepsilon}^p_{k+1}}{\varepsilon_0}\right)^{\left( \frac{1}{N^\varepsilon}-1\right) } ,
+\end{eqnarray}
+where $\overline{\varepsilon}^p_{k+1}$ is the current equivalent plastic strain, calculated in different ways depending on the fact that if the stress state is in the classical or apex region, see  Table~\ref{tab:1}.
+%%%%%%%%%%%%
+\begin{table}
+\centering
+\caption{Equivalent plastic strain} \label{tab:1}
+	\vspace*{0.3cm}
+	\begin{tabular}{ll}
+	\noalign{\smallskip}\hline\noalign{\smallskip}
+	Classical & $
+\overline{\varepsilon}^p_{k+1}=\overline{\varepsilon}^p_{k}+\Delta\gamma\sqrt{3\alpha_{_Q}^2+1}
+$ \\
+Apex & $
+\overline{\varepsilon}^p_{k+1}=\overline{\varepsilon}^p_{k}+\sqrt{\Delta\gamma_1^2+3\alpha_{_Q}^2\left(\Delta\gamma_1+\Delta\gamma_2 \right)^2}
+$\\
+\hline\noalign{\smallskip}
+	\end{tabular}
+\end{table}
+%%%%%%%%%
+%%%%%%%%%%
+\begin{table}
+\centering
+\caption{ Parameters for Drucker-Prager and von-Mises yield criteria} \label{tab:2}
+	\vspace*{0.3cm}
+	\begin{tabular}{llll}
+	\hline\noalign{\smallskip}
+	& DP: Plane strain & DP: Outer cone & von-Mises \\ 
+	\noalign{\smallskip}\hline\noalign{\smallskip}
+	$\alpha_{_F}$ & $\frac{\tan\phi}{\sqrt{3+4\tan^2\phi}}\sqrt{\frac{2}{3}}$ & $\frac{2\sin\phi}{3-\sin\phi}\sqrt{\frac{2}{3}}$ & 0 \\
+$\alpha_{_Q}$ & $\frac{\tan\psi}{\sqrt{3+4\tan^2\psi}}\sqrt{\frac{2}{3}}$ &
+$\frac{2\sin\psi}{3-\sin\psi}\sqrt{\frac{2}{3}} $ & 0\\
+$\beta$ & $\frac{3}{\sqrt{3+4\tan^2\phi}}\sqrt{\frac{2}{3}}$ &
+$\frac{6\cos\phi}{3-\sin\phi}\sqrt{\frac{2}{3}}$ & $\sqrt{\frac{2}{3}}$\\
+\hline\noalign{\smallskip}
+	\end{tabular}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+In order to know which   algorithm   to employ, a limit value for the pressure, $p_{lim}$ is calculated:
+ \begin{eqnarray}
+p_{lim}&=&\frac{3\alpha_{_Q}K}{2G}\|\textbf{s}^{trial}_{k+1}\|\nonumber\\ \label{eq_dp8}
+&+&\frac{\beta}{3\alpha_{_F}}\left( \frac{\|\textbf{s}^{trial}_{k+1}\|}{2G}H\sqrt{1+3\alpha_{_Q}^2} + c_k \right).
+\end{eqnarray}
+If the trial pressure is lower than this limit, classical return-mapping algorithm is employed, otherwise the apex algorithm is adopted.  
+
+The yield conditions for the classical and apex regions respectively are:
+\begin{eqnarray}
+\Phi^{cl} &=&\|\textbf{s}^{trial}_{k+1}\| - 2G\Delta\gamma + 3\alpha_{_F}[p^{trial}_{k+1}- 3K\alpha_{_Q}\Delta\gamma]
+\nonumber\\\label{eq_dp9}
+&&-\beta c_{k+1}, \\
+\Phi^{ap}&=&\frac{\beta}{3\alpha_{_F}}\left[c_k+H\sqrt{\Delta\gamma_1^2 + 3\alpha_{_Q}^2(\Delta\gamma_1+\Delta\gamma_2)^2} \right]
+\nonumber\\\label{eq_dp10}
+&&- p^{trial}_{k+1}  
++3K\alpha_{_Q}\left(\Delta\gamma_1+\Delta\gamma_2 \right),
+\end{eqnarray}
+where $\Delta\gamma_1=\frac{\|\textbf{s}^{trial}_{k+1}\|}{2G}$, $\Delta\gamma$ and $\Delta\gamma_2$ are the objective functions to be calculated in the Newton-Raphson scheme for the classical or apex regions accordingly.
+
+For the calculation of the Drucker-Prager parameters from the friction angle, $\phi$, and the dilatancy angle, $\psi$, the plane strain case is presented in  Table~\ref{tab:2}. Additionally the parameters for the out cone are shown in Table~\ref{tab:2}. This cone circumscribes the Mohr-Coulomb plastic region, and the corresponding values for a von Mises criterion. 
+%%%%%%%%
+}
+\section{Discretization of the solution: Explicit scheme}
+\label{sec:4}
+To solve the aforementioned coupled problem in the time domain, the standard central difference explicit Newmark time integration scheme is employed. If the current time step is numbered as $k+1$, and assuming the solution in the previous step $k$ has been already obtained (hence it is known), a relationship between $\textbf{u}_{k+1}$, $\dot{\textbf{u}}_{k+1}$ and $\ddot{\textbf{u}}_{k+1}$ is established according to a finite difference scheme, as follows: 
+\begin{eqnarray}
+\ddot{\boldsymbol{u}}_{k+1} &=&\ddot{\boldsymbol{u}}_{k}+\Delta \ddot{\boldsymbol{u}}_{k+1},  \nonumber \\
+\dot{\boldsymbol{u}}_{k+1} &=&\dot{\boldsymbol{u}}_k+\ddot{\boldsymbol{u}}_{k}\Delta t+\gamma \Delta t \Delta \ddot{\boldsymbol{u}}_{k+1}, \nonumber \\
+\boldsymbol{u}_{k+1}&=&\boldsymbol{u}_{k}+\dot{\boldsymbol{u}}_{k} \Delta t+\frac{1}{2} \Delta t^{2} \ddot{\boldsymbol{u}}_{k}+\beta\Delta t^{2}\Delta \ddot{\boldsymbol{u}}_{k+1}. \label{eq_Nw}
+\end{eqnarray}
+Similarly, the pore pressure, evaluated at material point level, can be expressed in terms of its derivative.
+\begin{eqnarray}
+p_{w_{k+1}} &=&p_{w_k}+\dot{p}_{w_k}\Delta t+\theta \Delta t \Delta \dot{p}_w{_{k+1}}.  \label{eq_Nw_p}
+\end{eqnarray}
+When the Newmark scheme parameters, $\gamma$ and $\beta$ are set to 0.5 and 0 respectively, the central difference scheme is obtained. In the present research, $\theta=\gamma=0.5$. Rearranging terms, \textit{Predictor} and \textit{Corrector} terms can be obtained:
+\begin{eqnarray}
+\dot{u}_{k+1}&=&\underline{\dot{u}_{k}+(1-\gamma)\Delta t \,  \ddot{u}_{k}} + \gamma \Delta t \,  \ddot{u}_{k+1} \label{pc_1}, \\
+p_{w_{k+1}}&=&\underline{p_{w_{k}}+(1-\gamma)\Delta t \,  \dot{p_w}_{k}} + \gamma \Delta t \,  \dot{p_w}_{k+1} \label{pc_2};
+\end{eqnarray}
+being the underlined terms the ones of the predictor step, which will be 
+
+About the numerical stability of the proposed methodology, it is guaranteed when the Courant-Friedrichs-Lewy (CFL) condition is satisfied. In particular, the time step, $\Delta t$, should be small enough to ensure that the compressive wave can travel between nodes, i.e. 
+  %Thus, it should be smaller than the time that the wave spends traveling between neighbor nodes, 
+  \begin{equation}
+\Delta t < \frac{h}{V_c},
+\end{equation}
+where $h$ represents the discretization size and $V_c$ is the \textit{p}-wave velocity (see \cite{zienkiewicz1980}), which is defined by  
+\begin{equation}
+V_c=\sqrt{\left( D+\frac{K_f}{n}\right) \frac{1}{\rho}}, \; \; \textrm{where} \;\; D=\frac{2G(1-\nu)}{1-2\nu}.
+\end{equation}\label{ex_2}
+
+\subsection{Spatial discretization}
+\label{subsec:41}
+
+
+By employing the outlined 
+
+%%%%%%%%%
+\subsection{Explicit integration}
+\label{subsec:42}
+From Eq.~(\ref{eq_uw12}) and Eq.~(\ref{eq_uw14}) we can get the solutions of the acceleration of the solid phase in both cases, written in the incremental form:
+\begin{eqnarray}
+\Delta\boldsymbol{ \ddot{u}} &=&  \rho^{-1} \left[\boldsymbol{ \nabla }\left (\Delta\boldsymbol{ \sigma'}-\Delta p_w\right) - \rho_{w}  \, \Delta\boldsymbol{  \ddot{w} } +\rho \, \Delta\boldsymbol{ g}  \right], \label{eq_uw18} \\
+\Delta\boldsymbol{  \ddot{u}} &=&\rho_{w}^{-1} \left[ - \boldsymbol{ \nabla} \Delta p_{w}-  \frac{1}{k}\Delta\boldsymbol{ \dot{w}} -\frac{\rho_{w}}{n}  \,\Delta\boldsymbol{  \ddot{w} }+\rho_{w} \,  \Delta\boldsymbol{g} \right ]. \label{eq_uw19} 
+\end{eqnarray}
+As $\Delta\boldsymbol{ \dot{w}}$ is  unknown in the $k+1$ step, it is necessary to write the Newmark's time integration scheme from Eq.~(\ref{eq_Nw}) in terms of the fluid phase:
+\begin{eqnarray}
+\Delta\dot{\boldsymbol{w}}_{k+1}&=&\ddot{\boldsymbol{w}}_{k} \Delta t+\gamma \Delta t \Delta \ddot{\boldsymbol{w}}_{k+1}\label{eq_uw20},\\
+\Delta\boldsymbol{w}_{k+1}&=&\dot{\boldsymbol{w}}_{k} \Delta t+\frac{1}{2} \Delta t^{2} \ddot{\boldsymbol{w}}_{k}
++\beta\Delta t^{2} \Delta \ddot{\textbf{w}}_{n+1}.
+\end{eqnarray}\label{eq_uw21}
+If we write Eq.~(\ref{eq_uw19})  by substituting $\Delta\boldsymbol{ \dot{w}}$  by the definition given in Eq.~(\ref{eq_uw20}), we obtain:
+
+\begin{eqnarray}\label{eq_uw22}
+ \Delta\boldsymbol{  \ddot{u}}_{k+1} &=& \rho_{w}^{-1} \left ( - \boldsymbol{ \nabla} \Delta p_{w_{k+1}}- \frac{1}{k} \ddot{\boldsymbol{w}}_{k}\Delta t- \frac{1}{k} \gamma\Delta t\Delta \ddot{\boldsymbol{w}}_{k+1} \right .
+ \nonumber \\
+& & \left .- \frac{\rho_{w}}{n}  \,\Delta\boldsymbol{  \ddot{w} }_{k+1}+\rho_{w} \,  \Delta\boldsymbol{ g}_{k+1} \right )  \nonumber \\
+& =& \rho_{w}^{-1} \left [- \boldsymbol{ \nabla} \Delta p_{w_{k+1}}- \frac{1}{k} \ddot{\boldsymbol{w}}_{k}\Delta t +\rho_{w} \,  \Delta\boldsymbol{ g}_{k+1}  \right .
+\nonumber \\
+& & - \left . \left(\frac{1}{k} \gamma \Delta t +\frac{\rho_{w}}{n}  \right) \Delta\boldsymbol{  \ddot{w} }_{k+1} \right ].
+\end{eqnarray}
+
+Rearranging Eq.~(\ref{eq_uw18}) and Eq.~(\ref{eq_uw22}) we can obtain one equation in terms of the relative acceleration of the fluid, which can be solved explicitly and $\Delta\boldsymbol{ \ddot{w}}$ is obtained as in Eq.(\ref{eq_uw24}). Once this equation is solved, $\Delta\boldsymbol{ \ddot{u}}$ can be obtained from Eq.~(\ref{eq_uw18}).
+%%%%%
+
+\begin{eqnarray}\label{eq_uw23} 
+\rho_{w}&& \left[\boldsymbol{ \nabla }\left (\Delta\boldsymbol{ \sigma'}-\Delta p_w\right)_{k+1} - \rho_{w}  \, \Delta\boldsymbol{\ddot{w}}_{k+1} +\rho \, \Delta\boldsymbol{g}_{k+1}  \right]  \nonumber \\
+&&=\rho \left  [ - \boldsymbol{ \nabla} \Delta p_{w_{k+1}}- \frac{1}{k} \ddot{\boldsymbol{w}}_{k} \Delta t \right.
+\nonumber \\
+&& \left .- \left( \frac{1}{k} \gamma \Delta t +\frac{\rho_{w}}{n}  \right) \Delta\boldsymbol{  \ddot{w} }_{k+1}+\rho_{w} \,  \Delta\boldsymbol{ g}_{k+1} \right ].
+\end{eqnarray}
+\begin{eqnarray}\label{eq_uw24} 
+&&\rho_{w} \Delta \boldsymbol{ R}^{s}_{k+1}-(\rho_{w} -\rho)\Delta \boldsymbol{R}^{w}_{k+1}  + \rho_{w} \Delta\boldsymbol{P}_{k+1}^{s}-\rho \Delta\boldsymbol{P}_{k+1}^{w}  \nonumber \\ 
+&&+\Delta t \rho \frac{1}{k} \ddot{\boldsymbol{w}}_{k}=
+\left( \rho_{w}\rho_{w}-\rho \frac{1}{k} \gamma \Delta t -\frac{\rho\rho_{w}}{n}  \right) \Delta\boldsymbol{  \ddot{w} }_{k+1}.
+\end{eqnarray}
+
+Both equations to be solved, Eq.~(\ref{eq_uw24}) and Eq.~(\ref{eq_uw18}), after integration in space can be written in the matrix form in the following way:
+ 
+\begin{eqnarray}\label{eq_uw25} 
+\left[\boldsymbol{M}^{w}\boldsymbol{M}^{w}-\gamma\Delta t \boldsymbol{M}^{s}\boldsymbol{C} - \frac{\boldsymbol{M}^{s}\boldsymbol{M}^{w}}{n}\right]^{-1} && \nonumber \\
+\left[ \Delta\boldsymbol{R}^{*}_{k+1} +\Delta\boldsymbol{P}^{*}_{k+1}+\Delta t \boldsymbol{M}^{s}\boldsymbol{C}\boldsymbol{\ddot{w}}_k \right] && \nonumber \\
+=\Delta\boldsymbol{\ddot{w}}_{k+1} ,&&\\
+\label{eq_uw26} \left[\boldsymbol{M}^{s}\right]^{-1} \left[ \Delta\boldsymbol{R}^{s} + \Delta\boldsymbol{R}^{w}+\Delta\boldsymbol{P}^{s}-\boldsymbol{M}^{w}\Delta\boldsymbol{\ddot{w}} \right] _{k+1} && \nonumber \\
+=\Delta\boldsymbol{\ddot{u}}_{k+1}. &&
+\end{eqnarray}
+
+In Eqs.~(\ref{eq_uw25}-\ref{eq_uw26})$, \boldsymbol{R}_{k+1}$ represents the internal forces of the previous step for the solid, $s$, fluid, $w$, or the mixture of both, $*$, i.e.:
+
+\begin{eqnarray*}
+\Delta\boldsymbol{R}^s_{k+1}&=&\boldsymbol{ \nabla }\Delta\boldsymbol{ \sigma'}_{k+1}, \\
+\Delta\boldsymbol{R}^w_{k+1}&=&\boldsymbol{ \nabla }\Delta p_{w_{k+1}}, \\
+\Delta\boldsymbol{R}^*_{k+1}&=&\rho_{w} \Delta \boldsymbol{ R}^{s}_{k+1}-(\rho_{w} -\rho)\Delta \boldsymbol{R}^{w}_{k+1}.
+\end{eqnarray*}
+
+Similarly, the current external forces can be expressed as $ \boldsymbol{P}_{k+1}$, containing both gravity acceleration and the  boundary conditions for nodal forces. The external forces of the mixture are denoted by:
+$$
+\Delta\boldsymbol{P}^*_{k+1}=\rho_{w} \Delta\boldsymbol{P}_{k+1}^{s}-\rho \Delta\boldsymbol{P}_{k+1}^{w}.
+$$
+Mass and damping matrices, in the $k+1$ step, are defined as follows:
+\begin{eqnarray*}
+\boldsymbol{M}^w &=& \rho_{w}\boldsymbol{I} , \\
+\boldsymbol{M}^s &=& \rho\boldsymbol{I} , \\
+\boldsymbol{C} &=& \frac{1}{k}\boldsymbol{I} .
+\end{eqnarray*}
+
+%%%%%%%%%%%%
+\subsection{Explicit algorithm within the OTM framework} \label{subsec:42}
+The pseudo-algorithm of the whole model can be written in the following way:
+\begin{enumerate}
+%\begin{itemize}
+\item  Explicit Newmark Predictor ($\gamma=0.5$, $\beta=0$)
+\begin{eqnarray*}
+u_{k+1} &=&u_k+\Delta t \dot{u}_{k}+0.5\Delta t^2 \, \ddot{u}_k=u_k+\Delta u_{k+1}, \\
+w_{k+1} &=&w_k+\Delta t \dot{w}_{k}+0.5\Delta t^2 \, \ddot{w}_k=w_k+\Delta w_{k+1};\\
+%&&\\
+\dot{u}_{k+1}&=&\dot{u}_{k}+(1-\gamma)\Delta t \,  \ddot{u}_{k}, \\
+\dot{w}_{k+1}&=&\dot{w}_{k}+(1-\gamma)\Delta t \,  \ddot{w}_{k}; \\
+x_{k+1}&=&x_{k}+\Delta u_{k+1} .
+\end{eqnarray*}
+\item  Material points position update
+$$
+x_{k+1}^p=x_{k}^p+\sum_{a=1}^{Nb}\Delta u_{k+1}^a N^a(x^p_{k}).
+$$
+\item Deformation gradient calculation
+\begin{eqnarray*}
+\Delta \mathbf{F}_{k+1} &=& I+\sum_{a=1}^{Nb}\Delta u_{k+1}^a \nabla N^a(x_{k}^p), \\
+\Delta \mathbf{F}^w_{k+1} &=&I+\sum_{a=1}^{Nb}\Delta w_{k+1}^a \nabla N^a(x_{k}^p), \\
+\mathbf{F}_{k+1} &=& \Delta \mathbf{F}_{k+1} \mathbf{F}_{k}, \\
+V&=&JV_0=\det \mathbf{F} \, V_0,\\
+n&=&1-\frac{1-n_0}{J}.
+\end{eqnarray*}
+\item  Small strains and pore pressure:
+ $\mathbf{C}=\mathbf{F}^T\mathbf{F}$.
+\begin{eqnarray*}
+\mbox{div }(\boldsymbol{u}) &=& \mbox{tr}(\boldsymbol{\varepsilon}_{k+1})=\mbox{tr} \left (\frac{1}{2}\,\log\mathbf{C}_{k+1} \right), \\
+\mbox{div }(\boldsymbol{w}) &=& \mbox{tr} (\boldsymbol{\varepsilon}^w_{k+1})=\mbox{tr} \left(\frac{1}{2}\,\log\mathbf{C}^w_{k+1} \right), \\
+p_w&=&-Q \left( \mbox{div } \boldsymbol{u} + \mbox{div } \boldsymbol{w} \right).
+\end{eqnarray*}
+\item Remapping loop, reconnect the nodes with their new material neighbors.
+\item Update density and recompute lumped mass
+$$
+\rho_{k+1}=n_{k+1}\rho_{w}+(1-n_{k+1})\rho_s.
+$$
+\item Constitutive relations from the  Elasto-Plastic model: $\boldsymbol{\sigma'}_{k+1}$ and $\boldsymbol{R}_{k+1}$.
+\item Solve Eqs. \ref{eq_uw25} and \ref{eq_uw26} for $\boldsymbol{\ddot{u}}_{k+1}$ and $\boldsymbol{\ddot{w}}_{k+1}$.
+\item Explicit Newmark Corrector
+$$
+\dot{u}_{k+1}=\dot{u}_{k+1}+\gamma \Delta t \, \ddot{u}_{k+1},
+$$
+$$
+\dot{w}_{k+1}=\dot{w}_{k+1}+\gamma \Delta t \, \ddot{w}_{k+1}.
+$$\\
+\end{enumerate}
+
+In order to obtain the material point position (Step 2.) and the deformation gradient (Step 3.) it is necessary to calculate the shape function and its derivatives. Since a meshfree method is employed, the computation is done along a neighborhood $N_b$. As mentioned before, the shape functions are based on the work of Arroyo and Ortiz~\cite{arroyo2006}, who defined the Local Max-Ent shape function (LME) of the point $\boldsymbol(x)$ with respect to the neighborhood $\boldsymbol(x_a)$ as follows:
+\begin{equation} \label{eq_N1}
+N_a(\textbf{x})=\frac{\exp\left[ -\beta \; |\bf x-x_a|^2 +  \boldsymbol{\lambda}^*  \cdot  (x-x_a)  \right] } {Z(\textbf{x},\boldsymbol{\lambda}^*(\textbf{x}))},
+\end{equation}
+where
+\begin{equation}\label{eq_N2}
+Z({\bf x}, {\boldsymbol{\lambda}}) = \sum_{a=1}^{Nb}{ \exp \left[ -\beta \, |{\bf x-x_a}|^2 + \boldsymbol{\lambda}  \cdot  \bf {(x-x_a)}         \right]}.
+\end{equation}
+The first derivatives of the shape function can be obtained from the own shape function and its Hessian matrix \textbf{J} by employing the following expression:
+\begin{eqnarray}
+\nabla N^*_a &=& -N^*_a \,  (\textbf{J}^*)^{-1} \,  (\bf x-x_a) \label{eq_N3} ,
+\end{eqnarray}
+The parameter $\beta$ defines the shape of the neighborhood and it is related with the discretization size (or nodal spacing), $h$,  and the constant, $\gamma$, which controls the locality of the shape functions, as follows,
+\begin{equation}\label{eqLM3}
+\beta=\frac{\gamma}{h^2}.
+\end{equation} 
+
+It bears emphasis that $\boldsymbol{\lambda}^*(\bf x)$ comes from the minimization of the function $g(\boldsymbol{\lambda})=\log Z(\bf x, \boldsymbol{\lambda})$ to guarantee the maximum entropy, by employing a modified Nelder-Mead algorithm~\cite{Navas:17}.
+
+It is important to clarify the remapping loop defined in the algorithm. By using the stretches, $\lambda_1$, $\lambda_2$ and $\lambda_3$, the eigenvalues of the Right Cauchy-Green deformation tensor,   the neighborhood of the shape function can be enlarged. This fact allows us to model large deformation problems since the new locations of material points and nodes  lead to new values of the shape function. When the largest stretch surpasses a tolerance it is necessary to do the following:
+\begin{itemize}
+\item Update neighborhood and parameter $\beta_{k+1}^p < \beta_{k}^p$, see Eq.~(\ref{eq_N1}) and Eq.~(\ref{eq_N2}).
+\item Recompute $N^a(x_{k+1}^p)$ and $\nabla N^a(x_{k+1}^p)$ with the new positions of $x_{k+1}$ and $x_{k+1}^p$.
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{acknowledgements}
+This research was funded by the \textit{Ministerio de Ciencia e Innovaci\'on}, under Grant Number, PID2019-105630GB-I00, which has been greatly appreciated. Authors would like to thank the administrative and technical support of the ETSI Caminos, Canales y Puertos, from the Universidad Polit\'ecnica de Madrid, as well. Additionally, the first author really appreciate the Entrecanales Ibarra Foundation for his undergraduate scholarship.
+\end{acknowledgements}
+
+
+% Authors must disclose all relationships or interests that 
+% could have direct or potential influence or impart bias on 
+% the work: 
+%
+\section*{Conflict of interest}
+The authors declare that they have no conflict of interest.
+
+\section*{Author contributions}
+Conceptualization and mathematical methodology, P. Navas and M. M. Stickle. Implementation, M. Molinos and P.Navas. Validation, A. Yag\"ue and D.Manzanal. Meanwhile supervision, project administration and funding acquisition belongs to M. Pastor. All authors have contributed to the writing and original draft preparation and they read and agreed to the published version of the manuscript.
+
+\appendix
+
+%\clearpage
+\numberwithin{equation}{section}
+
+\section{Nomenclature}
+\label{ap:1}
+
+%\renewcommand{\labelitemi}{$ $}
+\begin{itemize}
+\item $\boldsymbol{a}^s \equiv \boldsymbol{\ddot{u}}$: acceleration vector of the solid = material time derivative of $\boldsymbol{v}^s$
+\item $\boldsymbol{a}^{ws}$: relative water acceleration vector with respect to the solid = material time derivative of $\boldsymbol{v}^{ws}$ with respect to the solid 
+\item $\boldsymbol{b}=\boldsymbol{F}\boldsymbol{F}^{T}$: left Cauchy-Green tensor
+\item $\boldsymbol{\overline{b}}$: body forces vector
+\item $c$: cohesion (equivalent to the yield stress, $\sigma_Y$)
+\item $\boldsymbol{C}=\boldsymbol{F}^{T}\boldsymbol{F}$: right Cauchy-Green tensor
+\item $\boldsymbol{C}$ (time integration scheme): damping matrix
+\item $\frac{D^s\Box}{Dt}$ $\equiv \dot\Box$: material time derivative of $\qed$ with respect to the solid
+\item $\boldsymbol{F}=\frac{\partial\boldsymbol{x}}{\partial\boldsymbol{X}}$: deformation gradient
+\item $\boldsymbol{g}$: gravity acceleration vector
+\item $G$: shear modulus
+\item $h$: nodal spacing
+\item $H$: hardening modulus, derivative of the cohesion against time.
+\item $\boldsymbol{I}$: second order unit tensor
+\item $J=\mbox{det}\boldsymbol{F}$: Jacobian determinant
+\item $k$: intrinsic permeability
+\item $\boldsymbol{k}$: permeability tensor
+\item $K$: bulk modulus
+\item $K_s$: bulk modulus of the solid grains
+\item $K_w$: bulk modulus of the fluid
+\item $\boldsymbol{M}$ : mass matrix
+\item $n$: porosity
+\item $N(\boldsymbol{x})$, $\nabla N(\boldsymbol{x})$: shape function and its derivatives
+\item $p$: solid pressure
+\item $p_w$: pore pressure
+\item $\boldsymbol{P}$ (time integration scheme): external forces vector
+\item $Q$: volumetric compressibility of the mixture
+\item $\boldsymbol{R}$: internal forces vector
+\item $\boldsymbol{s}=\boldsymbol{\sigma}^{dev}$: deviatoric stress tensor
+\item $t$: time
+\item $\boldsymbol{u}$: displacement vector of the solid
+\item $\boldsymbol{U}$: displacement vector of the water
+\item $\boldsymbol{v}^s=\boldsymbol{\dot{u}}$: velocity vector of the solid
+\item $\boldsymbol{v}^{ws}$: relative velocity vector of the water with respect to the solid
+\item $\boldsymbol{w}$: relative displacement vector of the water with respect to the solid
+\item $Z(\boldsymbol{x},\boldsymbol{\lambda})$: denominator of the exponential shape function
+
+\item $\alpha_{_F}$, $\alpha_{_Q}$ and $\beta$: Drucker-Prager parameters
+\item $\beta$, $\gamma$: time integration schemes parameters
+\item $\beta$, $\gamma$: LME parameters related with the shape of the neighborhood
+\item $\Delta\gamma$: increment of equivalent plastic strain
+\item $\overline{\varepsilon}^p$: equivalent plastic strain
+\item $\boldsymbol{\varepsilon}$: small strain tensor
+\item  $\varepsilon_0$: reference plastic strain
+\item $\kappa$: hydraulic conductivity
+\item $\lambda$: Lam\'e constant
+\item $\boldsymbol{\lambda}$: minimizer of log$Z(\boldsymbol{x},\boldsymbol{\lambda})$
+\item  $\mu_w $: viscosity of the water
+\item $\nu$: Poisson's ratio
+\item $\rho$: current mixture density
+\item $\rho_w$: water density
+\item $\rho_s$: density of the solid particles
+\item $\boldsymbol{\sigma}$: Cauchy stress tensor
+\item $\boldsymbol{\sigma'}$: effective Cauchy stress tensor
+\item $\boldsymbol{\tau}$: Kirchhoff stress tensor
+\item $\boldsymbol{\tau'}$: effective Kirchhoff stress tensor
+\item $\Phi$: plastic yield surface
+\item  $\phi$: friction angle
+\item $\psi$: dilatancy angle
+\\
+\end{itemize}
+
+Superscripts and subscripts
+\begin{itemize}
+\item$^{dev}$: superscript for deviatoric part
+\item$^{e}$: superscript for elastic part
+\item$_{k}$: subscript for the previous step
+\item$_{k+1}$: subscript for the current step
+\item$^{p}$: superscript for plastic part
+\item$^{s}$: superscript for the solid part
+\item$^{trial}$: superscript for trial state in the plastic calculation
+\item$^{vol}$: superscript for volumetric part
+\item$^{w}$: superscript for the fluid part
+\item$^{ws}$: superscript for the fluid part relative to the solid one
+\end{itemize}
+
+% BibTeX users please use one of
+%\bibliographystyle{spbasic}      % basic style, author-year citations
+\bibliographystyle{spmpsci}      % mathematics and physical sciences
+%\bibliographystyle{spphys}       % APS-like style for physics
+\bibliography{lib2020}   % name your BibTeX data base
+
+\end{document}
+% end of file template.tex
+

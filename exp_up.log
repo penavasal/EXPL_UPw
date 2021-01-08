@@ -1,0 +1,776 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.19)  7 JAN 2021 13:06
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**exp_up.tex
+(./exp_up.tex
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-03-06> (./svjour3.cls
+Document Class: svjour3 2007/05/08 v3.2 
+LaTeX document class for Springer journals
+(/usr/local/texlive/2020/texmf-dist/tex/latex/base/fleqn.clo
+File: fleqn.clo 2016/12/29 v1.2b Standard LaTeX option (flush left equations)
+\mathindent=\dimen134
+Applying: [2015/01/01] Make \[ robust on input line 50.
+LaTeX Info: Redefining \[ on input line 51.
+Already applied: [0000/00/00] Make \[ robust on input line 62.
+Applying: [2015/01/01] Make \] robust on input line 74.
+LaTeX Info: Redefining \] on input line 75.
+Already applied: [0000/00/00] Make \] robust on input line 83.
+)
+Class Springer-SVJour3 Info: extra/valid Springer sub-package (-> *.clo) 
+(Springer-SVJour3)           not found in option list of \documentclass
+(Springer-SVJour3)           - autoactivating "global" style.
+ (./svglov3.clo
+File: svglov3.clo 2009/12/18 v3.2 style option for standardised journals
+
+SVJour Class option: svglov3.clo for standardised journals
+)
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 147.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 148.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 149.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 150.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 151.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 152.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 153.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 154.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 155.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 156.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 157.
+\logodepth=\dimen135
+\headerboxheight=\dimen136
+\betweenumberspace=\dimen137
+\aftertext=\dimen138
+\headlineindent=\dimen139
+\c@inst=\count167
+\c@auth=\count168
+\instindent=\dimen140
+\authrun=\box45
+\authorrunning=\toks15
+\titrun=\box46
+\titlerunning=\toks16
+\combirun=\box47
+\c@lastpage=\count169
+\rubricwidth=\dimen141
+\c@section=\count170
+\c@subsection=\count171
+\c@subsubsection=\count172
+\c@paragraph=\count173
+\c@subparagraph=\count174
+\spthmsep=\dimen142
+\c@theorem=\count175
+\c@case=\count176
+\c@conjecture=\count177
+\c@corollary=\count178
+\c@definition=\count179
+\c@example=\count180
+\c@exercise=\count181
+\c@lemma=\count182
+\c@note=\count183
+\c@problem=\count184
+\c@property=\count185
+\c@proposition=\count186
+\c@question=\count187
+\c@solution=\count188
+\c@remark=\count189
+\c@figure=\count190
+\c@table=\count191
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\figcapgap=\dimen143
+\tabcapgap=\dimen144
+\figgap=\dimen145
+\bibindent=\dimen146
+\@tempcntc=\count192
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen147
+\Gin@req@width=\dimen148
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks18
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks19
+\ex@=\dimen149
+)
+\pmbraise@=\dimen150
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count193
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count194
+\leftroot@=\count195
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count196
+\DOTSCASE@=\count197
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box48
+\strutbox@=\box49
+\big@size=\dimen151
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count198
+\c@MaxMatrixCols=\count199
+\dotsspace@=\muskip16
+\c@parentequation=\count266
+\dspbrk@lvl=\count267
+\tag@help=\toks20
+\row@=\count268
+\column@=\count269
+\maxfields@=\count270
+\andhelp@=\toks21
+\eqnshift@=\dimen152
+\alignsep@=\dimen153
+\tagshift@=\dimen154
+\tagwidth@=\dimen155
+\totwidth@=\dimen156
+\lineht@=\dimen157
+\@envbody=\toks22
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/epsfig.sty
+Package: epsfig 2017/06/25 v1.7b (e)psfig emulation (SPQR)
+\epsfxsize=\dimen158
+\epsfysize=\dimen159
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf.sty
+Package: epstopdf 2020-01-24 v2.11 Conversion with epstopdf on the fly (HO)
+
+(/usr/local/texlive/2020/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2020/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)) (/usr/local/texlive/2020/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+
+(/usr/local/texlive/2020/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+))
+(/usr/local/texlive/2020/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2020/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+)))
+(/usr/local/texlive/2020/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip52
+\subfigcapskip=\skip53
+\subfigcaptopadj=\dimen160
+\subfigbottomskip=\skip54
+\subfigcapmargin=\dimen161
+\subfiglabelskip=\skip55
+\c@subfigure=\count271
+\c@lofdepth=\count272
+\c@subtable=\count273
+\c@lotdepth=\count274
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/local/texlive/2020/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip56
+\subfig@bottom=\skip57
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/tools/array.sty
+Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
+\col@sep=\dimen162
+\ar@mcellbox=\box50
+\extrarowheight=\dimen163
+\NC@list=\toks24
+\extratabsurround=\skip58
+\backup@length=\skip59
+\ar@cellbox=\box51
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+\TX@col@width=\dimen164
+\TX@old@table=\dimen165
+\TX@old@col=\dimen166
+\TX@target=\dimen167
+\TX@delta=\dimen168
+\TX@cols=\count275
+\TX@ftn=\toks25
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/supertabular/supertabular.sty
+Package: supertabular 2020/02/02 v4.1g the supertabular environment
+\c@tracingst=\count276
+\ST@wd=\dimen169
+\ST@rightskip=\skip60
+\ST@leftskip=\skip61
+\ST@parfillskip=\skip62
+\ST@pageleft=\dimen170
+\ST@headht=\dimen171
+\ST@tailht=\dimen172
+\ST@pagesofar=\dimen173
+\ST@pboxht=\dimen174
+\ST@lineht=\dimen175
+\ST@prevht=\dimen176
+\ST@toadd=\dimen177
+\ST@dimen=\dimen178
+\ST@pbox=\box52
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/fancyhdr/fancyheadings.sty
+Package: fancyheadings 2019/01/31 v3.10 Legacy package to call fancyhdr
+
+
+Package fancyheadings Warning: Please stop using fancyheadings!
+(fancyheadings)                Use fancyhdr instead.
+(fancyheadings)                We will call fancyhdr with the very same
+(fancyheadings)                options you passed to fancyheadings.
+(fancyheadings)                
+(fancyheadings)                fancyhdr is 99 percent compatible with
+(fancyheadings)                fancyheadings. The only incompatibility is
+(fancyheadings)                that \headrulewidth and \footrulewidth and
+(fancyheadings)                their \plain... versions are no longer length
+(fancyheadings)                parameters, but normal macros (to be changed
+(fancyheadings)                with \renewcommand rather than \setlength)..
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip63
+\f@nch@O@elh=\skip64
+\f@nch@O@erh=\skip65
+\f@nch@O@olh=\skip66
+\f@nch@O@orh=\skip67
+\f@nch@O@elf=\skip68
+\f@nch@O@erf=\skip69
+\f@nch@O@olf=\skip70
+\f@nch@O@orf=\skip71
+))
+(/usr/local/texlive/2020/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
+\multirow@colwidth=\skip72
+\multirow@cntb=\count277
+\multirow@dima=\skip73
+\bigstrutjot=\dimen179
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/cancel/cancel.sty
+Package: cancel 2013/04/12 v2.2 Cancel math terms
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count278
+\output=\toks26
+\linenoprevgraf=\count279
+\linenumbersep=\dimen180
+\linenumberwidth=\dimen181
+\c@linenumber=\count280
+\c@pagewiselinenumber=\count281
+\c@LN@truepage=\count282
+\c@internallinenumber=\count283
+\c@internallinenumbers=\count284
+\quotelinenumbersep=\dimen182
+\bframerule=\dimen183
+\bframesep=\dimen184
+\bframebox=\box53
+LaTeX Info: Redefining \\ on input line 3056.
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup6
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip74
+\enit@outerparindent=\dimen185
+\enit@toks=\toks27
+\enit@inbox=\box54
+\enit@count@id=\count285
+\enitdp@description=\count286
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box55
+\UL@hyphenbox=\box56
+\UL@skip=\skip75
+\UL@hook=\toks28
+\UL@height=\dimen186
+\UL@pe=\count287
+\UL@pixel=\dimen187
+\ULC@box=\box57
+Package: ulem 2019/11/18
+\ULdepth=\dimen188
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count288
+\l__pdf_internal_box=\box58
+)
+(./exp_up.aux)
+\openout1 = `exp_up.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+
+Unknown journal: specify \journalname{<name of your journal>} in preambel
+
+(/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count289
+\scratchdimen=\dimen189
+\scratchbox=\box59
+\nofMPsegments=\count290
+\nofMParguments=\count291
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count292
+\MPscratchDim=\dimen190
+\MPnumerator=\count293
+\makeMPintoPDFobject=\count294
+\everyMPtoPDFconversion=\toks30
+)
+SVJour3 warning: Missing \journalname
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <16> not available
+(Font)              size <17.28> substituted on input line 97.
+
+LaTeX Font Info:    Calculating math sizes for size <16> on input line 97.
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <16> not available
+(Font)              size <17.28> substituted on input line 97.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <16> not available
+(Font)              size <17.28> substituted on input line 97.
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 97.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 97.
+
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 97
+.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <16> not available
+(Font)              size <17.28> substituted on input line 97.
+
+! Undefined control sequence.
+\@author ->Pedro Navas \orcidA 
+                               \and Miguel Molinos \and Miguel M. Stickle \a...
+l.97 \maketitle
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\@author ->Pedro Navas \orcidA 
+                               \and Miguel Molinos \and Miguel M. Stickle \a...
+l.97 \maketitle
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    Calculating math sizes for size <8.5> on input line 97.
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <8.5> not available
+(Font)              size <8> substituted on input line 97.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.25> not available
+(Font)              size <5> substituted on input line 97.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <8.5> not available
+(Font)              size <8> substituted on input line 97.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.25> not available
+(Font)              size <5> substituted on input line 97.
+
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <8.5> not available
+(Font)              size <8> substituted on input line 97.
+
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <4.25> not available
+(Font)              size <5> substituted on input line 97.
+
+
+Underfull \hbox (badness 1924) in paragraph at lines 97--97
+\OT1/cmr/m/n/8.5 Dep. Con-tin-uum Me-chan-ics and The-ory of Struc-tures,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--97
+\OT1/cmr/m/n/8.5 E-mail: pe-dro.navas@upm.es, d.manzanal@upm.es, an-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--97
+\OT1/cmr/m/n/8.5 E-mail: m.molinos@alumnos.upm.es, m.martins@upm.es,
+ []
+
+! Undefined control sequence.
+<argument> Pedro Navas \orcidA 
+                               
+l.97 \maketitle
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (0.20396pt too wide) in paragraph at lines 100--101
+[]\OT1/cmr/m/n/10 In this pa-per an ef-fi-cient and ro-bust method-
+ []
+
+
+Overfull \hbox (5.09189pt too wide) in paragraph at lines 100--101
+\OT1/cmr/m/n/10 quency dy-namic load-ings un-der large de-for-ma-tion regime
+ []
+
+
+Overfull \hbox (3.0084pt too wide) in paragraph at lines 100--101
+\OT1/cmr/m/n/10 is pre-sented. The cou-pling be-tween solid and fluid phases
+ []
+
+
+LaTeX Warning: Citation `Biot1956poro' on page 1 undefined on input line 111.
+
+[1{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+
+LaTeX Warning: Citation `Navas:17' on page 2 undefined on input line 118.
+
+
+Overfull \hbox (12.20291pt too wide) in paragraph at lines 118--119
+[]\OT1/cmr/m/n/10 Moreover, it bears em-pha-sis that the pro-posed method-
+ []
+
+
+LaTeX Warning: Citation `Soga:15' on page 2 undefined on input line 120.
+
+
+LaTeX Warning: Reference `sec:5' on page 2 undefined on input line 122.
+
+
+LaTeX Warning: Reference `sec:6' on page 2 undefined on input line 122.
+
+
+Overfull \hbox (0.36961pt too wide) in paragraph at lines 129--131
+[]\OT1/cmr/m/n/10 Concerning the no-ta-tion, bold sym-bols are em-ployed
+ []
+
+[2]
+Overfull \hbox (3.8869pt too wide) in paragraph at lines 156--158
+\OT1/cmr/m/n/10 where $\OML/cmm/m/it/10 K[]$ \OT1/cmr/m/n/10 is the bulk mod-u-
+lus of the solid grains, whereas
+ []
+
+
+Overfull \hbox (0.59189pt too wide) in alignment at lines 177--181
+[][][] []
+ []
+
+[3]
+
+LaTeX Warning: Citation `Bonet:97' on page 4 undefined on input line 241.
+
+
+LaTeX Warning: Reference `sec:5' on page 4 undefined on input line 251.
+
+
+Overfull \hbox (10.53624pt too wide) in paragraph at lines 272--275
+\OT1/cmr/m/n/10 Regarding the Drucker-Prager yield cri-te-rion, the method-
+ []
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <8.5> not available
+(Font)              size <8> substituted on input line 284.
+
+
+Overfull \hbox (7.48328pt too wide) in paragraph at lines 303--314
+ [][] 
+ []
+
+[4]
+Overfull \hbox (7.4529pt too wide) in paragraph at lines 333--335
+\OT1/cmr/m/n/10 func-tions to be cal-cu-lated in the Newton-Raphson scheme
+ []
+
+
+Overfull \hbox (8.98074pt too wide) in paragraph at lines 358--360
+[]\OT1/cmr/m/n/10 About the nu-mer-i-cal sta-bil-ity of the pro-posed method-
+ []
+
+
+LaTeX Warning: Reference `eq_uw12' on page 5 undefined on input line 373.
+
+[5]
+Overfull \hbox (4.98062pt too wide) in paragraph at lines 428--429
+[]\OT1/cmr/m/n/10 Similarly, the cur-rent ex-ter-nal forces can be ex-pressed
+ []
+
+
+Overfull \hbox (3.84186pt too wide) in paragraph at lines 428--429
+\OT1/cmr/m/n/10 bound-ary con-di-tions for nodal forces. The ex-ter-nal forces
+ []
+
+
+Overfull \hbox (2.14738pt too wide) in paragraph at lines 477--478
+[]\OT1/cmr/m/n/10 Constitutive re-la-tions from the Elasto-Plastic model:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 485--486
+
+ []
+
+[6]
+
+LaTeX Warning: Citation `Navas:17' on page 7 undefined on input line 505.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/it' in size <8.5> not available
+(Font)              size <8> substituted on input line 516.
+
+
+Overfull \hbox (4.61966pt too wide) in paragraph at lines 528--529
+\OT1/cmr/m/n/10 Mean-while su-per-vi-sion, project ad-min-is-tra-tion and fund-
+
+ []
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <4.25> not available
+(Font)              size <5> substituted on input line 535.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <8.5> not available
+(Font)              size <8> substituted on input line 540.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <4.25> not available
+(Font)              size <5> substituted on input line 540.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <8.5> not available
+(Font)              size <8> substituted on input line 540.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <4.25> not available
+(Font)              size <5> substituted on input line 540.
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 598--600
+
+ []
+
+(./exp_up.bbl
+Underfull \hbox (badness 5563) in paragraph at lines 39--45
+[]\OT1/cmr/m/n/8.5 Borja, R.I., Ta-m-agnini, C., Alarc^^Son, E.: Elasto-
+ []
+
+
+Underfull \hbox (badness 4779) in paragraph at lines 39--45
+\OT1/cmr/m/n/8.5 plas-tic con-sol-i-da-tion at fi-nite strain. Part 2: fi-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--45
+\OT1/cmr/m/n/8.5 nite el-e-ment im-ple-men-ta-tion and nu-mer-i-cal ex-
+ []
+
+
+Underfull \hbox (badness 2547) in paragraph at lines 39--45
+\OT1/cmr/m/n/8.5 am-ples.  Com-puter Meth-ods in Ap-plied Me-chan-
+ []
+
+
+Underfull \hbox (badness 2762) in paragraph at lines 39--45
+\OT1/cmr/m/n/8.5 ics and En-gi-neer-ing \OT1/cmr/bx/n/8 159\OT1/cmr/m/n/8.5 , 1
+03--122 (1998).  URL
+ []
+
+
+Overfull \hbox (53.3987pt too wide) in paragraph at lines 39--45
+\OT1/cmr/m/n/8.5 http://www.sciencedirect.com/science/article/pii/S004578259880
+1059 
+ []
+
+
+Underfull \hbox (badness 1762) in paragraph at lines 73--78
+[]\OT1/cmr/m/n/8.5 Diebels, S., Ehlers, W.: Dy-namic anal-y-sis of fully
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--78
+\OT1/cmr/m/n/8.5 DOI 10.1002/(SICI)1097-0207(19960115)39:1<81::AID-
+ []
+
+
+Underfull \hbox (badness 1043) in paragraph at lines 98--103
+\OT1/cmr/m/n/8.5 mesh-free ap-prox-i-ma-tion schemes for fluid and plas-
+ []
+
+[8]) [9
+
+] (./exp_up.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 1.28pt have occurred.
+
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 4552 strings out of 480608
+ 62483 string characters out of 5903630
+ 323733 words of memory out of 5000000
+ 20325 multiletter control sequences out of 15000+600000
+ 548938 words of font info for 90 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 30i,13n,49p,1149b,330s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pf
+b></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy
+6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/c
+mbsy7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+bx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmb
+x12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
+7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.
+pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.p
+fb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pf
+b></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><
+/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></u
+sr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr
+/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/l
+ocal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/l
+ocal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb></u
+sr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb
+></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8
+.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.p
+fb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb>
+</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></u
+sr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/
+local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/l
+ocal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/loc
+al/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local
+/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/
+texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/te
+xlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/loca
+l/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam5.pfb>
+Output written on exp_up.pdf (9 pages, 358308 bytes).
+PDF statistics:
+ 151 PDF objects out of 1000 (max. 8388607)
+ 109 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
