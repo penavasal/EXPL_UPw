@@ -352,7 +352,7 @@ When the Newmark scheme parameters, $\gamma$ and $\beta$ are set to 0.5 and 0 re
 \dot{u}_{k+1}&=&\underline{\dot{u}_{k}+(1-\gamma)\Delta t \,  \ddot{u}_{k}} + \gamma \Delta t \,  \ddot{u}_{k+1} \label{pc_1}, \\
 p_{w_{k+1}}&=&\underline{p_{w_{k}}+(1-\gamma)\Delta t \,  \dot{p_w}_{k}} + \gamma \Delta t \,  \dot{p_w}_{k+1} \label{pc_2};
 \end{eqnarray}
-being the underlined terms the ones of the predictor step, which will be 
+being the underlined terms the ones of the predictor step, which will be called $\dot{u}_{k+*}$ and $p_{w_{k+*}}$.
 
 About the numerical stability of the proposed methodology, it is guaranteed when the Courant-Friedrichs-Lewy (CFL) condition is satisfied. In particular, the time step, $\Delta t$, should be small enough to ensure that the compressive wave can travel between nodes, i.e. 
   %Thus, it should be smaller than the time that the wave spends traveling between neighbor nodes, 
@@ -366,133 +366,11 @@ V_c=\sqrt{\left( D+\frac{K_f}{n}\right) \frac{1}{\rho}}, \; \; \textrm{where} \;
 
 \subsection{Spatial discretization}
 \label{subsec:41}
-
-
-By employing the outlined 
-
-%%%%%%%%%
-\subsection{Explicit integration}
-\label{subsec:42}
-From Eq.~(\ref{eq_uw12}) and Eq.~(\ref{eq_uw14}) we can get the solutions of the acceleration of the solid phase in both cases, written in the incremental form:
-\begin{eqnarray}
-\Delta\boldsymbol{ \ddot{u}} &=&  \rho^{-1} \left[\boldsymbol{ \nabla }\left (\Delta\boldsymbol{ \sigma'}-\Delta p_w\right) - \rho_{w}  \, \Delta\boldsymbol{  \ddot{w} } +\rho \, \Delta\boldsymbol{ g}  \right], \label{eq_uw18} \\
-\Delta\boldsymbol{  \ddot{u}} &=&\rho_{w}^{-1} \left[ - \boldsymbol{ \nabla} \Delta p_{w}-  \frac{1}{k}\Delta\boldsymbol{ \dot{w}} -\frac{\rho_{w}}{n}  \,\Delta\boldsymbol{  \ddot{w} }+\rho_{w} \,  \Delta\boldsymbol{g} \right ]. \label{eq_uw19} 
-\end{eqnarray}
-As $\Delta\boldsymbol{ \dot{w}}$ is  unknown in the $k+1$ step, it is necessary to write the Newmark's time integration scheme from Eq.~(\ref{eq_Nw}) in terms of the fluid phase:
-\begin{eqnarray}
-\Delta\dot{\boldsymbol{w}}_{k+1}&=&\ddot{\boldsymbol{w}}_{k} \Delta t+\gamma \Delta t \Delta \ddot{\boldsymbol{w}}_{k+1}\label{eq_uw20},\\
-\Delta\boldsymbol{w}_{k+1}&=&\dot{\boldsymbol{w}}_{k} \Delta t+\frac{1}{2} \Delta t^{2} \ddot{\boldsymbol{w}}_{k}
-+\beta\Delta t^{2} \Delta \ddot{\textbf{w}}_{n+1}.
-\end{eqnarray}\label{eq_uw21}
-If we write Eq.~(\ref{eq_uw19})  by substituting $\Delta\boldsymbol{ \dot{w}}$  by the definition given in Eq.~(\ref{eq_uw20}), we obtain:
-
-\begin{eqnarray}\label{eq_uw22}
- \Delta\boldsymbol{  \ddot{u}}_{k+1} &=& \rho_{w}^{-1} \left ( - \boldsymbol{ \nabla} \Delta p_{w_{k+1}}- \frac{1}{k} \ddot{\boldsymbol{w}}_{k}\Delta t- \frac{1}{k} \gamma\Delta t\Delta \ddot{\boldsymbol{w}}_{k+1} \right .
- \nonumber \\
-& & \left .- \frac{\rho_{w}}{n}  \,\Delta\boldsymbol{  \ddot{w} }_{k+1}+\rho_{w} \,  \Delta\boldsymbol{ g}_{k+1} \right )  \nonumber \\
-& =& \rho_{w}^{-1} \left [- \boldsymbol{ \nabla} \Delta p_{w_{k+1}}- \frac{1}{k} \ddot{\boldsymbol{w}}_{k}\Delta t +\rho_{w} \,  \Delta\boldsymbol{ g}_{k+1}  \right .
-\nonumber \\
-& & - \left . \left(\frac{1}{k} \gamma \Delta t +\frac{\rho_{w}}{n}  \right) \Delta\boldsymbol{  \ddot{w} }_{k+1} \right ].
-\end{eqnarray}
-
-Rearranging Eq.~(\ref{eq_uw18}) and Eq.~(\ref{eq_uw22}) we can obtain one equation in terms of the relative acceleration of the fluid, which can be solved explicitly and $\Delta\boldsymbol{ \ddot{w}}$ is obtained as in Eq.(\ref{eq_uw24}). Once this equation is solved, $\Delta\boldsymbol{ \ddot{u}}$ can be obtained from Eq.~(\ref{eq_uw18}).
-%%%%%
-
-\begin{eqnarray}\label{eq_uw23} 
-\rho_{w}&& \left[\boldsymbol{ \nabla }\left (\Delta\boldsymbol{ \sigma'}-\Delta p_w\right)_{k+1} - \rho_{w}  \, \Delta\boldsymbol{\ddot{w}}_{k+1} +\rho \, \Delta\boldsymbol{g}_{k+1}  \right]  \nonumber \\
-&&=\rho \left  [ - \boldsymbol{ \nabla} \Delta p_{w_{k+1}}- \frac{1}{k} \ddot{\boldsymbol{w}}_{k} \Delta t \right.
-\nonumber \\
-&& \left .- \left( \frac{1}{k} \gamma \Delta t +\frac{\rho_{w}}{n}  \right) \Delta\boldsymbol{  \ddot{w} }_{k+1}+\rho_{w} \,  \Delta\boldsymbol{ g}_{k+1} \right ].
-\end{eqnarray}
-\begin{eqnarray}\label{eq_uw24} 
-&&\rho_{w} \Delta \boldsymbol{ R}^{s}_{k+1}-(\rho_{w} -\rho)\Delta \boldsymbol{R}^{w}_{k+1}  + \rho_{w} \Delta\boldsymbol{P}_{k+1}^{s}-\rho \Delta\boldsymbol{P}_{k+1}^{w}  \nonumber \\ 
-&&+\Delta t \rho \frac{1}{k} \ddot{\boldsymbol{w}}_{k}=
-\left( \rho_{w}\rho_{w}-\rho \frac{1}{k} \gamma \Delta t -\frac{\rho\rho_{w}}{n}  \right) \Delta\boldsymbol{  \ddot{w} }_{k+1}.
-\end{eqnarray}
-
-Both equations to be solved, Eq.~(\ref{eq_uw24}) and Eq.~(\ref{eq_uw18}), after integration in space can be written in the matrix form in the following way:
- 
-\begin{eqnarray}\label{eq_uw25} 
-\left[\boldsymbol{M}^{w}\boldsymbol{M}^{w}-\gamma\Delta t \boldsymbol{M}^{s}\boldsymbol{C} - \frac{\boldsymbol{M}^{s}\boldsymbol{M}^{w}}{n}\right]^{-1} && \nonumber \\
-\left[ \Delta\boldsymbol{R}^{*}_{k+1} +\Delta\boldsymbol{P}^{*}_{k+1}+\Delta t \boldsymbol{M}^{s}\boldsymbol{C}\boldsymbol{\ddot{w}}_k \right] && \nonumber \\
-=\Delta\boldsymbol{\ddot{w}}_{k+1} ,&&\\
-\label{eq_uw26} \left[\boldsymbol{M}^{s}\right]^{-1} \left[ \Delta\boldsymbol{R}^{s} + \Delta\boldsymbol{R}^{w}+\Delta\boldsymbol{P}^{s}-\boldsymbol{M}^{w}\Delta\boldsymbol{\ddot{w}} \right] _{k+1} && \nonumber \\
-=\Delta\boldsymbol{\ddot{u}}_{k+1}. &&
-\end{eqnarray}
-
-In Eqs.~(\ref{eq_uw25}-\ref{eq_uw26})$, \boldsymbol{R}_{k+1}$ represents the internal forces of the previous step for the solid, $s$, fluid, $w$, or the mixture of both, $*$, i.e.:
-
-\begin{eqnarray*}
-\Delta\boldsymbol{R}^s_{k+1}&=&\boldsymbol{ \nabla }\Delta\boldsymbol{ \sigma'}_{k+1}, \\
-\Delta\boldsymbol{R}^w_{k+1}&=&\boldsymbol{ \nabla }\Delta p_{w_{k+1}}, \\
-\Delta\boldsymbol{R}^*_{k+1}&=&\rho_{w} \Delta \boldsymbol{ R}^{s}_{k+1}-(\rho_{w} -\rho)\Delta \boldsymbol{R}^{w}_{k+1}.
-\end{eqnarray*}
-
-Similarly, the current external forces can be expressed as $ \boldsymbol{P}_{k+1}$, containing both gravity acceleration and the  boundary conditions for nodal forces. The external forces of the mixture are denoted by:
-$$
-\Delta\boldsymbol{P}^*_{k+1}=\rho_{w} \Delta\boldsymbol{P}_{k+1}^{s}-\rho \Delta\boldsymbol{P}_{k+1}^{w}.
-$$
-Mass and damping matrices, in the $k+1$ step, are defined as follows:
-\begin{eqnarray*}
-\boldsymbol{M}^w &=& \rho_{w}\boldsymbol{I} , \\
-\boldsymbol{M}^s &=& \rho\boldsymbol{I} , \\
-\boldsymbol{C} &=& \frac{1}{k}\boldsymbol{I} .
-\end{eqnarray*}
-
-%%%%%%%%%%%%
-\subsection{Explicit algorithm within the OTM framework} \label{subsec:42}
-The pseudo-algorithm of the whole model can be written in the following way:
-\begin{enumerate}
-%\begin{itemize}
-\item  Explicit Newmark Predictor ($\gamma=0.5$, $\beta=0$)
-\begin{eqnarray*}
-u_{k+1} &=&u_k+\Delta t \dot{u}_{k}+0.5\Delta t^2 \, \ddot{u}_k=u_k+\Delta u_{k+1}, \\
-w_{k+1} &=&w_k+\Delta t \dot{w}_{k}+0.5\Delta t^2 \, \ddot{w}_k=w_k+\Delta w_{k+1};\\
-%&&\\
-\dot{u}_{k+1}&=&\dot{u}_{k}+(1-\gamma)\Delta t \,  \ddot{u}_{k}, \\
-\dot{w}_{k+1}&=&\dot{w}_{k}+(1-\gamma)\Delta t \,  \ddot{w}_{k}; \\
-x_{k+1}&=&x_{k}+\Delta u_{k+1} .
-\end{eqnarray*}
-\item  Material points position update
-$$
-x_{k+1}^p=x_{k}^p+\sum_{a=1}^{Nb}\Delta u_{k+1}^a N^a(x^p_{k}).
-$$
-\item Deformation gradient calculation
-\begin{eqnarray*}
-\Delta \mathbf{F}_{k+1} &=& I+\sum_{a=1}^{Nb}\Delta u_{k+1}^a \nabla N^a(x_{k}^p), \\
-\Delta \mathbf{F}^w_{k+1} &=&I+\sum_{a=1}^{Nb}\Delta w_{k+1}^a \nabla N^a(x_{k}^p), \\
-\mathbf{F}_{k+1} &=& \Delta \mathbf{F}_{k+1} \mathbf{F}_{k}, \\
-V&=&JV_0=\det \mathbf{F} \, V_0,\\
-n&=&1-\frac{1-n_0}{J}.
-\end{eqnarray*}
-\item  Small strains and pore pressure:
- $\mathbf{C}=\mathbf{F}^T\mathbf{F}$.
-\begin{eqnarray*}
-\mbox{div }(\boldsymbol{u}) &=& \mbox{tr}(\boldsymbol{\varepsilon}_{k+1})=\mbox{tr} \left (\frac{1}{2}\,\log\mathbf{C}_{k+1} \right), \\
-\mbox{div }(\boldsymbol{w}) &=& \mbox{tr} (\boldsymbol{\varepsilon}^w_{k+1})=\mbox{tr} \left(\frac{1}{2}\,\log\mathbf{C}^w_{k+1} \right), \\
-p_w&=&-Q \left( \mbox{div } \boldsymbol{u} + \mbox{div } \boldsymbol{w} \right).
-\end{eqnarray*}
-\item Remapping loop, reconnect the nodes with their new material neighbors.
-\item Update density and recompute lumped mass
-$$
-\rho_{k+1}=n_{k+1}\rho_{w}+(1-n_{k+1})\rho_s.
-$$
-\item Constitutive relations from the  Elasto-Plastic model: $\boldsymbol{\sigma'}_{k+1}$ and $\boldsymbol{R}_{k+1}$.
-\item Solve Eqs. \ref{eq_uw25} and \ref{eq_uw26} for $\boldsymbol{\ddot{u}}_{k+1}$ and $\boldsymbol{\ddot{w}}_{k+1}$.
-\item Explicit Newmark Corrector
-$$
-\dot{u}_{k+1}=\dot{u}_{k+1}+\gamma \Delta t \, \ddot{u}_{k+1},
-$$
-$$
-\dot{w}_{k+1}=\dot{w}_{k+1}+\gamma \Delta t \, \ddot{w}_{k+1}.
-$$\\
-\end{enumerate}
-
-In order to obtain the material point position (Step 2.) and the deformation gradient (Step 3.) it is necessary to calculate the shape function and its derivatives. Since a meshfree method is employed, the computation is done along a neighborhood $N_b$. As mentioned before, the shape functions are based on the work of Arroyo and Ortiz~\cite{arroyo2006}, who defined the Local Max-Ent shape function (LME) of the point $\boldsymbol(x)$ with respect to the neighborhood $\boldsymbol(x_a)$ as follows:
+The Optimal Transportation Meshfree (CITAS) has been demonstrated to perform reasonably well in geotechnical problems and, specifically, in multiphase problems. CITASSSS It is based in the conjunction of material points and nodes. As mentioned before, the shape functions are based on the work of Arroyo and Ortiz~\cite{arroyo2006}, who defined the Local Max-Ent shape function (LME) of the material point $\boldsymbol(x)$ with respect to the neighborhood $\boldsymbol(x_a)$ as follows:
 \begin{equation} \label{eq_N1}
 N_a(\textbf{x})=\frac{\exp\left[ -\beta \; |\bf x-x_a|^2 +  \boldsymbol{\lambda}^*  \cdot  (x-x_a)  \right] } {Z(\textbf{x},\boldsymbol{\lambda}^*(\textbf{x}))},
 \end{equation}
-where
+where the computation is done along a neighborhood $N_b$ and 
 \begin{equation}\label{eq_N2}
 Z({\bf x}, {\boldsymbol{\lambda}}) = \sum_{a=1}^{Nb}{ \exp \left[ -\beta \, |{\bf x-x_a}|^2 + \boldsymbol{\lambda}  \cdot  \bf {(x-x_a)}         \right]}.
 \end{equation}
@@ -505,13 +383,111 @@ The parameter $\beta$ defines the shape of the neighborhood and it is related wi
 \beta=\frac{\gamma}{h^2}.
 \end{equation} 
 
-It bears emphasis that $\boldsymbol{\lambda}^*(\bf x)$ comes from the minimization of the function $g(\boldsymbol{\lambda})=\log Z(\bf x, \boldsymbol{\lambda})$ to guarantee the maximum entropy, by employing a modified Nelder-Mead algorithm~\cite{Navas:17}.
+It bears emphasis that $\boldsymbol{\lambda}^*(\bf x)$ comes from the minimization of the function $g(\boldsymbol{\lambda})=\log Z(\bf x, \boldsymbol{\lambda})$ to guarantee the maximum entropy. Moreover, in the remapping of the shape function, before recomputing the aforementioned minimization process, it is necessary to update the neighborhood and the parameter $\beta_{k+1}^p < \beta_{k}^p$ in order to improve the stability.\\
 
-It is important to clarify the remapping loop defined in the algorithm. By using the stretches, $\lambda_1$, $\lambda_2$ and $\lambda_3$, the eigenvalues of the Right Cauchy-Green deformation tensor,   the neighborhood of the shape function can be enlarged. This fact allows us to model large deformation problems since the new locations of material points and nodes  lead to new values of the shape function. When the largest stretch surpasses a tolerance it is necessary to do the following:
-\begin{itemize}
-\item Update neighborhood and parameter $\beta_{k+1}^p < \beta_{k}^p$, see Eq.~(\ref{eq_N1}) and Eq.~(\ref{eq_N2}).
-\item Recompute $N^a(x_{k+1}^p)$ and $\nabla N^a(x_{k+1}^p)$ with the new positions of $x_{k+1}$ and $x_{k+1}^p$.
-\end{itemize}
+By employing the outlined shape functions and applying Galerkin procedure to the weak form of Eqs.~\eqref{eq_uw13} and~\eqref{eq_uw14}
+ (See~\cite{Sanavia:02,Sanavia:06} for details), the following matrix equations appear:
+ \begin{eqnarray}
+ \boldsymbol{R}^s- \boldsymbol{R}^w- \boldsymbol{M}^s \ddot{\boldsymbol{u}} + \boldsymbol{F}^{ext, \, s} &=& \boldsymbol{0} \label{mat1}\\
+-\boldsymbol{R}^w- \boldsymbol{C}^w \dot{\boldsymbol{w}} - \boldsymbol{M}^w \ddot{\boldsymbol{u}}+ \boldsymbol{F}^{ext, \, w} \boldsymbol{g} &=&\boldsymbol{0} \label{mat2}\\
+\dot{p_w} -Q \left[\mbox{tr}(\dot{\boldsymbol{\varepsilon}}) + \mbox{tr}(\dot{\boldsymbol{\varepsilon}}^w)\right] \label{mat3} &=& 0
+ \end{eqnarray}
+ 
+ where the internal and external forces are defined as:
+ \begin{eqnarray}
+  \boldsymbol{R}^s &=& \sum_{P=1}^{N_{P}} V_{P} \boldsymbol{\sigma'} \nabla \mathbf{N} \nonumber \\
+    \boldsymbol{R}^w &=& \sum_{P=1}^{N_{P}} V_{P} p_w \nabla \mathbf{N} \nonumber \\
+  \boldsymbol{F}^{ext, \, s} &=& \boldsymbol{M}^s \boldsymbol{g} - +\int_{\partial \Omega_{\tau}} \boldsymbol{\sigma'} \boldsymbol{n}\mathbf{N} d \Gamma\nonumber \\
+ \boldsymbol{F}^{ext, \, w} &=& \boldsymbol{M}^w \boldsymbol{g} - \int_{\partial \Omega_{p_w}} p_w \boldsymbol{n} \mathbf{N} d \Gamma, \nonumber
+  \end{eqnarray}
+  
+  and the mass and damping matrices, constructed as lumped matrices in order to alleviate the computational effort of the explicit scheme, are written as follows:
+   \begin{eqnarray}
+  \boldsymbol{M}^s &=& \sum_{P=1}^{N_{P}} V_{P} \rho \mathbf{N} \nonumber \\
+    \boldsymbol{M}^w &=& \sum_{P=1}^{N_{P}} V_{P} \rho_w \mathbf{N} \nonumber \\
+        \boldsymbol{C}^w &=& \sum_{P=1}^{N_{P}} V_{P} \frac{\mu_w}{k} \mathbf{N} \nonumber
+  \end{eqnarray}
+  
+  being $V_p$ and $N_p$ the volume and the neighborhood of a material point P respectively.
+  
+%%%%%%%%%
+\subsection{Explicit integration}
+\label{subsec:42}
+The proposed scheme seeks the value of the solid acceleration, $\ddot{\boldsymbol{u}}$, calculated from equation~\eqref{mat1}. In this calculation, it is necessary to predict the internal forces from the values of the predicted solid displacement, $\boldsymbol{u}_{k+*}$, and the predicted pore pressure, $p_{w_{k+*}}$. The stress has to be calculated in this predicted step as well:
+$$
+\boldsymbol{\sigma'}_{k+*}=\boldsymbol{\sigma'}(\boldsymbol{F}_{k+*})=\boldsymbol{\sigma'}(\boldsymbol{F}(\boldsymbol{u}_{k+*}))
+$$
+
+From Eq.~(\ref{mat2}), once the solid acceleration is reached, the fluid velocity can be calculated and, finally, the pore pressure rate can be updated from Eq.~(\ref{mat3}), taking into account the definition of the divergence of both fluid and solid velocities: 
+\begin{eqnarray}
+\mbox{div }(\dot{\boldsymbol{u}}) &=& \mbox{tr}(\boldsymbol{\dot{\varepsilon}}_{k+1})=\mbox{tr} \left (\frac{1}{2}\,\log\dot{\mathbf{b}}_{k+1} \right), \\
+\mbox{div }(\dot{\boldsymbol{w}}) &=& \mbox{tr} (\boldsymbol{\dot{\varepsilon}}^w_{k+1})=\mbox{tr} \left(\frac{1}{2}\,\log\dot{\mathbf{b}}^w_{k+1} \right). \\
+\end{eqnarray}
+
+$\mathbf{b}$ is the Left Cauchy-Green strain tensor, calculated as:
+ $$\mathbf{b}=\mathbf{F}\mathbf{F}^T$$
+ The approximation of the logarithmic strain as the measure to be employed in the reference configuration has been demonstrated to provide good performance when large deformations are modeled. (CITAS CUITIÑO; SANAVIA, TAMAGNINI). In the present research, the rate of tensor $\mathbf{b}$, for each phase, can be calculated as:
+ $$
+ \dot{\mathbf{b}}=\mathbf{b}(\dot{\mathbf{F}})=\mathbf{b}(\mathbf{F}(\dot{\boldsymbol{u}}_{k+1}))
+ $$
+  $$
+ \dot{\mathbf{b}}^w=\mathbf{b}(\dot{\mathbf{F}}^w)=\mathbf{b}(\mathbf{F}(\dot{\boldsymbol{w}}_{k+1}))
+ $$
+ 
+ It is worth mentioning that the subscript $k+1$ is employed in this calculation. All these ingredients are those which integrate the Newmark Predictor-Corrector explicit algorithm for the $\boldsymbol{u}-p_w$ formulation at large strain. Its numerical implementation is explained in the following section.
+
+%%%%%%%%%%%%
+\subsubsection{Explicit algorithm within the OTM framework} \label{subsec:421}
+The pseudo-algorithm of the whole model can be written as follows. The employment of the superscript $p$ for material point calculations has to be pointed out.
+\begin{enumerate}
+%\begin{itemize}
+\item  Explicit Newmark Predictor ($\gamma=0.5$, $\beta=0$)
+\begin{eqnarray*}
+u_{k+1} &=&u_k+\Delta t \dot{u}_{k}+0.5\Delta t^2 \, \ddot{u}_k, \\
+%&&\\
+\dot{u}_{k+*}&=&\dot{u}_{k}+(1-\gamma)\Delta t \,  \ddot{u}_{k}, \\
+p^p_{w_{k+*}} &=&p^p_{w_k}+(1-\gamma)\Delta t \, \dot{p}^p_{w_k}.
+\end{eqnarray*}
+\item  Nodes and Material points position update
+$$
+x_{k+1}=x_{k}+\Delta u_{k+1},
+$$
+$$
+x_{k+1}^p=x_{k}^p+\sum_{a=1}^{Nb}\Delta u_{k+1}^a N^a(x^p_{k}).
+$$
+\item Deformation gradient calculation and related parameters
+\begin{eqnarray*}
+\Delta \mathbf{F}_{k+1} &=& I+\sum_{a=1}^{Nb}\Delta u_{k+1}^a \nabla N^a(x_{k}^p), \\
+\mathbf{F}_{k+1} &=& \Delta \mathbf{F}_{k+1} \mathbf{F}_{k}, \\
+V&=&JV_0=\det \mathbf{F} \, V_0,\\
+n&=&1-\frac{1-n_0}{J}.
+\end{eqnarray*}
+\item Update density and recompute lumped mass
+$$
+\rho_{k+1}=n_{k+1}\rho_{w}+(1-n_{k+1})\rho_s.
+$$
+\item Remapping loop, reconnect the nodes with their new material neighbors.
+\item Constitutive relations from the  Elasto-Plastic model, $\boldsymbol{\sigma'}_{k+*}$ and internal forces $\boldsymbol{R}^s_{k+*}$ and $\boldsymbol{R}^w_{k+*}$.
+\item Calculate $\boldsymbol{\ddot{u}}_{k+1}$ from Eq.~\eqref{mat1}:
+$$
+\ddot{\boldsymbol{u}} =  \left[\boldsymbol{M}^s \right]^{-1}\left[\boldsymbol{R}^s_{k+*}- \boldsymbol{R}^w_{k+*} + \boldsymbol{F}^{ext, \, s}_{k+1}\right]
+$$
+\item  Small strains and pore pressure:
+ $\mathbf{C}=\mathbf{F}^T\mathbf{F}$.
+\begin{eqnarray*}
+\mbox{div }(\boldsymbol{u}) &=& \mbox{tr}(\boldsymbol{\varepsilon}_{k+1})=\mbox{tr} \left (\frac{1}{2}\,\log\mathbf{C}_{k+1} \right), \\
+\mbox{div }(\boldsymbol{w}) &=& \mbox{tr} (\boldsymbol{\varepsilon}^w_{k+1})=\mbox{tr} \left(\frac{1}{2}\,\log\mathbf{C}^w_{k+1} \right), \\
+p_w&=&-Q \left( \mbox{div } \boldsymbol{u} + \mbox{div } \boldsymbol{w} \right).
+\end{eqnarray*}
+\item Solve Eqs. \ref{eq_uw25} and \ref{eq_uw26} for and $\boldsymbol{\ddot{w}}_{k+1}$.
+\item Explicit Newmark Corrector
+$$
+\dot{u}_{k+1}=\dot{u}_{k+1}+\gamma \Delta t \, \ddot{u}_{k+1},
+$$
+$$
+\dot{w}_{k+1}=\dot{w}_{k+1}+\gamma \Delta t \, \ddot{w}_{k+1}.
+$$\\
+\end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%
 
 
