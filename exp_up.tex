@@ -355,7 +355,7 @@ p_{w_{k+1}}&=&\underline{p_{w_{k}}+(1-\gamma)\Delta t \,  \dot{p_w}_{k}} + \gamm
 being the underlined terms the ones of the predictor step, which will be called $\dot{u}_{k+*}$ and $p_{w_{k+*}}$.
 
 About the numerical stability of the proposed methodology, it is guaranteed when the Courant-Friedrichs-Lewy (CFL) condition is satisfied. In particular, the time step, $\Delta t$, should be small enough to ensure that the compressive wave can travel between nodes, i.e. 
-  %Thus, it should be smaller than the time that the wave spends traveling between neighbor nodes, 
+
   \begin{equation}
 \Delta t < \frac{h}{V_c},
 \end{equation}
@@ -389,7 +389,7 @@ By employing the outlined shape functions and applying Galerkin procedure to the
  (See~\cite{Sanavia:02,Sanavia:06} for details), the following matrix equations appear:
  \begin{eqnarray}
  \boldsymbol{R}^s- \boldsymbol{R}^w- \boldsymbol{M}^s \ddot{\boldsymbol{u}} + \boldsymbol{F}^{ext, \, s} &=& \boldsymbol{0} \label{mat1}\\
--\boldsymbol{R}^w- \boldsymbol{C}^w \dot{\boldsymbol{w}} - \boldsymbol{M}^w \ddot{\boldsymbol{u}}+ \boldsymbol{F}^{ext, \, w} \boldsymbol{g} &=&\boldsymbol{0} \label{mat2}\\
+-\boldsymbol{R}^w- \boldsymbol{C}^w \dot{\boldsymbol{w}} - \boldsymbol{M}^w \ddot{\boldsymbol{u}}+ \boldsymbol{F}^{ext, \, w} &=&\boldsymbol{0} \label{mat2}\\
 \dot{p_w} -Q \left[\mbox{tr}(\dot{\boldsymbol{\varepsilon}}) + \mbox{tr}(\dot{\boldsymbol{\varepsilon}}^w)\right] \label{mat3} &=& 0
  \end{eqnarray}
  
@@ -421,7 +421,7 @@ $$
 From Eq.~(\ref{mat2}), once the solid acceleration is reached, the fluid velocity can be calculated and, finally, the pore pressure rate can be updated from Eq.~(\ref{mat3}), taking into account the definition of the divergence of both fluid and solid velocities: 
 \begin{eqnarray}
 \mbox{div }(\dot{\boldsymbol{u}}) &=& \mbox{tr}(\boldsymbol{\dot{\varepsilon}}_{k+1})=\mbox{tr} \left (\frac{1}{2}\,\log\dot{\mathbf{b}}_{k+1} \right), \\
-\mbox{div }(\dot{\boldsymbol{w}}) &=& \mbox{tr} (\boldsymbol{\dot{\varepsilon}}^w_{k+1})=\mbox{tr} \left(\frac{1}{2}\,\log\dot{\mathbf{b}}^w_{k+1} \right). \\
+\mbox{div }(\dot{\boldsymbol{w}}) &=& \mbox{tr} (\boldsymbol{\dot{\varepsilon}}^w_{k+1})=\mbox{tr} \left(\frac{1}{2}\,\log\dot{\mathbf{b}}^w_{k+1} \right).
 \end{eqnarray}
 
 $\mathbf{b}$ is the Left Cauchy-Green strain tensor, calculated as:
@@ -470,23 +470,23 @@ $$
 \item Constitutive relations from the  Elasto-Plastic model, $\boldsymbol{\sigma'}_{k+*}$ and internal forces $\boldsymbol{R}^s_{k+*}$ and $\boldsymbol{R}^w_{k+*}$.
 \item Calculate $\boldsymbol{\ddot{u}}_{k+1}$ from Eq.~\eqref{mat1}:
 $$
-\ddot{\boldsymbol{u}} =  \left[\boldsymbol{M}^s \right]^{-1}\left[\boldsymbol{R}^s_{k+*}- \boldsymbol{R}^w_{k+*} + \boldsymbol{F}^{ext, \, s}_{k+1}\right]
+\ddot{\boldsymbol{u}}_{k+1} =  \left[\boldsymbol{M}^s \right]^{-1}\left[\boldsymbol{R}^s_{k+*}- \boldsymbol{R}^w_{k+*} + \boldsymbol{F}^{ext, \, s}_{k+1}\right]
 $$
-\item  Small strains and pore pressure:
- $\mathbf{C}=\mathbf{F}^T\mathbf{F}$.
-\begin{eqnarray*}
-\mbox{div }(\boldsymbol{u}) &=& \mbox{tr}(\boldsymbol{\varepsilon}_{k+1})=\mbox{tr} \left (\frac{1}{2}\,\log\mathbf{C}_{k+1} \right), \\
-\mbox{div }(\boldsymbol{w}) &=& \mbox{tr} (\boldsymbol{\varepsilon}^w_{k+1})=\mbox{tr} \left(\frac{1}{2}\,\log\mathbf{C}^w_{k+1} \right), \\
-p_w&=&-Q \left( \mbox{div } \boldsymbol{u} + \mbox{div } \boldsymbol{w} \right).
-\end{eqnarray*}
-\item Solve Eqs. \ref{eq_uw25} and \ref{eq_uw26} for and $\boldsymbol{\ddot{w}}_{k+1}$.
+\item Calculate $\boldsymbol{\dot{w}}_{k+1}$ from Eq.~\eqref{mat2}:
+$$
+\dot{\boldsymbol{w}}_{k+1} = \left[ \boldsymbol{C}^w\right]^{-1} \left[ -\boldsymbol{R}^w_{k+*} - \boldsymbol{M}^w \ddot{\boldsymbol{u}}_{k+1} + \boldsymbol{F}^{ext, \, w}_{k+1} \right]
+$$
 \item Explicit Newmark Corrector
 $$
-\dot{u}_{k+1}=\dot{u}_{k+1}+\gamma \Delta t \, \ddot{u}_{k+1},
+\dot{u}_{k+1}=\dot{u}_{k+*}+\gamma \Delta t \, \ddot{u}_{k+1},
+$$
+\item  Pore pressure update:
+$$
+\dot{p}^{p}_{w_{k+1}}&=&-Q \left( \mbox{div } \dot{\boldsymbol{u}}_{k+1} + \mbox{div } \dot{\boldsymbol{w}}_{k+1} \right),
 $$
 $$
-\dot{w}_{k+1}=\dot{w}_{k+1}+\gamma \Delta t \, \ddot{w}_{k+1}.
-$$\\
+{p}^{p}_{w_{k+1}}={p}^{p}_{w_{k+*}}+\gamma \Delta t \, \dot{p}^{p}_{w_{k+1}}.
+$$
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%
 
@@ -521,7 +521,6 @@ Conceptualization and mathematical methodology, P. Navas and M. M. Stickle. Impl
 \item $\boldsymbol{b}=\boldsymbol{F}\boldsymbol{F}^{T}$: left Cauchy-Green tensor
 \item $\boldsymbol{\overline{b}}$: body forces vector
 \item $c$: cohesion (equivalent to the yield stress, $\sigma_Y$)
-\item $\boldsymbol{C}=\boldsymbol{F}^{T}\boldsymbol{F}$: right Cauchy-Green tensor
 \item $\boldsymbol{C}$ (time integration scheme): damping matrix
 \item $\frac{D^s\Box}{Dt}$ $\equiv \dot\Box$: material time derivative of $\qed$ with respect to the solid
 \item $\boldsymbol{F}=\frac{\partial\boldsymbol{x}}{\partial\boldsymbol{X}}$: deformation gradient
@@ -588,8 +587,7 @@ Superscripts and subscripts
 \item$^{s}$: superscript for the solid part
 \item$^{trial}$: superscript for trial state in the plastic calculation
 \item$^{vol}$: superscript for volumetric part
-\item$^{w}$: superscript for the fluid part
-\item$^{ws}$: superscript for the fluid part relative to the solid one
+\item$^{w}$: superscript for the fluid part relative to the solid one
 \end{itemize}
 
 % BibTeX users please use one of
