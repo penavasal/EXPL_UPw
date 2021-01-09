@@ -1,7 +1,6 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.19)  8 JAN 2021 13:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.19)  8 JAN 2021 13:25
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
 **exp_up.tex
 (./exp_up.tex
@@ -339,4 +338,408 @@ Package: cancel 2013/04/12 v2.2 Cancel math terms
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
 \linenopenalty=\count278
 \output=\toks26
-\linenoprevgraf=\cou
+\linenoprevgraf=\count279
+\linenumbersep=\dimen180
+\linenumberwidth=\dimen181
+\c@linenumber=\count280
+\c@pagewiselinenumber=\count281
+\c@LN@truepage=\count282
+\c@internallinenumber=\count283
+\c@internallinenumbers=\count284
+\quotelinenumbersep=\dimen182
+\bframerule=\dimen183
+\bframesep=\dimen184
+\bframebox=\box53
+LaTeX Info: Redefining \\ on input line 3056.
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup6
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip74
+\enit@outerparindent=\dimen185
+\enit@toks=\toks27
+\enit@inbox=\box54
+\enit@count@id=\count285
+\enitdp@description=\count286
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box55
+\UL@hyphenbox=\box56
+\UL@skip=\skip75
+\UL@hook=\toks28
+\UL@height=\dimen186
+\UL@pe=\count287
+\UL@pixel=\dimen187
+\ULC@box=\box57
+Package: ulem 2019/11/18
+\ULdepth=\dimen188
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count288
+\l__pdf_internal_box=\box58
+)
+(./exp_up.aux)
+\openout1 = `exp_up.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+
+Unknown journal: specify \journalname{<name of your journal>} in preambel
+
+(/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count289
+\scratchdimen=\dimen189
+\scratchbox=\box59
+\nofMPsegments=\count290
+\nofMParguments=\count291
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count292
+\MPscratchDim=\dimen190
+\MPnumerator=\count293
+\makeMPintoPDFobject=\count294
+\everyMPtoPDFconversion=\toks30
+)
+SVJour3 warning: Missing \journalname
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <16> not available
+(Font)              size <17.28> substituted on input line 96.
+
+LaTeX Font Info:    Calculating math sizes for size <16> on input line 96.
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <16> not available
+(Font)              size <17.28> substituted on input line 96.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <16> not available
+(Font)              size <17.28> substituted on input line 96.
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 96.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 96.
+
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 96
+.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <16> not available
+(Font)              size <17.28> substituted on input line 96.
+
+LaTeX Font Info:    Calculating math sizes for size <8.5> on input line 96.
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <8.5> not available
+(Font)              size <8> substituted on input line 96.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.25> not available
+(Font)              size <5> substituted on input line 96.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <8.5> not available
+(Font)              size <8> substituted on input line 96.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.25> not available
+(Font)              size <5> substituted on input line 96.
+
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <8.5> not available
+(Font)              size <8> substituted on input line 96.
+
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <4.25> not available
+(Font)              size <5> substituted on input line 96.
+
+
+Underfull \hbox (badness 1924) in paragraph at lines 96--96
+\OT1/cmr/m/n/8.5 Dep. Con-tin-uum Me-chan-ics and The-ory of Struc-tures,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--96
+\OT1/cmr/m/n/8.5 E-mail: pe-dro.navas@upm.es, d.manzanal@upm.es, an-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--96
+\OT1/cmr/m/n/8.5 E-mail: m.molinos@alumnos.upm.es, m.martins@upm.es,
+ []
+
+
+Overfull \hbox (0.20396pt too wide) in paragraph at lines 99--100
+[]\OT1/cmr/m/n/10 In this pa-per an ef-fi-cient and ro-bust method-
+ []
+
+
+Overfull \hbox (5.09189pt too wide) in paragraph at lines 99--100
+\OT1/cmr/m/n/10 quency dy-namic load-ings un-der large de-for-ma-tion regime
+ []
+
+
+Overfull \hbox (3.0084pt too wide) in paragraph at lines 99--100
+\OT1/cmr/m/n/10 is pre-sented. The cou-pling be-tween solid and fluid phases
+ []
+
+
+LaTeX Warning: Citation `Biot1956poro' on page 1 undefined on input line 110.
+
+[1{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+
+LaTeX Warning: Citation `Navas:17' on page 2 undefined on input line 117.
+
+
+Overfull \hbox (12.20291pt too wide) in paragraph at lines 117--118
+[]\OT1/cmr/m/n/10 Moreover, it bears em-pha-sis that the pro-posed method-
+ []
+
+
+LaTeX Warning: Citation `Soga:15' on page 2 undefined on input line 119.
+
+
+LaTeX Warning: Reference `sec:5' on page 2 undefined on input line 121.
+
+
+LaTeX Warning: Reference `sec:6' on page 2 undefined on input line 121.
+
+
+Overfull \hbox (0.36961pt too wide) in paragraph at lines 128--130
+[]\OT1/cmr/m/n/10 Concerning the no-ta-tion, bold sym-bols are em-ployed
+ []
+
+[2]
+Overfull \hbox (3.8869pt too wide) in paragraph at lines 155--157
+\OT1/cmr/m/n/10 where $\OML/cmm/m/it/10 K[]$ \OT1/cmr/m/n/10 is the bulk mod-u-
+lus of the solid grains, whereas
+ []
+
+
+Overfull \hbox (0.59189pt too wide) in alignment at lines 176--180
+[][][] []
+ []
+
+[3]
+
+LaTeX Warning: Citation `Bonet:97' on page 4 undefined on input line 240.
+
+
+LaTeX Warning: Reference `sec:5' on page 4 undefined on input line 250.
+
+
+Overfull \hbox (10.53624pt too wide) in paragraph at lines 271--274
+\OT1/cmr/m/n/10 Regarding the Drucker-Prager yield cri-te-rion, the method-
+ []
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <8.5> not available
+(Font)              size <8> substituted on input line 283.
+
+
+Overfull \hbox (7.48328pt too wide) in paragraph at lines 302--313
+ [][] 
+ []
+
+[4]
+Overfull \hbox (7.4529pt too wide) in paragraph at lines 332--334
+\OT1/cmr/m/n/10 func-tions to be cal-cu-lated in the Newton-Raphson scheme
+ []
+
+
+Overfull \hbox (8.98074pt too wide) in paragraph at lines 357--358
+[]\OT1/cmr/m/n/10 About the nu-mer-i-cal sta-bil-ity of the pro-posed method-
+ []
+
+
+Overfull \hbox (5.17404pt too wide) in paragraph at lines 369--370
+\OT1/cmr/m/n/10 The Op-ti-mal Trans-porta-tion Mesh-free (CITAS) has been
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 386--387
+
+ []
+
+
+Overfull \hbox (34.22964pt too wide) in paragraph at lines 428--430
+\OT1/cmr/m/n/10 large de-for-ma-tions are mod-eled. (CITAS CUITI[]NO; SANAVIA,
+ []
+
+
+Overfull \hbox (0.31396pt too wide) in paragraph at lines 437--438
+\OT1/cmr/m/n/10 those which in-te-grate the New-mark Predictor-Corrector
+ []
+
+[6]
+Overfull \hbox (2.14738pt too wide) in paragraph at lines 470--471
+[]\OT1/cmr/m/n/10 Constitutive re-la-tions from the Elasto-Plastic model,
+ []
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/it' in size <8.5> not available
+(Font)              size <8> substituted on input line 495.
+
+
+Overfull \hbox (4.61966pt too wide) in paragraph at lines 507--508
+\OT1/cmr/m/n/10 Mean-while su-per-vi-sion, project ad-min-is-tra-tion and fund-
+
+ []
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <4.25> not available
+(Font)              size <5> substituted on input line 514.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <8.5> not available
+(Font)              size <8> substituted on input line 519.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <4.25> not available
+(Font)              size <5> substituted on input line 519.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <8.5> not available
+(Font)              size <8> substituted on input line 519.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <4.25> not available
+(Font)              size <5> substituted on input line 519.
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 576--578
+
+ []
+
+(./exp_up.bbl
+Underfull \hbox (badness 5563) in paragraph at lines 39--45
+[]\OT1/cmr/m/n/8.5 Borja, R.I., Ta-m-agnini, C., Alarc^^Son, E.: Elasto-
+ []
+
+
+Underfull \hbox (badness 4779) in paragraph at lines 39--45
+\OT1/cmr/m/n/8.5 plas-tic con-sol-i-da-tion at fi-nite strain. Part 2: fi-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--45
+\OT1/cmr/m/n/8.5 nite el-e-ment im-ple-men-ta-tion and nu-mer-i-cal ex-
+ []
+
+
+Underfull \hbox (badness 2547) in paragraph at lines 39--45
+\OT1/cmr/m/n/8.5 am-ples.  Com-puter Meth-ods in Ap-plied Me-chan-
+ []
+
+
+Underfull \hbox (badness 2762) in paragraph at lines 39--45
+\OT1/cmr/m/n/8.5 ics and En-gi-neer-ing \OT1/cmr/bx/n/8 159\OT1/cmr/m/n/8.5 , 1
+03--122 (1998).  URL
+ []
+
+
+Overfull \hbox (53.3987pt too wide) in paragraph at lines 39--45
+\OT1/cmr/m/n/8.5 http://www.sciencedirect.com/science/article/pii/S004578259880
+1059 
+ []
+
+
+Underfull \hbox (badness 1762) in paragraph at lines 73--78
+[]\OT1/cmr/m/n/8.5 Diebels, S., Ehlers, W.: Dy-namic anal-y-sis of fully
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--78
+\OT1/cmr/m/n/8.5 DOI 10.1002/(SICI)1097-0207(19960115)39:1<81::AID-
+ []
+
+
+Underfull \hbox (badness 1043) in paragraph at lines 98--103
+\OT1/cmr/m/n/8.5 mesh-free ap-prox-i-ma-tion schemes for fluid and plas-
+ []
+
+[8]) [9
+
+] (./exp_up.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 1.28pt have occurred.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 4544 strings out of 480608
+ 62405 string characters out of 5903630
+ 320669 words of memory out of 5000000
+ 20317 multiletter control sequences out of 15000+600000
+ 548938 words of font info for 90 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 30i,13n,49p,1149b,330s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pf
+b></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy
+6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/c
+mbsy7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+bx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmb
+x12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
+7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.
+pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.p
+fb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pf
+b></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><
+/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></u
+sr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr
+/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/l
+ocal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/l
+ocal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb></u
+sr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb
+></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8
+.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.p
+fb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb>
+</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></u
+sr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/
+local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/l
+ocal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/loc
+al/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local
+/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/t
+exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/te
+xlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texl
+ive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/
+texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam5.pfb>
+Output written on exp_up.pdf (9 pages, 369854 bytes).
+PDF statistics:
+ 155 PDF objects out of 1000 (max. 8388607)
+ 112 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
