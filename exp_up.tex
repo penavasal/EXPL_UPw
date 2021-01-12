@@ -388,53 +388,44 @@ It bears emphasis that $\boldsymbol{\lambda}^*(\bf x)$ comes from the minimizati
 By employing the outlined shape functions and applying Galerkin procedure to the weak form of Eqs.~\eqref{eq_uw13} and~\eqref{eq_uw14}
  (See~\cite{Sanavia:02,Sanavia:06} for details), the following matrix equations appear:
  \begin{eqnarray}
- \boldsymbol{R}^s- \boldsymbol{R}^w- \boldsymbol{M}^s \ddot{\boldsymbol{u}} + \boldsymbol{F}^{ext, \, s} &=& \boldsymbol{0} \label{mat1}\\
--\boldsymbol{R}^w- \boldsymbol{C}^w \dot{\boldsymbol{w}} - \boldsymbol{M}^w \ddot{\boldsymbol{u}}+ \boldsymbol{F}^{ext, \, w} &=&\boldsymbol{0} \label{mat2}\\
-\dot{p_w} -Q \left[\mbox{tr}(\dot{\boldsymbol{\varepsilon}}) + \mbox{tr}(\dot{\boldsymbol{\varepsilon}}^w)\right] \label{mat3} &=& 0
+ \boldsymbol{R}^s- \boldsymbol{R}^w- \boldsymbol{M}^s \ddot{\boldsymbol{u}} + \boldsymbol{f}^{ext, \, s} &=& \boldsymbol{0} \label{mat1}\\
+- \boldsymbol{C} \dot{\boldsymbol{u}} + \boldsymbol{M}^w \ddot{\boldsymbol{u}} + \boldsymbol{f}^{ext, \, w}-\boldsymbol{R}^{w}
+  \label{mat2} &=& \dot{p_w}
  \end{eqnarray}
  
  where the internal and external forces are defined as:
  \begin{eqnarray}
   \boldsymbol{R}^s &=& \sum_{P=1}^{N_{P}} V_{P} \boldsymbol{\sigma'} \nabla \mathbf{N} \nonumber \\
     \boldsymbol{R}^w &=& \sum_{P=1}^{N_{P}} V_{P} p_w \nabla \mathbf{N} \nonumber \\
-  \boldsymbol{F}^{ext, \, s} &=& \boldsymbol{M}^s \boldsymbol{g} - +\int_{\partial \Omega_{\tau}} \boldsymbol{\sigma'} \boldsymbol{n}\mathbf{N} d \Gamma\nonumber \\
- \boldsymbol{F}^{ext, \, w} &=& \boldsymbol{M}^w \boldsymbol{g} - \int_{\partial \Omega_{p_w}} p_w \boldsymbol{n} \mathbf{N} d \Gamma, \nonumber
+  \boldsymbol{f}^{ext, \, s} &=& \boldsymbol{M}^s \boldsymbol{g} - \int_{\partial \Omega_{\tau}} \boldsymbol{\sigma'} \boldsymbol{n}\mathbf{N} d \Gamma\nonumber \\
+ \boldsymbol{f}^{ext, \, w} &=& \boldsymbol{M}^w \boldsymbol{g} + \int_{\partial \Omega_{p_w}} p_w \boldsymbol{n} \mathbf{N} d \Gamma, \nonumber
   \end{eqnarray}
   
   and the mass and damping matrices, constructed as lumped matrices in order to alleviate the computational effort of the explicit scheme, are written as follows:
    \begin{eqnarray}
   \boldsymbol{M}^s &=& \sum_{P=1}^{N_{P}} V_{P} \rho \mathbf{N} \nonumber \\
-    \boldsymbol{M}^w &=& \sum_{P=1}^{N_{P}} V_{P} \rho_w \mathbf{N} \nonumber \\
-        \boldsymbol{C}^w &=& \sum_{P=1}^{N_{P}} V_{P} \frac{\mu_w}{k} \mathbf{N} \nonumber
+    \boldsymbol{M}^w &=& \sum_{P=1}^{N_{P}} Q \rho_w \frac{k}{\mu_w} V_{P} \mathbf{B}\mathbf{m} \mathbf{N} \nonumber \\
+        \boldsymbol{C}^w &=& \sum_{P=1}^{N_{P}} Q V_{P} \mathbf{B}\mathbf{m} \mathbf{N} \nonumber
   \end{eqnarray}
   
-  being $V_p$ and $N_p$ the volume and the neighborhood of a material point P respectively.
+  being $V_p$ and $N_p$ the volume and the neighborhood of a material point P respectively, $\mathbf{B}$ the symmetric shape function gradient operator and $\mathbf{m}$ the identity matrix in Voigt notation. Thus, $\mathbf{B}\mathbf{m}$ reproduces the \textit{divergence} operation.
   
 %%%%%%%%%
 \subsection{Explicit integration}
 \label{subsec:42}
-The proposed scheme seeks the value of the solid acceleration, $\ddot{\boldsymbol{u}}$, calculated from equation~\eqref{mat1}. In this calculation, it is necessary to predict the internal forces from the values of the predicted solid displacement, $\boldsymbol{u}_{k+*}$, and the predicted pore pressure, $p_{w_{k+*}}$. The stress has to be calculated in this predicted step as well:
+The proposed scheme seeks the value of the solid acceleration, $\ddot{\boldsymbol{u}}$, calculated from equation~\eqref{mat1}. It is worth mentioning that the subscript $k+1$ is employed for the current step and $k$ in the previous one. Furthermore, in this calculation, it is necessary to predict the internal forces from the values of the predicted solid displacement, $\boldsymbol{u}_{k+*}$, and the predicted pore pressure, $p_{w_{k+*}}$. The stress has to be calculated in this predicted step as well:
 $$
 \boldsymbol{\sigma'}_{k+*}=\boldsymbol{\sigma'}(\boldsymbol{F}_{k+*})=\boldsymbol{\sigma'}(\boldsymbol{F}(\boldsymbol{u}_{k+*}))
 $$
 
-From Eq.~(\ref{mat2}), once the solid acceleration is reached, the fluid velocity can be calculated and, finally, the pore pressure rate can be updated from Eq.~(\ref{mat3}), taking into account the definition of the divergence of both fluid and solid velocities: 
-\begin{eqnarray}
-\mbox{div }(\dot{\boldsymbol{u}}) &=& \mbox{tr}(\boldsymbol{\dot{\varepsilon}}_{k+1})=\mbox{tr} \left (\frac{1}{2}\,\log\dot{\mathbf{b}}_{k+1} \right), \\
-\mbox{div }(\dot{\boldsymbol{w}}) &=& \mbox{tr} (\boldsymbol{\dot{\varepsilon}}^w_{k+1})=\mbox{tr} \left(\frac{1}{2}\,\log\dot{\mathbf{b}}^w_{k+1} \right).
-\end{eqnarray}
+Moreover, the approximation of the logarithmic strain as the measure to be employed in the reference configuration has been demonstrated to provide good performance when large deformations are modeled. (CITAS CUITIÑO; SANAVIA, TAMAGNINI). In the present research, the tensor $\mathbf{b}$, the Left Cauchy-Green strain tensor ($\mathbf{b}=\mathbf{F}\mathbf{F}^T$) depends on the displacement on the predicted step as follows:
+ $$
+ \mathbf{b}_{k+*}=\mathbf{b}(\mathbf{F}_{k+*})=\mathbf{b}(\mathbf{F}(\boldsymbol{u}_{k+*}))
+ $$
 
-$\mathbf{b}$ is the Left Cauchy-Green strain tensor, calculated as:
- $$\mathbf{b}=\mathbf{F}\mathbf{F}^T$$
- The approximation of the logarithmic strain as the measure to be employed in the reference configuration has been demonstrated to provide good performance when large deformations are modeled. (CITAS CUITIÑO; SANAVIA, TAMAGNINI). In the present research, the rate of tensor $\mathbf{b}$, for each phase, can be calculated as:
- $$
- \dot{\mathbf{b}}=\mathbf{b}(\dot{\mathbf{F}})=\mathbf{b}(\mathbf{F}(\dot{\boldsymbol{u}}_{k+1}))
- $$
-  $$
- \dot{\mathbf{b}}^w=\mathbf{b}(\dot{\mathbf{F}}^w)=\mathbf{b}(\mathbf{F}(\dot{\boldsymbol{w}}_{k+1}))
- $$
- 
- It is worth mentioning that the subscript $k+1$ is employed in this calculation. All these ingredients are those which integrate the Newmark Predictor-Corrector explicit algorithm for the $\boldsymbol{u}-p_w$ formulation at large strain. Its numerical implementation is explained in the following section.
+Once the solid acceleration is reached, the pore pressure velocity can be calculated from Eq.~(\ref{mat2}). Also, in this equation, water internal forces and solid velocities have to be evaluated in the predicted step, $k+*$.
+
+All these ingredients are those which integrate the Newmark Predictor-Corrector explicit algorithm for the $\boldsymbol{u}-p_w$ formulation at large strain. Its numerical implementation is explained in the following section.
 
 %%%%%%%%%%%%
 \subsubsection{Explicit algorithm within the OTM framework} \label{subsec:421}
@@ -446,7 +437,7 @@ The pseudo-algorithm of the whole model can be written as follows. The employmen
 u_{k+1} &=&u_k+\Delta t \dot{u}_{k}+0.5\Delta t^2 \, \ddot{u}_k, \\
 %&&\\
 \dot{u}_{k+*}&=&\dot{u}_{k}+(1-\gamma)\Delta t \,  \ddot{u}_{k}, \\
-p^p_{w_{k+*}} &=&p^p_{w_k}+(1-\gamma)\Delta t \, \dot{p}^p_{w_k}.
+p_{w_{k+*}} &=&p_{w_k}+(1-\gamma)\Delta t \, \dot{p}_{w_k}.
 \end{eqnarray*}
 \item  Nodes and Material points position update
 $$
@@ -470,26 +461,27 @@ $$
 \item Constitutive relations from the  Elasto-Plastic model, $\boldsymbol{\sigma'}_{k+*}$ and internal forces $\boldsymbol{R}^s_{k+*}$ and $\boldsymbol{R}^w_{k+*}$.
 \item Calculate $\boldsymbol{\ddot{u}}_{k+1}$ from Eq.~\eqref{mat1}:
 $$
-\ddot{\boldsymbol{u}}_{k+1} =  \left[\boldsymbol{M}^s \right]^{-1}\left[\boldsymbol{R}^s_{k+*}- \boldsymbol{R}^w_{k+*} + \boldsymbol{F}^{ext, \, s}_{k+1}\right]
+\ddot{\boldsymbol{u}}_{k+1} =  \left[\boldsymbol{M}^s \right]^{-1}\left[\boldsymbol{R}^s_{k+*}- \boldsymbol{R}^w_{k+*} + \boldsymbol{f}^{ext, \, s}_{k+1}\right]
 $$
-\item Calculate $\boldsymbol{\dot{w}}_{k+1}$ from Eq.~\eqref{mat2}:
+\item Calculate $\dot{p_w}_{k+1}$ from Eq.~\eqref{mat2}:
 $$
-\dot{\boldsymbol{w}}_{k+1} = \left[ \boldsymbol{C}^w\right]^{-1} \left[ -\boldsymbol{R}^w_{k+*} - \boldsymbol{M}^w \ddot{\boldsymbol{u}}_{k+1} + \boldsymbol{F}^{ext, \, w}_{k+1} \right]
+\dot{p_w}_{k+1}=- \boldsymbol{C} \dot{\boldsymbol{u}}_{k+*} + \boldsymbol{M}^w \ddot{\boldsymbol{u}}_{k+1} + \boldsymbol{f}^{ext, \, w}_{k+1}-\boldsymbol{R}^{w}_{k+*}
 $$
 \item Explicit Newmark Corrector
 $$
 \dot{u}_{k+1}=\dot{u}_{k+*}+\gamma \Delta t \, \ddot{u}_{k+1},
 $$
-\item  Pore pressure update:
 $$
-\dot{p}^{p}_{w_{k+1}}=-Q \left( \mbox{div } \dot{\boldsymbol{u}}_{k+1} + \mbox{div } \dot{\boldsymbol{w}}_{k+1} \right),
-$$
-$$
-{p}^{p}_{w_{k+1}}={p}^{p}_{w_{k+*}}+\gamma \Delta t \, \dot{p}^{p}_{w_{k+1}}.
+{p}_{w_{k+1}}={p}_{w_{k+*}}+\gamma \Delta t \, \dot{p}_{w_{k+1}}.
 $$
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%
 
+\section{Validation examples}
+\label{sec:5}
+
+\section{Conclusions}
+\label{sec:6}
 
 \begin{acknowledgements}
 This research was funded by the \textit{Ministerio de Ciencia e Innovaci\'on}, under Grant Number, PID2019-105630GB-I00, which has been greatly appreciated. Authors would like to thank the administrative and technical support of the ETSI Caminos, Canales y Puertos, from the Universidad Polit\'ecnica de Madrid, as well. Additionally, the first author really appreciate the Entrecanales Ibarra Foundation for his undergraduate scholarship.
@@ -506,13 +498,13 @@ The authors declare that they have no conflict of interest.
 \section*{Author contributions}
 Conceptualization and mathematical methodology, P. Navas and M. M. Stickle. Implementation, M. Molinos and P.Navas. Validation, A. Yag\"ue and D.Manzanal. Meanwhile supervision, project administration and funding acquisition belongs to M. Pastor. All authors have contributed to the writing and original draft preparation and they read and agreed to the published version of the manuscript.
 
-\appendix
+%\appendix
 
 %\clearpage
-\numberwithin{equation}{section}
+%\numberwithin{equation}{section}
 
-\section{Nomenclature}
-\label{ap:1}
+\section*{Nomenclature}
+\label{nom}
 
 %\renewcommand{\labelitemi}{$ $}
 \begin{itemize}
