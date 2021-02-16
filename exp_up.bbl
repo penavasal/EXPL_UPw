@@ -21,6 +21,13 @@ Arroyo, M., Ortiz, M.: {Local maximum-entropy approximation schemes: a seamless
   \textbf{65}(13), 2167--2202 (2006).
 \newblock \doi{10.1002/nme.1534}
 
+\bibitem{Bandara2016a}
+Bandara, S., Ferrari, A., Laloui, L.: {Modelling landslides in unsaturated
+  slopes subjected to rainfall infiltration using material point method}.
+\newblock International Journal for Numerical and Analytical Methods in
+  Geomechanics \textbf{40}(9), 1358--1380 (2016).
+\newblock \doi{10.1002/nag.2499}
+
 \bibitem{Biot1956}
 Biot, M.A.: {Theory of propagation of elastic waves in a fluid-saturated porous
   solid. I. Low-Frequency range}.
@@ -100,6 +107,13 @@ Li, B., Habbal, F., Ortiz, M.: {Optimal transportation meshfree approximation
   \textbf{83}(June), 1541--1579 (2010).
 \newblock \doi{10.1002/nme}
 
+\bibitem{LiBorja2004}
+Li, C., Borja, R.I., Regueiro, R.A.: {Dynamics of porous media at finite
+  strain}.
+\newblock Computer Methods in Applied Mechanics and Engineering
+  \textbf{193}(36-38), 3837--3870 (2004).
+\newblock \doi{10.1016/j.cma.2004.02.014}
+
 \bibitem{LopezQuerolB2006}
 L{\'{o}}pez-Querol, S., Bl{\'{a}}zquez, R.: {Liquefaction and cyclic mobility
   model in saturated granular media}.
@@ -167,14 +181,6 @@ Navas, P., Yu, R.C., Li, B., Ruiz, G.: {Modeling the dynamic fracture in
   (2018).
 \newblock \doi{10.1016/j.ijimpeng.2017.11.004}
 
-\bibitem{Navas2018b}
-Navas, P., Yu, R.C., Ruiz, G.: {SIMULATION OF MIXED-MODE FRACTURE IN CONCRETE
-  THROUGH THE EIGENSOFTENING ALGORITHM}.
-\newblock Anales de Mec{\'{a}}nica de la Fractura \textbf{35}, 393--398 (2018).
-\newblock \doi{10.1016/j.gaitpost.2016.12.006}.
-\newblock
-  \urlprefix\url{http://www.researchgate.net/publication/235899988{\_}Continuum{\_}modelling{\_}of{\_}trap-affected{\_}hydrogen{\_}diffusion{\_}in{\_}hydrogen{\_}assisted{\_}fracture{\_}analysis/file/e0b49529d924ac01fc.pdf}
-
 \bibitem{Sukumar2004}
 Ortiz-Bernardin, A., Puso, M.A., Sukumar, N.: {Construction of Polygonal
   Interpolants: A Maximum Entropy Approach}.
@@ -224,15 +230,23 @@ Sanavia, L., Schrefler, B.A., Steinmann, P.: {A formulation for an unsaturated
 \newblock Computational Mechanics \textbf{28}(2), 137--151 (2002).
 \newblock \doi{10.1007/s00466-001-0277-8}
 
+\bibitem{Sladek2014}
+Sladek, J., Sladek, V., Schanz, M.: {A meshless method for axisymmetric
+  problems in continuously nonhomogeneous saturated porous media}.
+\newblock Computers and Geotechnics \textbf{62}, 100--109 (2014).
+\newblock \doi{10.1016/j.compgeo.2014.07.006}.
+\newblock \urlprefix\url{http://dx.doi.org/10.1016/j.compgeo.2014.07.006}
+
 \bibitem{Terzaghi1925}
 Terzaghi, K.V.: {Principles of Soil Mechanics}.
 \newblock Engineering News-Record \textbf{95}, 19--27 (1925)
 
-\bibitem{Ye10}
-Ye, F., Goh, S.H., Lee, F.H.: {A method to solve Biot's u-U formulation for
-  soil dynamic applications using the ABAQUS/explicit platform.}
-\newblock Numerical Methods in Geotechnical Engineering pp. 417--422 (2010).
-\newblock \urlprefix\url{http://ahajournals.org}
+\bibitem{Ye2014}
+Ye, F., Goh, S.H., Lee, F.H.: {Dual-phase coupled u-U analysis of wave
+  propagation in saturated porous media using a commercial code}.
+\newblock Computers and Geotechnics \textbf{55}, 316--329 (2014).
+\newblock \doi{10.1016/j.compgeo.2013.09.002}.
+\newblock \urlprefix\url{http://dx.doi.org/10.1016/j.compgeo.2013.09.002}
 
 \bibitem{zienkiewicz1990a}
 Zienkiewicz, O.C., Chan, A.H.C., Pastor, M., Paul, D.K., Shiomi, T.: {Static
@@ -242,8 +256,9 @@ Zienkiewicz, O.C., Chan, A.H.C., Pastor, M., Paul, D.K., Shiomi, T.: {Static
 
 \bibitem{Zienkiewicz99}
 Zienkiewicz, O.C., Chan, A.H.C., Pastor, M., Schrefler, B.A., Shiomi, T.:
-  Computational Geomechanics With Special Reference To Earthquake Engineering.
-\newblock Wiley (1999)
+  Computational Geomechanics With Special Reference To Earthquake Engineering,
+  vol. 1999.
+\newblock John Wiley, UK (1999)
 
 \bibitem{zienkiewicz1980}
 Zienkiewicz, O.C., Chang, C.T., Bettes, P.: {Drained, undrained, consolidating

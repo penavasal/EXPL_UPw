@@ -3,58 +3,44 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: exp_up.aux
 The style file: spmpsci.bst
 Database file #1: lib2020.bib
-I was expecting a `,' or a `}'---line 7160 of file lib2020.bib
- : 
- : @article{Tasiopoulou2016a,
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-Repeated entry---line 8028 of file lib2020.bib
- : @book{Zienkiewicz99
- :                    ,
-I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "Biot1956poro"
-Warning--I didn't find a database entry for "Navas:17"
-Warning--I didn't find a database entry for "Soga:15"
-Warning--I didn't find a database entry for "LiBR:04"
-You've used 37 entries,
+You've used 39 entries,
             2945 wiz_defined-function locations,
-            885 strings with 13324 characters,
-and the built_in function-call counts, 19297 in all, are:
-= -- 1633
-> -- 639
+            894 strings with 13502 characters,
+and the built_in function-call counts, 20358 in all, are:
+= -- 1719
+> -- 673
 < -- 3
-+ -- 263
-- -- 226
-* -- 1283
-:= -- 2608
-add.period$ -- 67
-call.type$ -- 37
-change.case$ -- 222
++ -- 277
+- -- 238
+* -- 1370
+:= -- 2752
+add.period$ -- 72
+call.type$ -- 39
+change.case$ -- 234
 chr.to.int$ -- 0
-cite$ -- 37
-duplicate$ -- 1661
-empty$ -- 1688
-format.name$ -- 260
-if$ -- 4029
+cite$ -- 39
+duplicate$ -- 1751
+empty$ -- 1784
+format.name$ -- 274
+if$ -- 4240
 int.to.chr$ -- 0
-int.to.str$ -- 37
-missing$ -- 401
-newline$ -- 186
-num.names$ -- 74
-pop$ -- 607
+int.to.str$ -- 39
+missing$ -- 427
+newline$ -- 197
+num.names$ -- 78
+pop$ -- 636
 preamble$ -- 1
-purify$ -- 187
+purify$ -- 197
 quote$ -- 0
-skip$ -- 348
+skip$ -- 349
 stack$ -- 0
-substring$ -- 1059
-swap$ -- 975
+substring$ -- 1124
+swap$ -- 1035
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 144
+type$ -- 152
 warning$ -- 0
-while$ -- 145
-width$ -- 39
-write$ -- 435
-(There were 2 error messages)
+while$ -- 152
+width$ -- 41
+write$ -- 462
