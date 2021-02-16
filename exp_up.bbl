@@ -43,13 +43,6 @@ Borja, R.I., Tamagnini, C., Alarc{\'{o}}n, E.: {Elastoplastic consolidation at
 \newblock
   \urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0045782598801059}
 
-\bibitem{Camacho:97}
-Camacho, G.T., Ortiz, M.: {Adaptive Lagrangian modelling of ballistic
-  penetration of metallic targets}.
-\newblock Computer Methods in Applied Mechanics and Engineering
-  \textbf{142}(3-4), 269--301 (1997).
-\newblock \doi{10.1016/S0045-7825(96)01134-6}
-
 \bibitem{CaoSanavia:16}
 Cao, T.D., Sanavia, L., Schrefler, B.A.: {A thermo-hydro-mechanical model for
   multiphase geomaterials in dynamics with application to strain localization
@@ -68,6 +61,12 @@ Cuiti{\~{n}}o, A., Ortiz, M.: {A material-independent method for extending
   stress update algotithms from small-strain plasticity to finite plasticity
   with multiplicative kinematics}.
 \newblock Engineering computations \textbf{9}, 437--451 (1992)
+
+\bibitem{deBoer:93}
+{De Boer}, R., Ehlers, W., Liu, Z.: {One-dimensional transient wave propagation
+  in fluid-saturated incompressible porous media}.
+\newblock Archive of Applied Mechanics \textbf{63}(1), 59--72 (1993).
+\newblock \doi{10.1007/BF00787910}
 
 \bibitem{DiebelsE:96}
 Diebels, S., Ehlers, W.: {Dynamic analysis of fully saturated porous medium
@@ -115,6 +114,14 @@ L{\'{o}}pez-Querol, S., {Fern{\'{a}}ndez Merodo}, J.A., Mira, P., Pastor, M.:
   Geomechanics \textbf{32}, 1431--1457 (2008).
 \newblock \doi{10.1002/nag}
 
+\bibitem{Monforte2019}
+Monforte, L., Navas, P., Carbonell, J.M., Arroyo, M., Gens, A.: {Low order
+  stabilized finite element for the full Biot formulation in Soil Mechanics at
+  Finite Strain}.
+\newblock International Journal for Numerical and Analytical Methods in
+  Geomechanics \textbf{43}, 1488--1515 (2019).
+\newblock \doi{10.1002/nag.2923}
+
 \bibitem{Navas2016}
 Navas, P., L{\'{o}}pez-Querol, S., Yu, R.C., Li, B.: {B-bar based algorithm
   applied to meshfree numerical schemes to solve unconfined seepage problems
@@ -122,6 +129,51 @@ Navas, P., L{\'{o}}pez-Querol, S., Yu, R.C., Li, B.: {B-bar based algorithm
 \newblock International Journal for Numerical and Analytical Methods in
   Geomechanics \textbf{40}(6), 962--984 (2016).
 \newblock \doi{10.1002/nag.2472}
+
+\bibitem{Navas2018}
+Navas, P., L{\'{o}}pez-Querol, S., Yu, R.C., Pastor, M.: {Optimal
+  transportation meshfree method in geotechnical engineering problems under
+  large deformation regime}.
+\newblock International Journal for Numerical Methods in Engineering
+  \textbf{115}(10), 1217--1240 (2018).
+\newblock \doi{10.1002/nme.5841}
+
+\bibitem{Navas2020b}
+Navas, P., Pastor, M., Yag\"ue, A., {Mart{\'{i}}n Stickle}, M., Manzanal, D.,
+  Molinos, M.: Fluid stabilization of the u-w biot’s formulation at large
+  strain.
+\newblock International Journal for Numerical and Analytical Methods in
+  Geomechanics \textbf{Under review} (2020)
+
+\bibitem{Navas:17b}
+Navas, P., Sanavia, L., L{\'{o}}pez-Querol, S., Yu, R.C.: {Explicit meshfree
+  solution for large deformation dynamic problems in saturated porous media.}
+\newblock Acta geotechnica \textbf{13}, 227--242 (2018).
+\newblock \doi{10.1007/s11440-017-0612-7}.
+\newblock \urlprefix\url{https://doi.org/10.1007/s11440-017-0612-7}
+
+\bibitem{Navas:17c}
+Navas, P., Sanavia, L., L{\'{o}}pez-Querol, S., Yu, R.C.: u-w formulation for
+  dynamic problems in large deformation regime solved through an implicit
+  meshfree scheme.
+\newblock Computational mechanics \textbf{62}, 745--760 (2018).
+\newblock \doi{10.1007/s00466-017-1524-y}.
+\newblock \urlprefix\url{https://doi.org/10.1007/s00466-017-1524-y}
+
+\bibitem{Navas2018a}
+Navas, P., Yu, R.C., Li, B., Ruiz, G.: {Modeling the dynamic fracture in
+  concrete: an eigensoftening meshfree approach}.
+\newblock International Journal of Impact Engineering \textbf{113}, 9--20
+  (2018).
+\newblock \doi{10.1016/j.ijimpeng.2017.11.004}
+
+\bibitem{Navas2018b}
+Navas, P., Yu, R.C., Ruiz, G.: {SIMULATION OF MIXED-MODE FRACTURE IN CONCRETE
+  THROUGH THE EIGENSOFTENING ALGORITHM}.
+\newblock Anales de Mec{\'{a}}nica de la Fractura \textbf{35}, 393--398 (2018).
+\newblock \doi{10.1016/j.gaitpost.2016.12.006}.
+\newblock
+  \urlprefix\url{http://www.researchgate.net/publication/235899988{\_}Continuum{\_}modelling{\_}of{\_}trap-affected{\_}hydrogen{\_}diffusion{\_}in{\_}hydrogen{\_}assisted{\_}fracture{\_}analysis/file/e0b49529d924ac01fc.pdf}
 
 \bibitem{Sukumar2004}
 Ortiz-Bernardin, A., Puso, M.A., Sukumar, N.: {Construction of Polygonal
@@ -136,6 +188,14 @@ Ravichandran, N., Muraleetharan, K.K.: {Dynamics of unsaturated soils using
 \newblock International Journal for Numerical and Analytical Methods in
   Geomechanics \textbf{33}, 611--631 (2009).
 \newblock \doi{10.1002/nag}
+
+\bibitem{Sabetamal:2015}
+Sabetamal, H., Nazem, M., Sloan, S.W., Carter, J.P.: {Frictionless contact
+  formulation for dynamic analysis of nonlinear saturated porous media based on
+  the mortar method}.
+\newblock International Journal for Numerical and Analytical Methods in
+  Geomechanics \textbf{40}(1), 25--61 (2016).
+\newblock \doi{10.1002/nag.2347}
 
 \bibitem{Sanavia:06}
 Sanavia, L., Pesavento, F., Schrefler, B.A.: {Finite element analysis of

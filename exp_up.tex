@@ -48,14 +48,17 @@
 \usepackage{mathrsfs} % para formato de letra
 \usepackage{enumitem}
 
-\usepackage{ulem} % by LS to to strike through some text
+%\usepackage{ulem} % by LS to to strike through some text
 
 %
 % please place your own definitions here and don't use \def but
 % \newcommand{}{}
-%
+\newcommand{\etal}{
+  \textit{et al.}
+}
+
 % Insert the name of "your journal" with
-% \journalname{myjournal}
+ \journalname{Computational Particle Mechanics}
 
 %
 \begin{document}
@@ -123,6 +126,7 @@ The rest of the paper is organized as follows. The Biot's equations are presente
 
 \section{Biot's equations: u-$p_w$ formulation}
 \label{sec:2}
+
 The Biot's equations~\cite{Biot1956} are based on formulating the mechanical behavior of a solid-fluid mixture, the coupling between different phases, and the continuity of flux through a differential domain of saturated porous media. Hereinafter, the balance equations will be derived from Lewis and Schrefler~\cite{LewisSchrefler98} in the spatial setting (see \cite{LewisSchrefler98} or \cite{Sanavia:02b,Sanavia:02} for the kinematic equations), departing from the more general equation, and, in order to reach the compact $u-p_w$ form, making the necessary hypotheses.
 
 Concerning the notation, bold symbols are employed herein for vectors and matrices as well as regular letters for scalar variables.  Let   $\boldsymbol{u}$ and   $\boldsymbol{U}$ represent  the displacement vector of the solid skeleton   and the absolute displacement of the fluid phase respectively. Since in porous media theory is common to describe the fluid motion with respect to the solid, the
@@ -232,95 +236,33 @@ Moreover, in order to avoid the employment of $\boldsymbol{w}$ as a degree of fr
 \dot{p_w} = -Q\left [ \mbox{div } \dot{\boldsymbol{u}} + \frac{\boldsymbol{k}}{\mu_w} \mbox{div}\left(   \rho_w \boldsymbol{g} - \rho_w \ddot{\boldsymbol{u}} - \mbox{grad }p_w\right)\right ].
 \end{equation}
 
-{\color{red}
+
 \section{Constitutive models for the solid phase} \label{sec:3}
-In this Section, we describe the two types of material models implemented to assess the performance of the   formulation presented in Section~\ref{sec:2}. One is for  elastic behavior, the other one involves  plastic deformation which follows the Drucker-Prager failure criterion.  
+In this Section, the hyperelastic and hyper-elastoplastic models, employed within this research, are outlined. Further information of both constitutive laws can be found in \cite{Navas2018,Navas2018b}.
 %%%%%%
 \subsection{Neo-Hookean material model extended to compressible range} \label{subsec:31}
-One of the widely used material model for predicting non-linear elastic behavior for solids undergoing large deformations   is the Neo-Hookean model extended to compressible range. Under spacial configurations,   it is expressed as follows~\cite{Bonet:97}:
-\begin{equation}\label{eq_nh1}
-\boldsymbol{\tau}'=J\boldsymbol{\sigma}'=G(\boldsymbol{b}-\textbf{I})+(\lambda \,\ln J)\textbf{I},
-\end{equation}
-where $\boldsymbol{\tau}'$ and  $\boldsymbol{b}$ are the effective Kirchhoff stress tensor and the left Cauchy-Green tensor respectively, whereas $J$ is the   Jacobian determinant, $G$ and $\lambda$ are the Lam\'e constants.  
 
-In order to take into consideration the compaction point of the soil, Ehlers and Eipper~\cite{Ehlers:99} presented a modification of the Neo-Hookean law taking into account the influence of  the initial porosity  $n_0$ and the Jacobian, i.e.
+In this research, the Neo-Hookean constitutive behavior has been considered as a extension of the elastic one in the large strain regime. Moreover, among several variants, the one proposed by Ehlers and Eipper~\cite{Ehlers:99} has been chosen. This law takes into consideration the compaction point of the soil, from influence of  the initial porosity  $n_0$ and the Jacobian, i.e.
 \begin{equation}\label{eq_nh2}
 \boldsymbol{\tau}'=G(\boldsymbol{b}-\textbf{I})+\lambda \, n_0^2\left(  \frac{J}{n_0}-\frac{J}{J-1+n_0} \right)\textbf{I},
 \end{equation}
-which is going to be used for the validation examples in Section~\ref{sec:5}.
+where $\boldsymbol{\tau}'$ and  $\boldsymbol{b}$ are the effective Kirchhoff stress tensor and the left Cauchy-Green tensor respectively, whereas $J$ is the Jacobian determinant, $G$ and $\lambda$ are the Lam\'e constants.  
 %%%%%%%%%
 \subsection{Drucker-Prager yield criterion}
 \label{subsec:32}
-For the calculation of  plastic deformations, we follow the work of Cuiti\~no and Ortiz \cite{cuitino:92} to relate the right Cauchy-Green strain tensor $\mathbf{C}$ and the small strain tensor $\boldsymbol{\varepsilon}$, during the trial step. In other words, for the current loading step, $k+1$, 
+In order to reproduce frictional-cohesive behavior at large strain, the traditional Drucker-Prager yield criterion~\cite{Sanavia:02,Sanavia:06} has been extended to large strain procedure. This methodology follows the work of Cuiti\~no and Ortiz \cite{cuitino:92} to relate the left Cauchy-Green strain tensor $\mathbf{b}$, calculated at the current configuration, and the small strain tensor $\boldsymbol{\varepsilon}$. Indeed, for the current loading step, $k+1$, 
 the trial elastic deformations, pressure ($p^{trial}_{k+1}$)  and the deviatoric stress tensor ($\mathbf{s}^{trial}_{k+1} $) are computed as the elastic deformations, pressure  and the deviatoric stress tensor are computed as:
 \begin{eqnarray}
 \label{eq_dp1}
-\mathbf{C}^{e\;trial}_{k+1} &=& (\mathbf{F}^p_{k})^{-T}\mathbf{C}_{k+1}(\mathbf{F}^p_{k})^{-1}, \\
+\mathbf{b}^{e\;trial}_{k+1} &=& \Delta\mathbf{F}^{k}\mathbf{b}^e_{k}(\Delta\mathbf{F}_{k})^{T}, \\
  \label{eq_dp2}
-\boldsymbol{\varepsilon}^{e\; trial}_{k+1} &=& \frac{1}{2}\,\log\mathbf{C}^{e\; trial}_{k+1},
+\boldsymbol{\varepsilon}^{e\; trial}_{k+1} &=& \frac{1}{2}\,\log\mathbf{b}^{e\; trial}_{k+1},
 \\ \label{eq_dp3}
 p^{trial}_{k+1} &=& K \left(\varepsilon^{e}_{vol}\right)^{trial}_{k+1},
 \\ \label{eq_dp4}
 \mathbf{s}^{trial}_{k+1} &=& 2G\,\left(\boldsymbol{\varepsilon}^{e}_{dev}\right)^{trial}_{k+1}.
 \end{eqnarray}
-where K and G represent the bulk and shear moduli of the solid respectively. Once the incremental plastic strain tensor is known, the plastic deformation gradient can be derived as:
-\begin{eqnarray}\label{eq_dp5}
-\Delta \mathbf{F}_{k+1}^{p} &=&\exp (\Delta\boldsymbol{\varepsilon}_{k+1}^{p}), \\
- \label{eq_dp6}
-\mathbf{F}_{k+1}^{p} &=&\Delta \mathbf{F}_{k+1}^{p} \mathbf{F}_{k}^{p}.
-\end{eqnarray}
- Regarding the Drucker-Prager yield criterion, the methodology of Sanavia  {\it et al.}~\cite{Sanavia:02,Sanavia:06} is employed for  its reduced computational effort and its capacity to distinguish if the location of the stress  state is on the cone or apex before calculating the plastic strain.
-The current cohesion, $c_{k+1}$, and its derivative, the hardening modulus, $H$, are calculated following Camacho and Ortiz research~\cite{Camacho:97} from the reference value, $c_{0}$, the reference plastic strain, $\varepsilon_0$, and  the hardening exponent, $N^\varepsilon$, as follows:
-\begin{eqnarray}\label{eq_dp7}
-c_{k+1} &=& c_{0}\left( 1+\frac{\overline{\varepsilon}^p_{k+1}}{\varepsilon_0}\right)^{\frac{1}{N^\varepsilon}},
-\nonumber\\
-\frac{\partial c}{\partial\overline{\varepsilon}^p} &=& H = \frac{c_{0}}{N^\varepsilon \varepsilon_0}\left( 1+\frac{\overline{\varepsilon}^p_{k+1}}{\varepsilon_0}\right)^{\left( \frac{1}{N^\varepsilon}-1\right) } ,
-\end{eqnarray}
-where $\overline{\varepsilon}^p_{k+1}$ is the current equivalent plastic strain, calculated in different ways depending on the fact that if the stress state is in the classical or apex region, see  Table~\ref{tab:1}.
-%%%%%%%%%%%%
-\begin{table}
-\centering
-\caption{Equivalent plastic strain} \label{tab:1}
-	\vspace*{0.3cm}
-	\begin{tabular}{ll}
-	\noalign{\smallskip}\hline\noalign{\smallskip}
-	Classical & $
-\overline{\varepsilon}^p_{k+1}=\overline{\varepsilon}^p_{k}+\Delta\gamma\sqrt{3\alpha_{_Q}^2+1}
-$ \\
-Apex & $
-\overline{\varepsilon}^p_{k+1}=\overline{\varepsilon}^p_{k}+\sqrt{\Delta\gamma_1^2+3\alpha_{_Q}^2\left(\Delta\gamma_1+\Delta\gamma_2 \right)^2}
-$\\
-\hline\noalign{\smallskip}
-	\end{tabular}
-\end{table}
-%%%%%%%%%
-%%%%%%%%%%
-\begin{table}
-\centering
-\caption{ Parameters for Drucker-Prager and von-Mises yield criteria} \label{tab:2}
-	\vspace*{0.3cm}
-	\begin{tabular}{llll}
-	\hline\noalign{\smallskip}
-	& DP: Plane strain & DP: Outer cone & von-Mises \\ 
-	\noalign{\smallskip}\hline\noalign{\smallskip}
-	$\alpha_{_F}$ & $\frac{\tan\phi}{\sqrt{3+4\tan^2\phi}}\sqrt{\frac{2}{3}}$ & $\frac{2\sin\phi}{3-\sin\phi}\sqrt{\frac{2}{3}}$ & 0 \\
-$\alpha_{_Q}$ & $\frac{\tan\psi}{\sqrt{3+4\tan^2\psi}}\sqrt{\frac{2}{3}}$ &
-$\frac{2\sin\psi}{3-\sin\psi}\sqrt{\frac{2}{3}} $ & 0\\
-$\beta$ & $\frac{3}{\sqrt{3+4\tan^2\phi}}\sqrt{\frac{2}{3}}$ &
-$\frac{6\cos\phi}{3-\sin\phi}\sqrt{\frac{2}{3}}$ & $\sqrt{\frac{2}{3}}$\\
-\hline\noalign{\smallskip}
-	\end{tabular}
-\end{table}
-
-%%%%%%%%%%%%%%%%%%%%%%%%
-In order to know which   algorithm   to employ, a limit value for the pressure, $p_{lim}$ is calculated:
- \begin{eqnarray}
-p_{lim}&=&\frac{3\alpha_{_Q}K}{2G}\|\textbf{s}^{trial}_{k+1}\|\nonumber\\ \label{eq_dp8}
-&+&\frac{\beta}{3\alpha_{_F}}\left( \frac{\|\textbf{s}^{trial}_{k+1}\|}{2G}H\sqrt{1+3\alpha_{_Q}^2} + c_k \right).
-\end{eqnarray}
-If the trial pressure is lower than this limit, classical return-mapping algorithm is employed, otherwise the apex algorithm is adopted.  
-
-The yield conditions for the classical and apex regions respectively are:
+where K and G represent the bulk and shear moduli of the solid respectively. Regarding the Drucker-Prager yield criterion, the employed methodology allows to distinguish if the location of the stress  state is on the cone or apex before calculating the plastic strain. The yield conditions for the classical and apex regions respectively are:
 \begin{eqnarray}
 \Phi^{cl} &=&\|\textbf{s}^{trial}_{k+1}\| - 2G\Delta\gamma + 3\alpha_{_F}[p^{trial}_{k+1}- 3K\alpha_{_Q}\Delta\gamma]
 \nonumber\\\label{eq_dp9}
@@ -330,11 +272,23 @@ The yield conditions for the classical and apex regions respectively are:
 &&- p^{trial}_{k+1}  
 +3K\alpha_{_Q}\left(\Delta\gamma_1+\Delta\gamma_2 \right),
 \end{eqnarray}
-where $\Delta\gamma_1=\frac{\|\textbf{s}^{trial}_{k+1}\|}{2G}$, $\Delta\gamma$ and $\Delta\gamma_2$ are the objective functions to be calculated in the Newton-Raphson scheme for the classical or apex regions accordingly.
+where $\Delta\gamma_1=\frac{\|\textbf{s}^{trial}_{k+1}\|}{2G}$, $\Delta\gamma$ and $\Delta\gamma_2$ are the objective functions to be calculated in the Newton-Raphson scheme for the classical or apex regions accordingly. $c_k$ is the cohesion of the material, $H$ the hardening parameter and $\alpha_F$,$\alpha_Q$ and $\beta$ are material parameters that depend on friction and dilatancy angles as well as the shape of the yield surface, taking into account that the Drucker-Prager criterion employed a cone to approximate the Mohr-Coulomb surface and this cone can be outer or inner to the aforementioned surface (more information is found in \cite{Navas2018a}).
 
-For the calculation of the Drucker-Prager parameters from the friction angle, $\phi$, and the dilatancy angle, $\psi$, the plane strain case is presented in  Table~\ref{tab:2}. Additionally the parameters for the out cone are shown in Table~\ref{tab:2}. This cone circumscribes the Mohr-Coulomb plastic region, and the corresponding values for a von Mises criterion. 
-%%%%%%%%
-}
+A limit value for the pressure, $p_{lim}$, is necessary to know which algorithm is to be employed. If the trial pressure is lower than this limit, classical return-mapping algorithm is employed, being this limit written as:
+ \begin{eqnarray}
+p_{lim}&=&\frac{3\alpha_{_Q}K}{2G}\|\textbf{s}^{trial}_{k+1}\|\nonumber\\ \label{eq_dp8}
+&+&\frac{\beta}{3\alpha_{_F}}\left( \frac{\|\textbf{s}^{trial}_{k+1}\|}{2G}H\sqrt{1+3\alpha_{_Q}^2} + c_k \right).
+\end{eqnarray}
+
+
+ Te equivalent plastic strain, $\overline{\varepsilon}^p_{k+1}$, is calculated in different ways depending on the fact that if the stress state is in the classical or apex region as well:
+$$
+\overline{\varepsilon}^p_{k+1}=\overline{\varepsilon}^p_{k}+\Delta\gamma\sqrt{3\alpha_{_Q}^2+1}
+$$
+$$
+\overline{\varepsilon}^p_{k+1}=\overline{\varepsilon}^p_{k}+\sqrt{\Delta\gamma_1^2+3\alpha_{_Q}^2\left(\Delta\gamma_1+\Delta\gamma_2 \right)^2}
+$$
+
 \section{Discretization of the solution: Explicit scheme}
 \label{sec:4}
 To solve the aforementioned coupled problem in the time domain, the standard central difference explicit Newmark time integration scheme is employed. If the current time step is numbered as $k+1$, and assuming the solution in the previous step $k$ has been already obtained (hence it is known), a relationship between $\textbf{u}_{k+1}$, $\dot{\textbf{u}}_{k+1}$ and $\ddot{\textbf{u}}_{k+1}$ is established according to a finite difference scheme, as follows: 
@@ -479,12 +433,189 @@ $$
 
 \section{Validation examples}
 \label{sec:5}
+This section is composed by two different problems. The first one deals with a consolidation, either pseudo-static or cyclic one, in order to validate the model in typical porous media applications. The second one, seeking the assessment of the performance of the proposed algorithm in a real geotechnical problem, studies the failure of a vertical wall of saturated soil.
+
+\subsection{Consolidation of a column of soil}
+\label{sec:5:1}
+In the following two examples, an idealization of a semi-infinite stratum of soil through a 2D column is employed, which is a traditional procedure seen in the literature. This column has a height $H_T=10m$ and a width $L=1m$. Lateral movements are prevented as well as the vertical movement of the rigid base. On the top, the drainage is allowed ($p_w=0$). This geometry and boundary conditions are depicted in Fig.~\ref{fig:1}. Also shape of both loads are depicted for the following problems, large deformation and dynamic consolidations, sections \ref{sec:5:1:1} and \ref{sec:5:1:2} respectively.
+
+\begin{figure}
+  \includegraphics[width=0.5\textwidth]{Fig/col.pdf}
+\caption{A) Geometry and boundary conditions of the column of soil;  Loading of B) large deformation consolidation and C) dynamic consolidation problems.}
+\label{fig:1}       % Give a unique label
+\end{figure}
+
+A regular nodal discretization of 0.5 m. size is employed, taking into account that the last top meter of the stratum is discretized with a 0.25 m. size in order to capture properly the wave provoked by the load. A similar mesh was proposed by Sabetamal~\etal~\cite{Sabetamal:2015}. 
+
+\subsubsection{Large strain consolidation}
+\label{sec:5:1:1}
+
+Our goal in this section is the validation of the presented methodology when large deformation occurs. Taking this into consideration, the consolidation problem solved by Li \textit{et al.}~\cite{LiBR:04}  is performed as a reference. The aforementioned geometry, seen in Fig.~\ref{fig:1}.A, is adopted. The column of soil is loaded following the curve of Fig.~\ref{fig:1}.B; increasing to reach $P_{max}$ at $t_0=0.05$~s, when the pressure is kept constant until the end of the simulation (0.5 s). The soild and water parameters are listed in Tab.~\ref{tab:4}, being the Neo-Hookean material of Eq.~(\ref{eq_nh2}) assumed in this case. 
+%%%%%%%%
+\begin{table}
+\centering
+\caption{ Material parameters of the dynamic consolidation problem} \label{tab:4}
+	\vspace*{0.2cm}
+	\begin{tabular}{ll | ll}
+	\hline\noalign{\smallskip}
+	$\lambda$ [MPa] & 29 & $K_w$ [MPa] & $2.2 \times 10^4$ \\
+		\noalign{\smallskip}\hline\noalign{\smallskip}
+	$G$ [MPa] & 7 & $K_s$ [MPa] & $10^{34}$ \\
+			\noalign{\smallskip}\hline\noalign{\smallskip}
+	$n$ & 0.42 & $\rho_w$ [kg/$\textrm{m}^3$] & 1000 \\
+				\noalign{\smallskip}\hline\noalign{\smallskip}
+	$k$ [m/s] & 0.1 & $\rho_s$ [kg/$\textrm{m}^3$] & 2700 \\
+\hline\noalign{\smallskip}
+	\end{tabular}
+\end{table}
+
+
+% For one-column wide figures use
+\begin{figure}
+  \includegraphics[width=0.5\textwidth]{Fig/borja.pdf}
+\caption{Comparison between the settlement obtained by Li \textit{et al.}~\cite{LiBR:04}, Navas \textit{et al.}~\cite{Navas2018a} and with the current methodology for the large deformation consolidation problem.}
+\label{fig:5}      
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%
+The validation is made against the solution proposed by Li \textit{et al.}~\cite{LiBR:04}. The settlement of the top surface along time is checked for two different values of $P_{max}$, namely 2 and 8 MPa, that provide two different scenarios, small and large deformation regimes. The obtained solutions are seen in Fig.~\ref{fig:5} for the two cases. Three different solutions are depicted: Static $u-p_w$ (Li \textit{et al.}~\cite{LiBR:04}), Dynamic $u-w$ (Navas \textit{et al.}~\cite{Navas:17b}) and Dynamic $u-p_w$ (present research). At the final of the consolidation, similar values of the settlement are achieved. Since inertial terms are included in the proposed methodology, the comparison along the entire process described by Li \textit{et al.}~\cite{LiBR:04} is not possible, since in that research the quasi static $u-p_w$ formulation is assumed. Consequently, a ramped loading, contrary to the step-wise one employed in \cite{LiBR:04}, is necessary in our case  to avoid non-physical sudden loading. Similarly, the results are not comparable against the $u-w$ formulation since fluid acceleration, neglected in the present research, were considered. Because of this fact, in the $u-w$ solution, we can see that the settlement to reach values bigger than the final settlement between 0.18 and 0.3 seconds. It is due to the fluid wave propagation, neglected in the present research.
+
+Additionally, the obtained settlement is compared, for both loading states (2 and 8 MPa),  against the small strain solution, which was provided also by Li \textit{et al.}~\cite{LiBR:04}. In Fig. \ref{fig:6} this comparison is plotted. As much is the deformation, as more important is the employment of the Finite Deformation regime since, as it is seen in this application, spurious results can be obtained.
+
+% For one-column wide figures use
+\begin{figure}
+  \includegraphics[width=0.5\textwidth]{Fig/borja2.pdf}
+\caption{Comparison between the settlement obtained with two different approached: large and small strain regimes.}
+\label{fig:6}      
+\end{figure}
+
+\subsubsection{Dynamic consolidation}
+\label{sec:5:1:2}
+
+Since soil inertial terms are considered in the proposed $u-p_w$ formulation, a dynamic problem has been proposed in order to see the performance of the proposed methodology. An interesting test was firstly studied by Sabetamal~\etal~\cite{Sabetamal:2015} and later by Monforte~\textit{et al.}~\cite{Monforte2019} and Navas~\textit{et al.}~\cite{Navas2020b}. The material properties provided in table~\ref{tab:2}, and the sinusoidal load, shown in Fig.~\ref{fig:1},C), are employed. In those researches, complete formulation ($u-w-p_w$ and  $u-w$ )results were provided. In this case, $u-p_w$ solutions of the pore pressure at different locations, for both stabilized and unstabilized, are presented against the stabilized $u-w$ one in Fig.~\ref{fig_con3}. Slightly differences are encountered. Following, possible reasons are detailed.
+
+\begin{table}[!t]
+\centering
+\caption{ Material parameters of the and harmonic-loading consolidation problem.} \label{tab:2}
+	\vspace*{0.2cm}
+	\begin{tabular}{cccc}
+	%\hline\noalign{\smallskip}
+$E$ [MPa] & $\nu$ & $K_w$ [MPa] & $K_s$ [MPa] \\
+		\noalign{\smallskip}\hline\noalign{\smallskip}
+	 30.0& 0.20 & 3.3$\cdot 10^8$ & $10^{34}$ \\
+	 \noalign{\smallskip}\hline\hline\noalign{\smallskip}
+	  $n$ & $\kappa$ [m/s] & $\rho_w$ [kg/$\textrm{m}^3$] & $\rho_s$ [kg/$\textrm{m}^3$]\\
+	  \noalign{\smallskip}\hline\noalign{\smallskip}
+	  0.33  & 10$^{-2} $& 1000 & 2000
+%\hline\noalign{\smallskip}
+	\end{tabular}
+\end{table}
+
+%%%%%%%%%%%
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.5\textwidth]{Fig/fig_cyc.pdf}
+\caption{Pore pressure evolution for the Harmonic-Loading consolidation problem at different depths a) 0.4 m. b) 1 m. and c) 6 m.}
+\label{fig_con3}
+\end{center}
+\end{figure}
+%%%%%%%%%%%
+
+On the one hand, the differences between the $u-w$ and $u-p_w$ solutions are small. This is due to the frequency of the load, which is not high enough to provoke water waves and, thus, the acceleration of the water phase can be neglected. Thus we have to take into account that, following the research of Zienkiewicz and coworkers~\cite{zienkiewicz1990a}, the configuration of this model lies on the denominated Zone I, where dynamic terms can be neglected (See point 1 of Fig.~\ref{fig_ZK}). This is the reason to have similar results for both $u-w$ and $u-p_w$ formulations. 
+%%%%%%%%%%%
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.5\textwidth]{Fig/zienk.pdf}
+\caption{Zones of the different behavior of the soil depending on the parameters $\Pi_1$ and $\Pi_2$ and values of $\omega$ and $k$ for the different points to be studied.}
+\label{fig_ZK}
+\end{center}
+\end{figure}
+
+Zones of Fig.~\ref{fig_ZK} depend on the geometry, elastic properties, frequency of the load and permeability.  By fixing the rest of the parameters and tuning the frequency from 25 to 200 (Point 2 in Fig.~\ref{fig_ZK}) and 500 Hz (Point 2 in Fig.~\ref{fig_ZK}), our problem becomes Zone II and III respectively, where dynamic terms are important. Thus, in Figs.~\ref{fig_con4} and \ref{fig_con5}, the pore pressure evolution for both approaches is presented for 200 and 500 Hz. It is noticeable the difference, since the $u-p_w$ is not able to capture several peaks that the $u-w$ does, more displayed for 500 Hz. Indeed, differences are more severe when it is measured deeper in the column. It must be pointed out that, for 200 Hz, no differences should be found. However, the $u-p_w$ solution is not able to reach $u-w$. Although point 2 is close to the border of Zone III, the figure proposed by Zienkiewicz and coworkers~\cite{zienkiewicz1990a} may be updated.
+
+%%%%%%%%%%%
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.5\textwidth]{Fig/fig_MF.pdf}
+\caption{Pore pressure evolution for the medium frequency Harmonic-Loading consolidation problem at different depths a) 0.4 m. and b) 6 m.}
+\label{fig_con4}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.5\textwidth]{Fig/fig_HF.pdf}
+\caption{Pore pressure evolution for the high frequency Harmonic-Loading consolidation problem at different depths a) 0.4 m. and b) 6 m.}
+\label{fig_con5}
+\end{center}
+\end{figure}
+%%%%%%%%%%%
+
+On the other hand, the second comparison is made in the settlement. In Sabetamal~\etal~\cite{Sabetamal:2015} we find also the comparison against the analytical solution proposed by De Boer~\cite{deBoer:93}, corresponding to incompressible constituents. In Fig.~\ref{fig_con6} the settlement is plotted for the first 6 meters from the top in two instants: 0.135 s. and 0.155 s. There is a slightly difference between the peaks.
+
+%%%%%%%%%%%
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.5\textwidth]{Fig/fig_disp.pdf}
+\caption{Settlement in the Harmonic-Loading consolidation problem at two different instants: a) 0.135 s. and b) 0.155 s.}
+\label{fig_con6}
+\end{center}
+\end{figure}
+%%%%%%%%%%%
+
+\subsection{Vertical cut}
+\label{sec:5:2}
+In this Section, the current methodology is applied the drainage of a square domain of saturated soil loaded on the top right half by a rigid footing. This load provokes the failure of the material in a typical vertical cut, whose shear band varies depending on the material properties. Precisely, the importance of this example lies in fact that, depending on the dilatancy angle, the formation of the shear band and the deformation pattern as well as the pore pressure may vary. For all the cases,  the  friction angle is kept at 20$^\circ$. 
+
+The same problem was previously studied by Sanavia~\textit{et al.}~\cite{Sanavia:01,Sanavia:02b} and Navas~\textit{et al.}~\cite{Navas:17b,Navas:17c} for both quasi static and dynamic regimes respectively. The geometry and material properties are shown in Fig.~\ref{fig:7}. A displacement of 1~m on the loaded boundary, $\Gamma_4$, is imposed  gradually during the simulation, which has been fixed of 50~s. A regular 12x12 nodal discretization is employed, which corresponds to a nodal spacing of 0.833 m. The time step is of 5 ms.
+
+% For one-column wide figures use
+\begin{figure}
+  \includegraphics[width=0.5\textwidth]{Fig/geo_zap.pdf}
+\caption{Geometry, material parameters and boundary conditions of a square domain of water saturated porous material}
+\label{fig:7}      
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure*}
+\centering
+  \includegraphics[width=0.9\textwidth]{Fig/vertical_cut.pdf}
+\caption{Pore pressure (in Pa) and equivalent plastic strain at 50~s of the square domain for $\psi=20^\circ$, $\psi=0^\circ$ and $\psi=-5^\circ$.}
+\label{fig:8}      
+\end{figure*}
+%%%
+
+Results are depicted, at the final stage, in Fig.~\ref{fig:8}. In the referred bibliography we found similar distributions of pore pressure and plastic strain for dilatant, contractive or neutral soils. However, it is worth mentioning that those results were obtained with different coupled formulation, what leads to small difference of the obtained values. Despite this fact, the trend of the behavior of the soil is well captured. 
+
+About the shear band, it can be observed that there are no big  variations on  the obtained peak values of the equivalent plastic strain when the dilatancy angle changes, being slighlty bigger when the dilatancy angle decreases. However, an important decrease of the shear band slope is noticed when dilatancy decreases. For associate plasticity, $\psi=20^\circ$, the shear band almost reaches the toe of the lateral wall.
+
+In addition, the effect of the plastic dilatancy (contractancy) is evidenced by the negative (positive) pore pressure within the shear band zone (see Fig.~\ref{fig:9}).  Moreover, in the case of zero dilatancy angle, no marked pore pressure variation is observed within the shear band zone. Similar phenomena were obtained in the cited researches. In order to study the evolution of the principal results of the problem, the history of the pore pressure  in a material point close to the shear band (Point P, see Fig. \ref{fig:7}) have been depicted in Figs. \ref{fig:13}.
+
+\begin{figure}
+  \includegraphics[width=0.5\textwidth]{Fig/pressure.pdf}
+\caption{Evolution of the pore pressure along the time in the point P.}
+\label{fig:13}      
+\end{figure}
+%%%%
+
+For positive dilatancy values, smooth pore pressure evolution is observed. In addition, the peak pressure signals the initiation of plastic strain localization or shear band. The further extension of the shear band is accompanied by the continuous decreasing of the pore pressure. The material with dilatancy equal to 0$^\circ$ experiences a softer decreasing (close to a 0$^\circ$ slope), in this case, due to the dissipation of the pore pressure in the permeable boundary, not because of the shear band. From the same figure it can be seen a very unstable behavior of the soil of contractive angle. This happens since the soil does not admit more load: it is completely failed.
+
+It must be pointed out that, in this research, the sought goal is the assessment of the performance of the proposed algorithm within this geotechnical problem. Other interesting studies of the performance of the Optimal Transportation Method were carried out in~\cite{Navas:17b}. Of coarse, the influence of the size of the nodal discretization was important, getting, with a finer discretization, better resolution of the shear band and better pore pressure distribution. Also regular distributions provide better results. Finally, the importance of the neighborhood size was assessed, concluding that larger values of $\gamma$ (which corresponds to smaller neighborhood) reduce the spurious smoothing out of the shear band, being the best results obtained for $\gamma$=1.4.
 
 \section{Conclusions}
 \label{sec:6}
 
+We have presented a new methodology to model bi-phase saturated  soils,  solving  the  coupled  problem  in  an  explicit manner. In this manuscript, the robustness of the proposed formulation is assessed, being this the main quality sought in an explicit bi-phase formulation. Moreover, several tools have been added to the methodology in order to be able to model very large strain geotechnical problems. Both elastic and plastic solid behaviors have been tested, meanwhile in the case of the water, the  Darcy's law with solid inertial terms is is utilized.  Also, this methodology has been carried out within the Local Max-Ent shape function, employing a spatial discretization based on the Optimal Transportation Meshfree scheme. Since the finite strain formulation is employed in order to be able to simulate large deformation regimes, advanced techniques such as any other meshfree scheme are well recommended.
+
+Firstly, the performance of the method under large deformation regime is analyzed. The first example carried out is a large consolidation that was proposed firstly by Li \textit{et al.} \cite{LiBR:04}. The behavior of the soil when the range of deformation is big is perfectly captured.
+
+Secondly, the model is employed under high frequency loading conditions and an elastic media. The $u-p_w$ formulation behaves strong under low frequency loads, but is not well indicated when the frequency is bigger. The model is robust and captures both displacement and pore water pressure. Zones of applicability, proposed by Zienkiewicz \textit{et al.}~\cite{zienkiewicz1980}, may be revised in accordance to the results provided in this manuscript.
+
+Finally, last example is performed within a Drucker-Prager  flow  rule  in  order  to  see  the  behavior  of  the pore  pressure  along  the  plastic  shear  bands  depending  on  the  dilatancy  of  the  material based on the work of Sanavia \textit{et al.} \cite{Sanavia:02b}. The obtained results are in accordance with the aforementioned research: contractive materials accumulate pore pressure  while  in  the  dilatant  shear  band  the  reduction of pore pressure is observed. Some  pressure  instabilities  were  found  for contractive behavior, which is due to the breakage of the material, not allowing more load.
+
+One of the main conclusions driven by the good performance of the proposed methodology is its extension to other particle based numerical techniques. Several researches of the author about the Material Point Method show the excellent fulfillment with Local Max-Ent shape function and an explicit predictor-corrector scheme, being both numerical techniques employed within this research. The robutness of the explicit scheme here presented encourage the authors to study other coupled formulations with similar integration schemes as well as the possibility of making dynamic relaxation techniques in order to extend the range of applicability to long simulations.
+
 \begin{acknowledgements}
-This research was funded by the \textit{Ministerio de Ciencia e Innovaci\'on}, under Grant Number, PID2019-105630GB-I00, which has been greatly appreciated. Authors would like to thank the administrative and technical support of the ETSI Caminos, Canales y Puertos, from the Universidad Polit\'ecnica de Madrid, as well. Additionally, the first author really appreciate the Entrecanales Ibarra Foundation for his undergraduate scholarship.
+This research was funded by the \textit{Ministerio de Ciencia e Innovaci\'on}, under Grant Number, PID2019-105630GB-I00, which has been greatly appreciated. Authors would like to thank the administrative and technical support of the ETSI Caminos, Canales y Puertos, from the Universidad Polit\'ecnica de Madrid, as well. Additionally, the second author really appreciates the Entrecanales Ibarra Foundation for his undergraduate scholarship.
 \end{acknowledgements}
 
 
