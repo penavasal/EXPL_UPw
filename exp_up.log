@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.19)  16 FEB 2021 20:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.19)  17 FEB 2021 20:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -482,64 +482,69 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-Overfull \hbox (12.20291pt too wide) in paragraph at lines 122--123
-[]\OT1/cmr/m/n/10 Moreover, it bears em-pha-sis that the pro-posed method-
+
+LaTeX Warning: Citation ` Sanavia:02' on page 2 undefined on input line 120.
+
+
+Overfull \hbox (0.6905pt too wide) in paragraph at lines 124--125
+\OT1/cmr/m/n/10 Trans-porta-tion Mesh-free (OTM) scheme of Li \OT1/cmr/m/it/10 
+et al. \OT1/cmr/m/n/10 [15].
  []
 
 
-Overfull \hbox (13.39745pt too wide) in paragraph at lines 127--128
+Overfull \hbox (13.39745pt too wide) in paragraph at lines 126--127
 \OT1/cmr/m/n/10 high-light-ing the mesh-free so-lu-tion and the ex-plicit metho
 d-
  []
 
 
-Overfull \hbox (0.36961pt too wide) in paragraph at lines 135--137
+Overfull \hbox (0.36961pt too wide) in paragraph at lines 134--136
 []\OT1/cmr/m/n/10 Concerning the no-ta-tion, bold sym-bols are em-ployed
  []
 
 [2]
-Overfull \hbox (3.8869pt too wide) in paragraph at lines 162--164
+Overfull \hbox (3.8869pt too wide) in paragraph at lines 161--163
 \OT1/cmr/m/n/10 where $\OML/cmm/m/it/10 K[]$ \OT1/cmr/m/n/10 is the bulk mod-u-
 lus of the solid grains, whereas
  []
 
 
-Overfull \hbox (0.59189pt too wide) in alignment at lines 183--187
+Overfull \hbox (0.59189pt too wide) in alignment at lines 182--186
 [][][] []
  []
 
 [3]
-Overfull \hbox (7.4529pt too wide) in paragraph at lines 277--279
+Overfull \hbox (7.4529pt too wide) in paragraph at lines 276--278
 \OT1/cmr/m/n/10 func-tions to be cal-cu-lated in the Newton-Raphson scheme
  []
 
 
-Overfull \hbox (4.84177pt too wide) in paragraph at lines 280--281
+Overfull \hbox (4.84177pt too wide) in paragraph at lines 279--280
 \OT1/cmr/m/n/10 pres-sure is lower than this limit, clas-si-cal return-mapping
  []
 
 [4]
-Overfull \hbox (8.98074pt too wide) in paragraph at lines 314--315
+Overfull \hbox (8.98074pt too wide) in paragraph at lines 313--314
 []\OT1/cmr/m/n/10 About the nu-mer-i-cal sta-bil-ity of the pro-posed method-
  []
 
 
-Overfull \hbox (5.17404pt too wide) in paragraph at lines 326--327
+Overfull \hbox (5.17404pt too wide) in paragraph at lines 325--326
 \OT1/cmr/m/n/10 The Op-ti-mal Trans-porta-tion Mesh-free (CITAS) has been
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 343--344
+Underfull \hbox (badness 10000) in paragraph at lines 342--343
 
  []
 
 [5]
-Overfull \hbox (6.50853pt too wide) in paragraph at lines 378--379
+Overfull \hbox (6.50853pt too wide) in paragraph at lines 377--378
 []\OT1/cmr/m/n/10 Moreover, the ap-prox-i-ma-tion of the log-a-rith-mic strain
  []
 
 
-Overfull \hbox (2.14738pt too wide) in paragraph at lines 418--419
+Overfull \hbox (2.14738pt too wide) in paragraph at lines 417--418
 []\OT1/cmr/m/n/10 Constitutive re-la-tions from the Elasto-Plastic model,
  []
 
@@ -547,19 +552,19 @@ Overfull \hbox (2.14738pt too wide) in paragraph at lines 418--419
 <Fig/col.pdf, id=44, 454.27014pt x 395.4775pt>
 File: Fig/col.pdf Graphic file (type pdf)
 <use Fig/col.pdf>
-Package pdftex.def Info: Fig/col.pdf  used on input line 446.
+Package pdftex.def Info: Fig/col.pdf  used on input line 445.
 (pdftex.def)             Requested size: 247.5pt x 215.4676pt.
 
-Overfull \hbox (8.53583pt too wide) in paragraph at lines 446--447
+Overfull \hbox (8.53583pt too wide) in paragraph at lines 445--446
 [][] 
  []
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <8.5> not available
-(Font)              size <8> substituted on input line 447.
+(Font)              size <8> substituted on input line 446.
 
 
-Overfull \hbox (1.59186pt too wide) in paragraph at lines 456--474
+Overfull \hbox (1.59186pt too wide) in paragraph at lines 455--473
 \OT1/cmr/m/n/10 this into con-sid-er-a-tion, the con-sol-i-da-tion prob-lem sol
 ved
  []
@@ -567,16 +572,16 @@ ved
 <Fig/borja.pdf, id=45, 773.76878pt x 641.99847pt>
 File: Fig/borja.pdf Graphic file (type pdf)
 <use Fig/borja.pdf>
-Package pdftex.def Info: Fig/borja.pdf  used on input line 478.
+Package pdftex.def Info: Fig/borja.pdf  used on input line 477.
 (pdftex.def)             Requested size: 247.5pt x 205.34575pt.
 
-Overfull \hbox (8.53583pt too wide) in paragraph at lines 478--479
+Overfull \hbox (8.53583pt too wide) in paragraph at lines 477--478
 [][] 
  []
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/it' in size <8.5> not available
-(Font)              size <8> substituted on input line 479.
+(Font)              size <8> substituted on input line 478.
 
 
 Underfull \vbox (badness 2343) has occurred while \output is active []
@@ -585,60 +590,60 @@ Underfull \vbox (badness 2343) has occurred while \output is active []
 <Fig/borja2.pdf, id=99, 753.95073pt x 465.09357pt>
 File: Fig/borja2.pdf Graphic file (type pdf)
 <use Fig/borja2.pdf>
-Package pdftex.def Info: Fig/borja2.pdf  used on input line 489.
+Package pdftex.def Info: Fig/borja2.pdf  used on input line 488.
 (pdftex.def)             Requested size: 247.5pt x 152.67232pt.
 
-Overfull \hbox (8.53583pt too wide) in paragraph at lines 489--490
+Overfull \hbox (8.53583pt too wide) in paragraph at lines 488--489
 [][] 
  []
 
 <Fig/fig_cyc.pdf, id=100, 1096.04477pt x 971.74843pt>
 File: Fig/fig_cyc.pdf Graphic file (type pdf)
 <use Fig/fig_cyc.pdf>
-Package pdftex.def Info: Fig/fig_cyc.pdf  used on input line 519.
+Package pdftex.def Info: Fig/fig_cyc.pdf  used on input line 518.
 (pdftex.def)             Requested size: 247.5pt x 219.41983pt.
 
-Overfull \hbox (8.53583pt too wide) in paragraph at lines 519--520
+Overfull \hbox (8.53583pt too wide) in paragraph at lines 518--519
  [] 
  []
 
 <Fig/zienk.pdf, id=101, 399.9994pt x 236.35101pt>
 File: Fig/zienk.pdf Graphic file (type pdf)
 <use Fig/zienk.pdf>
-Package pdftex.def Info: Fig/zienk.pdf  used on input line 530.
+Package pdftex.def Info: Fig/zienk.pdf  used on input line 529.
 (pdftex.def)             Requested size: 247.5pt x 146.24399pt.
 
-Overfull \hbox (8.53583pt too wide) in paragraph at lines 530--531
+Overfull \hbox (8.53583pt too wide) in paragraph at lines 529--530
  [] 
  []
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <4.25> not available
-(Font)              size <5> substituted on input line 531.
+(Font)              size <5> substituted on input line 530.
 
 [8 <./Fig/borja2.pdf> <./Fig/fig_cyc.pdf> <./Fig/zienk.pdf>]
 <Fig/fig_MF.pdf, id=175, 1115.53763pt x 558.88701pt>
 File: Fig/fig_MF.pdf Graphic file (type pdf)
 <use Fig/fig_MF.pdf>
-Package pdftex.def Info: Fig/fig_MF.pdf  used on input line 541.
+Package pdftex.def Info: Fig/fig_MF.pdf  used on input line 540.
 (pdftex.def)             Requested size: 247.5pt x 123.99593pt.
 
-Overfull \hbox (8.53583pt too wide) in paragraph at lines 541--542
+Overfull \hbox (8.53583pt too wide) in paragraph at lines 540--541
  [] 
  []
 
 <Fig/fig_HF.pdf, id=176, 1115.53763pt x 558.88701pt>
 File: Fig/fig_HF.pdf Graphic file (type pdf)
 <use Fig/fig_HF.pdf>
-Package pdftex.def Info: Fig/fig_HF.pdf  used on input line 549.
+Package pdftex.def Info: Fig/fig_HF.pdf  used on input line 548.
 (pdftex.def)             Requested size: 247.5pt x 123.99593pt.
 
-Overfull \hbox (8.53583pt too wide) in paragraph at lines 549--550
+Overfull \hbox (8.53583pt too wide) in paragraph at lines 548--549
  [] 
  []
 
 
-Underfull \hbox (badness 1577) in paragraph at lines 550--550
+Underfull \hbox (badness 1577) in paragraph at lines 549--549
 []\OT1/cmr/bx/n/8 Fig. 7|\OT1/cmr/m/n/8.5 Pore pres-sure evo-lu-tion for the hi
 gh fre-quency
  []
@@ -646,10 +651,10 @@ gh fre-quency
 <Fig/fig_disp.pdf, id=177, 748.76637pt x 491.41591pt>
 File: Fig/fig_disp.pdf Graphic file (type pdf)
 <use Fig/fig_disp.pdf>
-Package pdftex.def Info: Fig/fig_disp.pdf  used on input line 561.
+Package pdftex.def Info: Fig/fig_disp.pdf  used on input line 560.
 (pdftex.def)             Requested size: 247.5pt x 162.43019pt.
 
-Overfull \hbox (8.53583pt too wide) in paragraph at lines 561--562
+Overfull \hbox (8.53583pt too wide) in paragraph at lines 560--561
  [] 
  []
 
@@ -657,7 +662,7 @@ Overfull \hbox (8.53583pt too wide) in paragraph at lines 561--562
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Overfull \hbox (12.84727pt too wide) in paragraph at lines 572--573
+Overfull \hbox (12.84727pt too wide) in paragraph at lines 571--572
 []\OT1/cmr/m/n/10 The same prob-lem was pre-vi-ously stud-ied by Sanavia \OT1/c
 mr/m/it/10 et
  []
@@ -665,17 +670,17 @@ mr/m/it/10 et
 <Fig/geo_zap.pdf, id=178, 727.71875pt x 422.07687pt>
 File: Fig/geo_zap.pdf Graphic file (type pdf)
 <use Fig/geo_zap.pdf>
-Package pdftex.def Info: Fig/geo_zap.pdf  used on input line 576.
+Package pdftex.def Info: Fig/geo_zap.pdf  used on input line 575.
 (pdftex.def)             Requested size: 247.5pt x 143.54932pt.
 
-Overfull \hbox (8.53583pt too wide) in paragraph at lines 576--577
+Overfull \hbox (8.53583pt too wide) in paragraph at lines 575--576
 [][] 
  []
 
 <Fig/vertical_cut.pdf, id=179, 1774.37906pt x 2104.8738pt>
 File: Fig/vertical_cut.pdf Graphic file (type pdf)
 <use Fig/vertical_cut.pdf>
-Package pdftex.def Info: Fig/vertical_cut.pdf  used on input line 584.
+Package pdftex.def Info: Fig/vertical_cut.pdf  used on input line 583.
 (pdftex.def)             Requested size: 445.49698pt x 528.46541pt.
 [9 <./Fig/fig_MF.pdf> <./Fig/fig_HF.pdf> <./Fig/fig_disp.pdf> <./Fig/geo_zap.pd
 f
@@ -692,37 +697,37 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <Fig/pressure.pdf, id=356, 516.92224pt x 402.45155pt>
 File: Fig/pressure.pdf Graphic file (type pdf)
 <use Fig/pressure.pdf>
-Package pdftex.def Info: Fig/pressure.pdf  used on input line 597.
+Package pdftex.def Info: Fig/pressure.pdf  used on input line 596.
 (pdftex.def)             Requested size: 247.5pt x 192.69556pt.
 
-Overfull \hbox (8.53583pt too wide) in paragraph at lines 597--598
+Overfull \hbox (8.53583pt too wide) in paragraph at lines 596--597
 [][] 
  []
 
 
-Overfull \hbox (2.20297pt too wide) in paragraph at lines 605--606
+Overfull \hbox (2.20297pt too wide) in paragraph at lines 604--605
 \OT1/cmr/m/n/10 bor-hood) re-duce the spu-ri-ous smooth-ing out of the shear
  []
 
 
-Overfull \hbox (1.14737pt too wide) in paragraph at lines 612--613
+Overfull \hbox (1.14737pt too wide) in paragraph at lines 611--612
 \OT1/cmr/m/n/10 ried out is a large con-sol-i-da-tion that was pro-posed firstl
 y
  []
 
 
-Overfull \hbox (1.20291pt too wide) in paragraph at lines 618--619
+Overfull \hbox (1.20291pt too wide) in paragraph at lines 617--618
 \OT1/cmr/m/n/10 namic re-lax-ation tech-niques in or-der to ex-tend the range
  []
 
 [11 <./Fig/pressure.pdf>]
-Overfull \hbox (4.61966pt too wide) in paragraph at lines 633--634
+Overfull \hbox (4.61966pt too wide) in paragraph at lines 632--633
 \OT1/cmr/m/n/10 Mean-while su-per-vi-sion, project ad-min-is-tra-tion and fund-
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 702--704
+Underfull \hbox (badness 10000) in paragraph at lines 701--703
 
  []
 
@@ -793,14 +798,11 @@ OT1/cmr/m/n/8.5 , 745--
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.28pt have occurred.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
  4533 strings out of 480608
  62823 string characters out of 5903630
- 316676 words of memory out of 5000000
+ 316675 words of memory out of 5000000
  20306 multiletter control sequences out of 15000+600000
  547604 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -833,7 +835,7 @@ xmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2020/texmf
 -dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2020/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb>
-Output written on exp_up.pdf (14 pages, 3563798 bytes).
+Output written on exp_up.pdf (14 pages, 3563856 bytes).
 PDF statistics:
  482 PDF objects out of 1000 (max. 8388607)
  302 compressed objects within 4 object streams
