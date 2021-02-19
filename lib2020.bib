@@ -11753,15 +11753,6 @@ the proximity to sites of important monuments of the past.},
 	Title = {{Meshfree modeling of cyclic behavior of sands within large strain Generalized Plasticity Framework}},
 	Volume = {122},
 	Year = {2020}}
-	
-	
-@article{Navas2020b,
-	Author = {Navas, Pedro and Pastor, Manuel and Yag\"ue, Angel and {Mart{\'{i}}n Stickle}, Miguel  and Manzanal, Diego and Molinos, Miguel},
-	Journal = {International Journal for Numerical and Analytical Methods in Geomechanics},
-	Pages = {},
-	Title = {Fluid stabilization of the u-w Biot’s formulation at large strain},
-	Volume = {Under review},
-	Year = {2020}}
 
 
 @article{McMeeking1975,
@@ -14211,6 +14202,92 @@ Program title: gpuSPHASE Catalogue identifier: AFBO{\_}v1{\_}0 Program summary U
 	Volume = {Online},
 	Year = {2021}
 	}
+	
+	@article{Choo2020,
+title = {Stabilized material point methods for coupled large deformation and fluid flow in porous materials},
+journal = {Computer Methods in Applied Mechanics and Engineering},
+volume = {362},
+pages = {112742},
+year = {2020},
+issn = {0045-7825},
+doi = {https://doi.org/10.1016/j.cma.2019.112742},
+url = {https://www.sciencedirect.com/science/article/pii/S0045782519306322},
+author = {Yidong Zhao and Jinhyun Choo},
+keywords = {Material point methods, Poromechanics, Large deformation, Stabilized methods, Constrained problems, Coupled problems},
+abstract = {The material point method (MPM) has been increasingly used for the simulation of large-deformation processes in fluid-infiltrated porous materials. For undrained poromechanical problems, however, standard MPMs are numerically unstable because they use low-order interpolation functions that violate the inf–sup stability condition. In this work, we develop stabilized MPM formulations for dynamic and quasi-static poromechanics that permit the use of standard low-order interpolation functions notwithstanding the drainage condition. For the stabilization of both dynamic and quasi-static formulations, we utilize the polynomial pressure projection method whereby a stabilization term is augmented to the balance of mass. The stabilization term can be implemented with both the original and generalized interpolation material point (GIMP) methods, and it is compatible with existing time-integration methods. Here we use fully-implicit methods for both dynamic and quasi-static poromechanical problems, aided by a block-preconditioned Newton–Krylov solver. The stabilized MPMs are verified and investigated through several numerical examples under dynamic and quasi-static conditions. Results show that the proposed MPM formulations allow standard low-order interpolation functions to be used for both the solid displacement and pore pressure fields of poromechanical formulations, from undrained to drained conditions, and from dynamic to quasi-static conditions.}
+}
+
+@article{Zheng2013,
+title = {Improved convected particle domain interpolation method for coupled dynamic analysis of fully saturated porous media involving large deformation},
+journal = {Computer Methods in Applied Mechanics and Engineering},
+volume = {257},
+pages = {150-163},
+year = {2013},
+issn = {0045-7825},
+doi = {https://doi.org/10.1016/j.cma.2013.02.001},
+url = {https://www.sciencedirect.com/science/article/pii/S0045782513000327},
+author = {Yonggang Zheng and Fei Gao and Hongwu Zhang and Mengkai Lu},
+keywords = {Saturated porous media, Convected particle domain interpolation, Dynamic analysis, Dynamic contact, Large deformation},
+abstract = {Based on the u-p form governing equations and the convected particle domain interpolation technique, the improved convected particle domain interpolation based material point method (CCPDI) is developed in this paper for the coupled dynamic and contact analysis of fully saturated porous media involving large deformation. The numerical artifact noises due to material points crossing computational grid boundaries that usually occur in large deformation are eliminated by using the smoother interpolation functions presented in the convected particle domain interpolation technique. The discrete equations are derived in the framework of the generalized interpolation material point method. The boundary load tracking algorithm and a modified contact algorithm are proposed based on the definition of particle domains to apply accurately the surface loads on the motive boundaries and to capture correctly the contact time/behaviors in large deformation problems, respectively. Simulations of several representative one- and two-dimensional problems are presented to demonstrate the accuracy and effectiveness of the proposed methods. Compared to those obtained by using the coupling material point method and/or finite element method, the simulation results illustrate that the proposed CCPDI method can be successfully used in simulating the large deformation coupled dynamic responses of the solid skeleton and fluid phase in fully saturated porous media and the large deformation impact between solid and saturated porous bodies.}
+}
+	
+	@article{Molinos2021,
+title = {On the dynamic assessment of the Local-Maximum Entropy Material Point Method through an Explicit Predictor–Corrector Scheme},
+journal = {Computer Methods in Applied Mechanics and Engineering},
+volume = {374},
+pages = {113512},
+year = {2021},
+issn = {0045-7825},
+doi = {https://doi.org/10.1016/j.cma.2020.113512},
+url = {https://www.sciencedirect.com/science/article/pii/S0045782520306976},
+author = {Miguel Molinos and Pedro Navas and Manuel Pastor and Miguel Martín Stickle},
+keywords = {LME, MPM, Explicit predictor–corrector, Dynamic problems},
+abstract = {Material Point Method (MPM) has arisen in the recent years as an alternative to Finite Element Method (FEM) under large deformations. However, the simulation of shock waves propagation in the large deformation regime is still challenging under this approach due to the incapability of the standard MPM time integration scheme to filter spurious noises. To overcome it, we propose in this paper an explicit Predictor–Corrector time integration scheme. Its powerful performance mitigates the presence of spurious oscillations with minimal dissipation in high frequency problems. Other source of numerical noise in MPM occurs when the material points cross computational grid boundaries, being caused by the lack of smoothness of the interpolation functions. This noise results in spurious local variations at the material points, where strain–stress fields are computed. This could lead to inaccurate solutions as well as aborted simulations in the worst cases. To surmount it, we propose in this work the Local Maximum-Entropy (LME) approximation schemes as a robust substitute of the traditional shape function in MPM. The performance of both improvements is validated by the high quality results of the numerical examples.}
+}
+
+@article{Zhang2009,
+title = {Material point method for dynamic analysis of saturated porous media under external contact/impact of solid bodies},
+journal = {Computer Methods in Applied Mechanics and Engineering},
+volume = {198},
+number = {17},
+pages = {1456-1472},
+year = {2009},
+issn = {0045-7825},
+doi = {https://doi.org/10.1016/j.cma.2008.12.006},
+url = {https://www.sciencedirect.com/science/article/pii/S0045782508004349},
+author = {H.W. Zhang and K.P. Wang and Z. Chen},
+keywords = {Material point method (MPM), Contact/impact, Saturated porous media, Dynamic analysis},
+abstract = {With the use of the u–p form governing equations of saturated porous media, the coupling material point method (CMPM) is developed to predict the dynamic responses of saturated soil. The contact/impact problem between saturated porous media and solid bodies, like soil–structure interaction, is solved under the framework of the MPM. In the proposed strategy, the dynamic analysis of saturated soil and solid bodies is handled by the CMPM and the original MPM respectively. The interaction between saturated soil and solid bodies is simulated by a new contact algorithm which effectively avoids the interpenetration between saturated soil and solid bodies. The proposed approach circumvents the difficulties associated with the conventional spatial discretization methods such as the finite element method in simulating the contact/impact behavior between saturated soil and solid bodies. Representative examples are used to verify the proposed model-based simulation procedure and to demonstrate its potential in impact analysis related to geotechnical engineering.}
+}
+	
+	@article{Molinos2021b,
+title = {Local Maximum Entropy Material Point Method applied to quasi-brittle fracture},
+journal = {Engineering Fracture Mechanics},
+volume = {241},
+pages = {107394},
+year = {2021},
+issn = {0013-7944},
+doi = {https://doi.org/10.1016/j.engfracmech.2020.107394},
+url = {https://www.sciencedirect.com/science/article/pii/S0013794420309723},
+author = {Miguel Molinos and Pedro Navas and Diego Manzanal and Manuel Pastor},
+keywords = {Quasi brittle fracture, Local- approximation, Material Point Method, Solid dynamics},
+abstract = {This work aims to introduce an alternative technique to address the fracture process of brittle and quasi-brittle materials under the Material Point Method (MPM) framework. With this purpose the eigensoftening algorithm, developed originally for the Optimal Transportation Meshfree (OTM) approximation scheme, is extended to the MPM to present a suitable alternative to the existing fracture algorithms developed for such a methodology. The good fitting in the predictions made by the eigensoftening algorithm against both analytical and experimental results proves the excellent performance of the method when challenging applications are to model.}
+}
+	
+	@article{Navas2021,
+author = {Navas, Pedro and Pastor, Manuel and Yagüe, Angel and Stickle, Miguel Martín and Manzanal, Diego and Molinos, Miguel},
+title = {Fluid stabilization of the u-w Biot's formulation at large strain},
+journal = {International Journal for Numerical and Analytical Methods in Geomechanics},
+volume = {45},
+number = {3},
+pages = {336-352},
+keywords = {Biot's equations, F-bar, fluid volumetric locking, stabilization, u−w formulation},
+doi = {https://doi.org/10.1002/nag.3158},
+url = {https://onlinelibrary.wiley.com/doi/abs/10.1002/nag.3158},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1002/nag.3158},
+abstract = {Abstract Dynamic problems of fluid-saturated soils have to be assessed through a complete formulation where dynamic terms take place. The main dynamic Biot's formulation, the u−w, is employed widely in the literature in order to accurately study the dynamic phenomena. However, depending on the spatial discretization this formulation is utilizing, numerical errors may appear within this approach. The proposed methodology, which is presented in this research, aims to solve the aforementioned problems within an elegant algorithm. Two interesting environmental applications, a consolidation of a fluid-saturated soil and the seepage of the water through an earth dam, are presented in this paper.},
+year = {2021}
+}
 
 @article{Navas:17c,
 	Abstract = {Solving dynamic problems for fluid saturated porous media at large deformation regime is an interesting but complex issue. An implicit time integration scheme is herein developed within the framework of the u--w (solid displacement--relative fluid displacement) formulation for the Biot's equations. In particular, liquid water saturated porous media is considered and the linearization of the linear momentum equations taking into account all the inertia terms for both solid and fluid phases is for the first time presented. The spatial discretization is carried out through a meshfree method, in which the shape functions are based on the principle of local maximum entropy LME. The current methodology is firstly validated with the dynamic consolidation of a soil column and the plastic shear band formulation of a square domain loaded by a rigid footing. The feasibility of this new numerical approach for solving large deformation dynamic problems is finally demonstrated through the application to an embankment problem subjected to an earthquake. {\textcopyright} 2017, Springer-Verlag GmbH Germany, part of Springer Nature.},

@@ -3,44 +3,55 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: exp_up.aux
 The style file: spmpsci.bst
 Database file #1: lib2020.bib
-You've used 39 entries,
+Repeated entry---line 14220 of file lib2020.bib
+ : @article{Zheng2013
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 14248 of file lib2020.bib
+ : @article{Zhang2009
+ :                   ,
+I'm skipping whatever remains of this entry
+Warning--can't use both volume and number fields in Simo2004
+Warning--missing publisher in Simo2004
+You've used 52 entries,
             2945 wiz_defined-function locations,
-            894 strings with 13502 characters,
-and the built_in function-call counts, 20358 in all, are:
-= -- 1719
-> -- 673
-< -- 3
-+ -- 277
-- -- 238
-* -- 1370
-:= -- 2752
-add.period$ -- 72
-call.type$ -- 39
-change.case$ -- 234
+            1001 strings with 17107 characters,
+and the built_in function-call counts, 27077 in all, are:
+= -- 2278
+> -- 899
+< -- 4
++ -- 370
+- -- 318
+* -- 1840
+:= -- 3670
+add.period$ -- 105
+call.type$ -- 52
+change.case$ -- 312
 chr.to.int$ -- 0
-cite$ -- 39
-duplicate$ -- 1751
-empty$ -- 1784
-format.name$ -- 274
-if$ -- 4240
+cite$ -- 54
+duplicate$ -- 2329
+empty$ -- 2368
+format.name$ -- 367
+if$ -- 5634
 int.to.chr$ -- 0
-int.to.str$ -- 39
-missing$ -- 427
-newline$ -- 197
-num.names$ -- 78
-pop$ -- 636
+int.to.str$ -- 52
+missing$ -- 570
+newline$ -- 269
+num.names$ -- 104
+pop$ -- 839
 preamble$ -- 1
-purify$ -- 197
+purify$ -- 263
 quote$ -- 0
-skip$ -- 349
+skip$ -- 456
 stack$ -- 0
-substring$ -- 1124
-swap$ -- 1035
-text.length$ -- 3
+substring$ -- 1454
+swap$ -- 1379
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 152
-warning$ -- 0
-while$ -- 152
-width$ -- 41
-write$ -- 462
+type$ -- 202
+warning$ -- 2
+while$ -- 197
+width$ -- 54
+write$ -- 631
+(There were 2 error messages)

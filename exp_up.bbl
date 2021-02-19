@@ -42,6 +42,15 @@ Borja, R.I., Alarc{\'{o}}n, E.: {A mathematical framework for finite strain
 \newblock Computer Methods in Applied Mechanics and Engineering
   \textbf{122}(94), 145--171 (1995)
 
+\bibitem{Borja1998a}
+Borja, R.I., Tamagnini, C.: {Cam-Clay plasticity part III: Extension of the
+  infinitesimal model to include finite strains}.
+\newblock Computer Methods in Applied Mechanics and Engineering
+  \textbf{155}(1-2), 73--95 (1998).
+\newblock \doi{10.1016/S0045-7825(97)00141-2}.
+\newblock
+  \urlprefix\url{http://linkinghub.elsevier.com/retrieve/pii/S0045782597001412}
+
 \bibitem{borja98}
 Borja, R.I., Tamagnini, C., Alarc{\'{o}}n, E.: {Elastoplastic consolidation at
   finite strain. Part 2: finite element implementation and numerical examples}.
@@ -49,6 +58,12 @@ Borja, R.I., Tamagnini, C., Alarc{\'{o}}n, E.: {Elastoplastic consolidation at
   103--122 (1998).
 \newblock
   \urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0045782598801059}
+
+\bibitem{Borja1997}
+Borja, R.I., Tamagnini, C., Amorosi, A.: {Coupling plasticity and
+  energy-conserving elasticity models for clays}.
+\newblock Journal of Geotechnical and Geoenvironmental Engineering
+  \textbf{123}(October), 948--957 (1997)
 
 \bibitem{CaoSanavia:16}
 Cao, T.D., Sanavia, L., Schrefler, B.A.: {A thermo-hydro-mechanical model for
@@ -88,6 +103,23 @@ Ehlers, W., Eipper, G.: {Finite Elastic Deformations in Liquid-Saturated and
 \newblock Transport in Porous Media \textbf{34}(1986), 179--191 (1999).
 \newblock \doi{10.1007/978-94-011-4579-4{\_}11}
 
+\bibitem{Gavagnin2020}
+Gavagnin, C., Sanavia, L., {De Lorenzis}, L.: {Stabilized mixed formulation for
+  phase-field computation of deviatoric fracture in elastic and poroelastic
+  materials}.
+\newblock Computational Mechanics  (2020).
+\newblock \doi{10.1007/s00466-020-01829-x}.
+\newblock \urlprefix\url{https://doi.org/10.1007/s00466-020-01829-x}
+
+\bibitem{Huang2019}
+Huang, D., Wei{\ss}enfels, C., Wriggers, P.: {Modelling of serrated chip
+  formation processes using the stabilized optimal transportation meshfree
+  method}.
+\newblock International Journal of Mechanical Sciences \textbf{155}(March),
+  323--333 (2019).
+\newblock \doi{10.1016/j.ijmecsci.2019.03.005}.
+\newblock \urlprefix\url{https://doi.org/10.1016/j.ijmecsci.2019.03.005}
+
 \bibitem{Jeremic08}
 Jeremi{\'{c}}, B., Cheng, Z., Taiebat, M., Dafalias, Y.F.: {Numerical
   simulation of fully saturated porous materials}.
@@ -106,6 +138,12 @@ Li, B., Habbal, F., Ortiz, M.: {Optimal transportation meshfree approximation
 \newblock International Journal for Numerical Methods in Engineering
   \textbf{83}(June), 1541--1579 (2010).
 \newblock \doi{10.1002/nme}
+
+\bibitem{li2014}
+Li, B., Stalzer, M., Ortiz, M.: {A massively parallel implementation of the
+  Optimal Transportation Meshfree (pOTM) method for explicit solid dynamics}.
+\newblock International Journal for Numerical Methods in Engineering
+  \textbf{100}, 40--61 (2014)
 
 \bibitem{LiBorja2004}
 Li, C., Borja, R.I., Regueiro, R.A.: {Dynamics of porous media at finite
@@ -127,6 +165,24 @@ L{\'{o}}pez-Querol, S., {Fern{\'{a}}ndez Merodo}, J.A., Mira, P., Pastor, M.:
 \newblock International Journal for Numerical and Analytical Methods in
   Geomechanics \textbf{32}, 1431--1457 (2008).
 \newblock \doi{10.1002/nag}
+
+\bibitem{Molinos2021b}
+Molinos, M., Navas, P., Manzanal, D., Pastor, M.: Local maximum entropy
+  material point method applied to quasi-brittle fracture.
+\newblock Engineering Fracture Mechanics \textbf{241}, 107394 (2021).
+\newblock \doi{https://doi.org/10.1016/j.engfracmech.2020.107394}.
+\newblock
+  \urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0013794420309723}
+
+\bibitem{Molinos2021}
+Molinos, M., Navas, P., Pastor, M., Stickle, M.M.: On the dynamic assessment of
+  the local-maximum entropy material point method through an explicit
+  predictor–corrector scheme.
+\newblock Computer Methods in Applied Mechanics and Engineering \textbf{374},
+  113512 (2021).
+\newblock \doi{https://doi.org/10.1016/j.cma.2020.113512}.
+\newblock
+  \urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0045782520306976}
 
 \bibitem{Monforte2019}
 Monforte, L., Navas, P., Carbonell, J.M., Arroyo, M., Gens, A.: {Low order
@@ -152,12 +208,21 @@ Navas, P., L{\'{o}}pez-Querol, S., Yu, R.C., Pastor, M.: {Optimal
   \textbf{115}(10), 1217--1240 (2018).
 \newblock \doi{10.1002/nme.5841}
 
-\bibitem{Navas2020b}
-Navas, P., Pastor, M., Yag\"ue, A., {Mart{\'{i}}n Stickle}, M., Manzanal, D.,
-  Molinos, M.: Fluid stabilization of the u-w biot’s formulation at large
-  strain.
+\bibitem{Navas2020}
+Navas, P., Manzanal, D., {Mart{\'{i}}n Stickle}, M., Pastor, M., Molinos, M.:
+  {Meshfree modeling of cyclic behavior of sands within large strain
+  Generalized Plasticity Framework}.
+\newblock Computers and Geotechnics \textbf{122}, 103538 (2020).
+\newblock \doi{10.1016/j.compgeo.2020.103538}
+
+\bibitem{Navas2021}
+Navas, P., Pastor, M., Yagüe, A., Stickle, M.M., Manzanal, D., Molinos, M.:
+  Fluid stabilization of the u-w biot's formulation at large strain.
 \newblock International Journal for Numerical and Analytical Methods in
-  Geomechanics \textbf{Under review} (2020)
+  Geomechanics \textbf{45}(3), 336--352 (2021).
+\newblock \doi{https://doi.org/10.1002/nag.3158}.
+\newblock
+  \urlprefix\url{https://onlinelibrary.wiley.com/doi/abs/10.1002/nag.3158}
 
 \bibitem{Navas:17b}
 Navas, P., Sanavia, L., L{\'{o}}pez-Querol, S., Yu, R.C.: {Explicit meshfree
@@ -174,12 +239,19 @@ Navas, P., Sanavia, L., L{\'{o}}pez-Querol, S., Yu, R.C.: u-w formulation for
 \newblock \doi{10.1007/s00466-017-1524-y}.
 \newblock \urlprefix\url{https://doi.org/10.1007/s00466-017-1524-y}
 
-\bibitem{Navas2018a}
-Navas, P., Yu, R.C., Li, B., Ruiz, G.: {Modeling the dynamic fracture in
-  concrete: an eigensoftening meshfree approach}.
-\newblock International Journal of Impact Engineering \textbf{113}, 9--20
-  (2018).
-\newblock \doi{10.1016/j.ijimpeng.2017.11.004}
+\bibitem{Navas2016b}
+Navas, P., Yu, R.C., L{\'{o}}pez-Querol, S., Li, B.: {Dynamic consolidation
+  problems in saturated soils solved through u-w formulation in a {\{}LME{\}}
+  meshfree framework}.
+\newblock Computers and Geotechnics \textbf{79}, 55--72 (2016).
+\newblock \doi{10.1016/j.compgeo.2016.05.021}
+
+\bibitem{Ortiz1985}
+Ortiz, M., Simo, J.C.: {A unified approach to finite deformation elastoplastic
+  analysis based on the use of hyperelastic constitutive equations}.
+\newblock Computer Methods in Applied Mechanics and Engineering \textbf{49}(2),
+  221--245 (1985).
+\newblock \doi{10.1016/0045-7825(85)90061-1}
 
 \bibitem{Sukumar2004}
 Ortiz-Bernardin, A., Puso, M.A., Sukumar, N.: {Construction of Polygonal
@@ -230,6 +302,11 @@ Sanavia, L., Schrefler, B.A., Steinmann, P.: {A formulation for an unsaturated
 \newblock Computational Mechanics \textbf{28}(2), 137--151 (2002).
 \newblock \doi{10.1007/s00466-001-0277-8}
 
+\bibitem{Simo2004}
+Simo, J.C., Hughes, T.J.R.: {Interdisciplinary Applied Mathematics, Volume 7.
+  Computational Inelasticity}, vol.~79 (2004).
+\newblock \doi{10.1086/425848}
+
 \bibitem{Sladek2014}
 Sladek, J., Sladek, V., Schanz, M.: {A meshless method for axisymmetric
   problems in continuously nonhomogeneous saturated porous media}.
@@ -247,6 +324,34 @@ Ye, F., Goh, S.H., Lee, F.H.: {Dual-phase coupled u-U analysis of wave
 \newblock Computers and Geotechnics \textbf{55}, 316--329 (2014).
 \newblock \doi{10.1016/j.compgeo.2013.09.002}.
 \newblock \urlprefix\url{http://dx.doi.org/10.1016/j.compgeo.2013.09.002}
+
+\bibitem{Zhang2009}
+Zhang, H.W., Wang, K., Chen, Z.: {Material point method for dynamic analysis of
+  saturated porous media under external contact/impact of solid bodies}.
+\newblock Computer Methods in Applied Mechanics and Engineering
+  \textbf{198}(17-20), 1456--1472 (2009).
+\newblock \doi{10.1016/J.CMA.2008.12.006}.
+\newblock
+  \urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0045782508004349}
+
+\bibitem{Choo2020}
+Zhao, Y., Choo, J.: Stabilized material point methods for coupled large
+  deformation and fluid flow in porous materials.
+\newblock Computer Methods in Applied Mechanics and Engineering \textbf{362},
+  112742 (2020).
+\newblock \doi{https://doi.org/10.1016/j.cma.2019.112742}.
+\newblock
+  \urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0045782519306322}
+
+\bibitem{Zheng2013}
+Zheng, Y., Gao, F., Zhang, H.W., Lu, M.: {Improved convected particle domain
+  interpolation method for coupled dynamic analysis of fully saturated porous
+  media involving large deformation}.
+\newblock Computer Methods in Applied Mechanics and Engineering \textbf{257},
+  150--163 (2013).
+\newblock \doi{10.1016/j.cma.2013.02.001}.
+\newblock \urlprefix\url{http://dx.doi.org/10.1016/j.cma.2013.02.001
+  https://www.sciencedirect.com/science/article/pii/S0045782513000327}
 
 \bibitem{zienkiewicz1990a}
 Zienkiewicz, O.C., Chan, A.H.C., Pastor, M., Paul, D.K., Shiomi, T.: {Static
