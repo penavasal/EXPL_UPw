@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.19)  19 FEB 2021 12:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.19)  19 FEB 2021 12:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -718,10 +718,7 @@ Overfull \hbox (4.61966pt too wide) in paragraph at lines 635--636
 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [12 <./Fig/pressure.pdf>]
+[12 <./Fig/pressure.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 704--706
 
  []
@@ -1052,7 +1049,7 @@ xmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2020/texmf
 -dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2020/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb>
-Output written on exp_up.pdf (15 pages, 3570082 bytes).
+Output written on exp_up.pdf (15 pages, 3570217 bytes).
 PDF statistics:
  485 PDF objects out of 1000 (max. 8388607)
  304 compressed objects within 4 object streams
