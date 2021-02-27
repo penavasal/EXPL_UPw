@@ -48,16 +48,14 @@ Borja, R.I., Tamagnini, C.: {Cam-Clay plasticity part III: Extension of the
 \newblock Computer Methods in Applied Mechanics and Engineering
   \textbf{155}(1-2), 73--95 (1998).
 \newblock \doi{10.1016/S0045-7825(97)00141-2}.
-\newblock
-  \urlprefix\url{http://linkinghub.elsevier.com/retrieve/pii/S0045782597001412}
+
 
 \bibitem{borja98}
 Borja, R.I., Tamagnini, C., Alarc{\'{o}}n, E.: {Elastoplastic consolidation at
   finite strain. Part 2: finite element implementation and numerical examples}.
 \newblock Computer Methods in Applied Mechanics and Engineering \textbf{159},
   103--122 (1998).
-\newblock
-  \urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0045782598801059}
+
 
 \bibitem{Borja1997}
 Borja, R.I., Tamagnini, C., Amorosi, A.: {Coupling plasticity and
@@ -110,6 +108,13 @@ Gavagnin, C., Sanavia, L., {De Lorenzis}, L.: {Stabilized mixed formulation for
 \newblock Computational Mechanics  (2020).
 \newblock \doi{10.1007/s00466-020-01829-x}.
 \newblock \urlprefix\url{https://doi.org/10.1007/s00466-020-01829-x}
+
+\bibitem{ODE1}
+Hairer, E., Norsett, S.P., Wanner, G.: Solving Ordinary Differential Equations
+  I. Nonstiff Problems, 2nd rev. ed. 1993. corr. 3rd printing edn.
+\newblock Springer, Berlin (1993).
+\newblock \urlprefix\url{https://archive-ouverte.unige.ch/unige:12346}.
+\newblock ID: unige:12346
 
 \bibitem{Huang2019}
 Huang, D., Wei{\ss}enfels, C., Wriggers, P.: {Modelling of serrated chip
@@ -171,18 +176,15 @@ Molinos, M., Navas, P., Manzanal, D., Pastor, M.: Local maximum entropy
   material point method applied to quasi-brittle fracture.
 \newblock Engineering Fracture Mechanics \textbf{241}, 107394 (2021).
 \newblock \doi{https://doi.org/10.1016/j.engfracmech.2020.107394}.
-\newblock
-  \urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0013794420309723}
+
 
 \bibitem{Molinos2021}
 Molinos, M., Navas, P., Pastor, M., Stickle, M.M.: On the dynamic assessment of
   the local-maximum entropy material point method through an explicit
-  predictor–corrector scheme.
+  predictor-corrector scheme.
 \newblock Computer Methods in Applied Mechanics and Engineering \textbf{374},
   113512 (2021).
 \newblock \doi{https://doi.org/10.1016/j.cma.2020.113512}.
-\newblock
-  \urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0045782520306976}
 
 \bibitem{Monforte2019}
 Monforte, L., Navas, P., Carbonell, J.M., Arroyo, M., Gens, A.: {Low order
@@ -260,6 +262,14 @@ Ortiz-Bernardin, A., Puso, M.A., Sukumar, N.: {Construction of Polygonal
   \textbf{61}(12), 2159--2181 (2004).
 \newblock \doi{10.1002/nme.1193}
 
+\bibitem{Pastor2021}
+Pastor, M., Tayyebi, S.M., Stickle, M.M., Yag\''ue, \'A., Molinos, M., Navas, P.,
+  Manzanal, D.: {A depth integrated, coupled, two-phase model for debris flow
+  propagation}.
+\newblock Acta Geotechnica \textbf{Online} (2021).
+\newblock \doi{10.1007/s11440-020-01114-4}.
+\newblock \urlprefix\url{https://doi.org/10.1007/s11440-020-01114-4}
+
 \bibitem{Muraleetharan09}
 Ravichandran, N., Muraleetharan, K.K.: {Dynamics of unsaturated soils using
   various finite element formulations}.
@@ -331,8 +341,7 @@ Zhang, H.W., Wang, K., Chen, Z.: {Material point method for dynamic analysis of
 \newblock Computer Methods in Applied Mechanics and Engineering
   \textbf{198}(17-20), 1456--1472 (2009).
 \newblock \doi{10.1016/J.CMA.2008.12.006}.
-\newblock
-  \urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0045782508004349}
+
 
 \bibitem{Choo2020}
 Zhao, Y., Choo, J.: Stabilized material point methods for coupled large
@@ -340,8 +349,7 @@ Zhao, Y., Choo, J.: Stabilized material point methods for coupled large
 \newblock Computer Methods in Applied Mechanics and Engineering \textbf{362},
   112742 (2020).
 \newblock \doi{https://doi.org/10.1016/j.cma.2019.112742}.
-\newblock
-  \urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0045782519306322}
+
 
 \bibitem{Zheng2013}
 Zheng, Y., Gao, F., Zhang, H.W., Lu, M.: {Improved convected particle domain
@@ -350,8 +358,7 @@ Zheng, Y., Gao, F., Zhang, H.W., Lu, M.: {Improved convected particle domain
 \newblock Computer Methods in Applied Mechanics and Engineering \textbf{257},
   150--163 (2013).
 \newblock \doi{10.1016/j.cma.2013.02.001}.
-\newblock \urlprefix\url{http://dx.doi.org/10.1016/j.cma.2013.02.001
-  https://www.sciencedirect.com/science/article/pii/S0045782513000327}
+
 
 \bibitem{zienkiewicz1990a}
 Zienkiewicz, O.C., Chan, A.H.C., Pastor, M., Paul, D.K., Shiomi, T.: {Static

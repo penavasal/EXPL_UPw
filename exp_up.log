@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.19)  19 FEB 2021 12:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.19)  27 FEB 2021 16:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -180,10 +180,22 @@ LaTeX Info: Redefining \] on input line 2860.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
+(/usr/local/texlive/2020/texmf-dist/tex/latex/soul/soul.sty
+Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
+\SOUL@word=\toks24
+\SOUL@lasttoken=\toks25
+\SOUL@cmds=\toks26
+\SOUL@buffer=\toks27
+\SOUL@token=\toks28
+\SOUL@spaceskip=\skip52
+\SOUL@ttwidth=\dimen158
+\SOUL@uldp=\dimen159
+\SOUL@ulht=\dimen160
+)
 (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/epsfig.sty
 Package: epsfig 2017/06/25 v1.7b (e)psfig emulation (SPQR)
-\epsfxsize=\dimen158
-\epsfysize=\dimen159
+\epsfxsize=\dimen161
+\epsfysize=\dimen162
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf.sty
 Package: epstopdf 2020-01-24 v2.11 Conversion with epstopdf on the fly (HO)
@@ -231,12 +243,12 @@ e
 )))
 (/usr/local/texlive/2020/texmf-dist/tex/latex/subfigure/subfigure.sty
 Package: subfigure 2002/03/15 v2.1.5 subfigure package
-\subfigtopskip=\skip52
-\subfigcapskip=\skip53
-\subfigcaptopadj=\dimen160
-\subfigbottomskip=\skip54
-\subfigcapmargin=\dimen161
-\subfiglabelskip=\skip55
+\subfigtopskip=\skip53
+\subfigcapskip=\skip54
+\subfigcaptopadj=\dimen163
+\subfigbottomskip=\skip55
+\subfigcapmargin=\dimen164
+\subfiglabelskip=\skip56
 \c@subfigure=\count271
 \c@lofdepth=\count272
 \c@subtable=\count273
@@ -246,66 +258,66 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 * Local config file subfigure.cfg used *
 ****************************************
 (/usr/local/texlive/2020/texmf-dist/tex/latex/subfigure/subfigure.cfg)
-\subfig@top=\skip56
-\subfig@bottom=\skip57
+\subfig@top=\skip57
+\subfig@bottom=\skip58
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/array.sty
 Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen162
+\col@sep=\dimen165
 \ar@mcellbox=\box50
-\extrarowheight=\dimen163
-\NC@list=\toks24
-\extratabsurround=\skip58
-\backup@length=\skip59
+\extrarowheight=\dimen166
+\NC@list=\toks29
+\extratabsurround=\skip59
+\backup@length=\skip60
 \ar@cellbox=\box51
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
-\TX@col@width=\dimen164
-\TX@old@table=\dimen165
-\TX@old@col=\dimen166
-\TX@target=\dimen167
-\TX@delta=\dimen168
+\TX@col@width=\dimen167
+\TX@old@table=\dimen168
+\TX@old@col=\dimen169
+\TX@target=\dimen170
+\TX@delta=\dimen171
 \TX@cols=\count275
-\TX@ftn=\toks25
+\TX@ftn=\toks30
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/supertabular/supertabular.sty
 Package: supertabular 2020/02/02 v4.1g the supertabular environment
 \c@tracingst=\count276
-\ST@wd=\dimen169
-\ST@rightskip=\skip60
-\ST@leftskip=\skip61
-\ST@parfillskip=\skip62
-\ST@pageleft=\dimen170
-\ST@headht=\dimen171
-\ST@tailht=\dimen172
-\ST@pagesofar=\dimen173
-\ST@pboxht=\dimen174
-\ST@lineht=\dimen175
-\ST@prevht=\dimen176
-\ST@toadd=\dimen177
-\ST@dimen=\dimen178
+\ST@wd=\dimen172
+\ST@rightskip=\skip61
+\ST@leftskip=\skip62
+\ST@parfillskip=\skip63
+\ST@pageleft=\dimen173
+\ST@headht=\dimen174
+\ST@tailht=\dimen175
+\ST@pagesofar=\dimen176
+\ST@pboxht=\dimen177
+\ST@lineht=\dimen178
+\ST@prevht=\dimen179
+\ST@toadd=\dimen180
+\ST@dimen=\dimen181
 \ST@pbox=\box52
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
 s
-\f@nch@headwidth=\skip63
-\f@nch@O@elh=\skip64
-\f@nch@O@erh=\skip65
-\f@nch@O@olh=\skip66
-\f@nch@O@orh=\skip67
-\f@nch@O@elf=\skip68
-\f@nch@O@erf=\skip69
-\f@nch@O@olf=\skip70
-\f@nch@O@orf=\skip71
+\f@nch@headwidth=\skip64
+\f@nch@O@elh=\skip65
+\f@nch@O@erh=\skip66
+\f@nch@O@olh=\skip67
+\f@nch@O@orh=\skip68
+\f@nch@O@elf=\skip69
+\f@nch@O@erf=\skip70
+\f@nch@O@olf=\skip71
+\f@nch@O@orf=\skip72
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
-\multirow@colwidth=\skip72
+\multirow@colwidth=\skip73
 \multirow@cntb=\count277
-\multirow@dima=\skip73
-\bigstrutjot=\dimen179
+\multirow@dima=\skip74
+\bigstrutjot=\dimen182
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
@@ -321,18 +333,18 @@ Package: cancel 2013/04/12 v2.2 Cancel math terms
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lineno/lineno.sty
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
 \linenopenalty=\count278
-\output=\toks26
+\output=\toks31
 \linenoprevgraf=\count279
-\linenumbersep=\dimen180
-\linenumberwidth=\dimen181
+\linenumbersep=\dimen183
+\linenumberwidth=\dimen184
 \c@linenumber=\count280
 \c@pagewiselinenumber=\count281
 \c@LN@truepage=\count282
 \c@internallinenumber=\count283
 \c@internallinenumbers=\count284
-\quotelinenumbersep=\dimen182
-\bframerule=\dimen183
-\bframesep=\dimen184
+\quotelinenumbersep=\dimen185
+\bframerule=\dimen186
+\bframesep=\dimen187
 \bframebox=\box53
 LaTeX Info: Redefining \\ on input line 3056.
 )
@@ -342,368 +354,375 @@ Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
-\labelindent=\skip74
-\enit@outerparindent=\dimen185
-\enit@toks=\toks27
+\labelindent=\skip75
+\enit@outerparindent=\dimen188
+\enit@toks=\toks32
 \enit@inbox=\box54
 \enit@count@id=\count285
 \enitdp@description=\count286
 )
+(/usr/local/texlive/2020/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box55
+\UL@hyphenbox=\box56
+\UL@skip=\skip76
+\UL@hook=\toks33
+\UL@height=\dimen189
+\UL@pe=\count287
+\UL@pixel=\dimen190
+\ULC@box=\box57
+Package: ulem 2019/11/18
+\ULdepth=\dimen191
+)
 (/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count287
-\l__pdf_internal_box=\box55
+\l__kernel_color_stack_int=\count288
+\l__pdf_internal_box=\box58
 )
 (./exp_up.aux)
 \openout1 = `exp_up.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
 
 (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count288
-\scratchdimen=\dimen186
-\scratchbox=\box56
-\nofMPsegments=\count289
-\nofMParguments=\count290
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count291
-\MPscratchDim=\dimen187
-\MPnumerator=\count292
-\makeMPintoPDFobject=\count293
-\everyMPtoPDFconversion=\toks29
+\scratchcounter=\count289
+\scratchdimen=\dimen192
+\scratchbox=\box59
+\nofMPsegments=\count290
+\nofMParguments=\count291
+\everyMPshowfont=\toks34
+\MPscratchCnt=\count292
+\MPscratchDim=\dimen193
+\MPnumerator=\count293
+\makeMPintoPDFobject=\count294
+\everyMPtoPDFconversion=\toks35
 )
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <16> not available
-(Font)              size <17.28> substituted on input line 99.
+(Font)              size <17.28> substituted on input line 100.
 
-LaTeX Font Info:    Calculating math sizes for size <16> on input line 99.
+LaTeX Font Info:    Calculating math sizes for size <16> on input line 100.
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <16> not available
-(Font)              size <17.28> substituted on input line 99.
+(Font)              size <17.28> substituted on input line 100.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <16> not available
-(Font)              size <17.28> substituted on input line 99.
+(Font)              size <17.28> substituted on input line 100.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 99.
-
+LaTeX Font Info:    Trying to load font information for U+msa on input line 100
+.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 99.
-
+LaTeX Font Info:    Trying to load font information for U+msb on input line 100
+.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 99
-.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 10
+0.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <16> not available
-(Font)              size <17.28> substituted on input line 99.
+(Font)              size <17.28> substituted on input line 100.
 
-LaTeX Font Info:    Calculating math sizes for size <8.5> on input line 99.
+LaTeX Font Info:    Calculating math sizes for size <8.5> on input line 100.
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <8.5> not available
-(Font)              size <8> substituted on input line 99.
+(Font)              size <8> substituted on input line 100.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.25> not available
-(Font)              size <5> substituted on input line 99.
+(Font)              size <5> substituted on input line 100.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <8.5> not available
-(Font)              size <8> substituted on input line 99.
+(Font)              size <8> substituted on input line 100.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.25> not available
-(Font)              size <5> substituted on input line 99.
+(Font)              size <5> substituted on input line 100.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <8.5> not available
-(Font)              size <8> substituted on input line 99.
+(Font)              size <8> substituted on input line 100.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <4.25> not available
-(Font)              size <5> substituted on input line 99.
+(Font)              size <5> substituted on input line 100.
 
 
-Underfull \hbox (badness 1924) in paragraph at lines 99--99
+Underfull \hbox (badness 1924) in paragraph at lines 100--100
 \OT1/cmr/m/n/8.5 Dep. Con-tin-uum Me-chan-ics and The-ory of Struc-tures,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--99
+Underfull \hbox (badness 10000) in paragraph at lines 100--100
 \OT1/cmr/m/n/8.5 E-mail: pe-dro.navas@upm.es, d.manzanal@upm.es, an-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--99
+Underfull \hbox (badness 10000) in paragraph at lines 100--100
 \OT1/cmr/m/n/8.5 E-mail: m.molinos@alumnos.upm.es, m.martins@upm.es,
  []
 
 
-Overfull \hbox (0.20396pt too wide) in paragraph at lines 102--103
+Overfull \hbox (0.20396pt too wide) in paragraph at lines 103--104
 []\OT1/cmr/m/n/10 In this pa-per an ef-fi-cient and ro-bust method-
  []
 
 
-Overfull \hbox (5.09189pt too wide) in paragraph at lines 102--103
-\OT1/cmr/m/n/10 quency dy-namic load-ings un-der large de-for-ma-tion regime
- []
+Overfull \hbox (8.00848pt too wide) in paragraph at lines 103--104
+\OT1/cmr/m/n/10 ol-ogy to sim-u-late sat-u-rated soils sub-jected to low-medium
 
-
-Overfull \hbox (3.0084pt too wide) in paragraph at lines 102--103
-\OT1/cmr/m/n/10 is pre-sented. The cou-pling be-tween solid and fluid phases
  []
 
 [1{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-Overfull \hbox (0.6905pt too wide) in paragraph at lines 123--124
-\OT1/cmr/m/n/10 Trans-porta-tion Mesh-free (OTM) scheme of Li \OT1/cmr/m/it/10 
-et al. \OT1/cmr/m/n/10 [19].
+Overfull \hbox (2.78627pt too wide) in paragraph at lines 120--121
+\OT1/cmr/m/n/10 sys-tem when ad-vanc-ing in time. Fi-nally, ex-plicit schemes
  []
 
 
-Overfull \hbox (13.39745pt too wide) in paragraph at lines 125--126
+Overfull \hbox (2.59175pt too wide) in paragraph at lines 126--127
+[]\OT1/cmr/m/n/10 In re-cent years, in the com-pu-ta-tional me-chan-ics field,
+ []
+
+
+Overfull \hbox (0.75845pt too wide) in paragraph at lines 126--127
+\OT1/cmr/m/n/10 50]). The small strain ap-proach is em-ployed within these
+ []
+
+
+Overfull \hbox (13.39745pt too wide) in paragraph at lines 130--131
 \OT1/cmr/m/n/10 high-light-ing the mesh-free so-lu-tion and the ex-plicit metho
 d-
  []
 
 
-Overfull \hbox (0.36961pt too wide) in paragraph at lines 133--135
+Overfull \hbox (0.36961pt too wide) in paragraph at lines 138--140
 []\OT1/cmr/m/n/10 Concerning the no-ta-tion, bold sym-bols are em-ployed
  []
 
 [2]
-Overfull \hbox (5.64735pt too wide) in paragraph at lines 156--157
+Overfull \hbox (5.64735pt too wide) in paragraph at lines 161--162
 []\OT1/cmr/m/n/10 Meanwhile, the vol-u-met-ric com-press-ibil-ity of the mix-
  []
 
 
-Overfull \hbox (3.8869pt too wide) in paragraph at lines 159--161
+Overfull \hbox (3.8869pt too wide) in paragraph at lines 164--166
 \OT1/cmr/m/n/10 where $\OML/cmm/m/it/10 K[]$ \OT1/cmr/m/n/10 is the bulk mod-u-
 lus of the solid grains, whereas
  []
 
 
-Overfull \hbox (0.59189pt too wide) in alignment at lines 180--184
+Overfull \hbox (0.59189pt too wide) in alignment at lines 185--189
 [][][] []
  []
 
-[3]
-Overfull \hbox (7.4529pt too wide) in paragraph at lines 280--282
+[3] [4]
+Overfull \hbox (7.4529pt too wide) in paragraph at lines 285--287
 \OT1/cmr/m/n/10 func-tions to be cal-cu-lated in the Newton-Raphson scheme
  []
 
 
-Overfull \hbox (4.84177pt too wide) in paragraph at lines 283--284
+Overfull \hbox (4.84177pt too wide) in paragraph at lines 288--289
 \OT1/cmr/m/n/10 pres-sure is lower than this limit, clas-si-cal return-mapping
  []
 
-[4]
-Overfull \hbox (8.98074pt too wide) in paragraph at lines 317--318
+
+Overfull \hbox (8.98074pt too wide) in paragraph at lines 322--323
 []\OT1/cmr/m/n/10 About the nu-mer-i-cal sta-bil-ity of the pro-posed method-
  []
 
 
-Overfull \hbox (7.36958pt too wide) in paragraph at lines 329--330
+Overfull \hbox (7.36958pt too wide) in paragraph at lines 334--335
 \OT1/cmr/m/n/10 been demon-strated to per-form rea-son-ably well in geotech-
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 346--347
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 351--352
 
  []
 
-[5]
-Overfull \hbox (6.50853pt too wide) in paragraph at lines 381--382
+
+Overfull \hbox (6.50853pt too wide) in paragraph at lines 386--387
 []\OT1/cmr/m/n/10 Moreover, the ap-prox-i-ma-tion of the log-a-rith-mic strain
  []
 
-
-Overfull \hbox (2.14738pt too wide) in paragraph at lines 420--421
+[6]
+Overfull \hbox (2.14738pt too wide) in paragraph at lines 425--426
 []\OT1/cmr/m/n/10 Constitutive re-la-tions from the Elasto-Plastic model,
  []
 
-[6]
 <Fig/col.pdf, id=44, 454.27014pt x 395.4775pt>
 File: Fig/col.pdf Graphic file (type pdf)
 <use Fig/col.pdf>
-Package pdftex.def Info: Fig/col.pdf  used on input line 448.
+Package pdftex.def Info: Fig/col.pdf  used on input line 453.
 (pdftex.def)             Requested size: 247.5pt x 215.4676pt.
 
-Overfull \hbox (8.53583pt too wide) in paragraph at lines 448--449
+Overfull \hbox (8.53583pt too wide) in paragraph at lines 453--454
 [][] 
  []
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <8.5> not available
-(Font)              size <8> substituted on input line 449.
+(Font)              size <8> substituted on input line 454.
 
 
-Overfull \hbox (1.59186pt too wide) in paragraph at lines 458--476
+Overfull \hbox (1.59186pt too wide) in paragraph at lines 463--481
 \OT1/cmr/m/n/10 this into con-sid-er-a-tion, the con-sol-i-da-tion prob-lem sol
 ved
  []
 
-
-Underfull \vbox (badness 2460) has occurred while \output is active []
-
 <Fig/borja.pdf, id=45, 773.76878pt x 641.99847pt>
 File: Fig/borja.pdf Graphic file (type pdf)
 <use Fig/borja.pdf>
-Package pdftex.def Info: Fig/borja.pdf  used on input line 480.
+Package pdftex.def Info: Fig/borja.pdf  used on input line 485.
 (pdftex.def)             Requested size: 247.5pt x 205.34575pt.
 
-Overfull \hbox (8.53583pt too wide) in paragraph at lines 480--481
+Overfull \hbox (8.53583pt too wide) in paragraph at lines 485--486
 [][] 
  []
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/it' in size <8.5> not available
-(Font)              size <8> substituted on input line 481.
+(Font)              size <8> substituted on input line 486.
 
-[7 <./Fig/col.pdf> <./Fig/borja.pdf>]
-<Fig/borja2.pdf, id=99, 753.95073pt x 465.09357pt>
+[7 <./Fig/col.pdf>]
+<Fig/borja2.pdf, id=77, 753.95073pt x 465.09357pt>
 File: Fig/borja2.pdf Graphic file (type pdf)
 <use Fig/borja2.pdf>
-Package pdftex.def Info: Fig/borja2.pdf  used on input line 491.
+Package pdftex.def Info: Fig/borja2.pdf  used on input line 496.
 (pdftex.def)             Requested size: 247.5pt x 152.67232pt.
 
-Overfull \hbox (8.53583pt too wide) in paragraph at lines 491--492
+Overfull \hbox (8.53583pt too wide) in paragraph at lines 496--497
 [][] 
  []
 
-<Fig/fig_cyc.pdf, id=100, 1096.04477pt x 971.74843pt>
+<Fig/fig_cyc.pdf, id=78, 1096.04477pt x 971.74843pt>
 File: Fig/fig_cyc.pdf Graphic file (type pdf)
 <use Fig/fig_cyc.pdf>
-Package pdftex.def Info: Fig/fig_cyc.pdf  used on input line 521.
+Package pdftex.def Info: Fig/fig_cyc.pdf  used on input line 526.
 (pdftex.def)             Requested size: 247.5pt x 219.41983pt.
 
-Overfull \hbox (8.53583pt too wide) in paragraph at lines 521--522
+Overfull \hbox (8.53583pt too wide) in paragraph at lines 526--527
  [] 
  []
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <4.25> not available
-(Font)              size <5> substituted on input line 522.
+(Font)              size <5> substituted on input line 527.
 
-<Fig/zienk.pdf, id=101, 399.9994pt x 236.35101pt>
+<Fig/zienk.pdf, id=79, 399.9994pt x 236.35101pt>
 File: Fig/zienk.pdf Graphic file (type pdf)
 <use Fig/zienk.pdf>
-Package pdftex.def Info: Fig/zienk.pdf  used on input line 532.
+Package pdftex.def Info: Fig/zienk.pdf  used on input line 537.
 (pdftex.def)             Requested size: 247.5pt x 146.24399pt.
 
-Overfull \hbox (8.53583pt too wide) in paragraph at lines 532--533
+Overfull \hbox (8.53583pt too wide) in paragraph at lines 537--538
  [] 
  []
 
-[8 <./Fig/borja2.pdf> <./Fig/fig_cyc.pdf>]
-<Fig/fig_MF.pdf, id=149, 1115.53763pt x 558.88701pt>
+[8 <./Fig/borja.pdf> <./Fig/borja2.pdf>]
+<Fig/fig_MF.pdf, id=126, 1115.53763pt x 558.88701pt>
 File: Fig/fig_MF.pdf Graphic file (type pdf)
 <use Fig/fig_MF.pdf>
-Package pdftex.def Info: Fig/fig_MF.pdf  used on input line 543.
+Package pdftex.def Info: Fig/fig_MF.pdf  used on input line 548.
 (pdftex.def)             Requested size: 247.5pt x 123.99593pt.
 
-Overfull \hbox (8.53583pt too wide) in paragraph at lines 543--544
+Overfull \hbox (8.53583pt too wide) in paragraph at lines 548--549
  [] 
  []
 
-<Fig/fig_HF.pdf, id=150, 1115.53763pt x 558.88701pt>
+<Fig/fig_HF.pdf, id=127, 1115.53763pt x 558.88701pt>
 File: Fig/fig_HF.pdf Graphic file (type pdf)
 <use Fig/fig_HF.pdf>
-Package pdftex.def Info: Fig/fig_HF.pdf  used on input line 551.
+Package pdftex.def Info: Fig/fig_HF.pdf  used on input line 556.
 (pdftex.def)             Requested size: 247.5pt x 123.99593pt.
 
-Overfull \hbox (8.53583pt too wide) in paragraph at lines 551--552
+Overfull \hbox (8.53583pt too wide) in paragraph at lines 556--557
  [] 
  []
 
 
-Underfull \hbox (badness 1577) in paragraph at lines 552--552
+Underfull \hbox (badness 1577) in paragraph at lines 557--557
 []\OT1/cmr/bx/n/8 Fig. 7|\OT1/cmr/m/n/8.5 Pore pres-sure evo-lu-tion for the hi
 gh fre-quency
  []
 
-<Fig/fig_disp.pdf, id=151, 748.76637pt x 491.41591pt>
+<Fig/fig_disp.pdf, id=128, 748.76637pt x 491.41591pt>
 File: Fig/fig_disp.pdf Graphic file (type pdf)
 <use Fig/fig_disp.pdf>
-Package pdftex.def Info: Fig/fig_disp.pdf  used on input line 563.
+Package pdftex.def Info: Fig/fig_disp.pdf  used on input line 568.
 (pdftex.def)             Requested size: 247.5pt x 162.43019pt.
 
-Overfull \hbox (8.53583pt too wide) in paragraph at lines 563--564
+Overfull \hbox (8.53583pt too wide) in paragraph at lines 568--569
  [] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [9 <./Fig/fig_cyc.pdf> <./Fig/zienk.pdf> <./Fig/fig_MF.pdf> <./Fig/fig_HF.pdf>
+ <./Fig/fig_disp.pdf
 
-Overfull \hbox (12.84727pt too wide) in paragraph at lines 574--575
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Fig/fig_disp.pdf): PDF inc
+lusion: multiple pdfs with page group included in a single page
+>]
+Overfull \hbox (12.84727pt too wide) in paragraph at lines 579--580
 []\OT1/cmr/m/n/10 The same prob-lem was pre-vi-ously stud-ied by Sanavia \OT1/c
 mr/m/it/10 et
  []
 
-<Fig/geo_zap.pdf, id=152, 727.71875pt x 422.07687pt>
+<Fig/geo_zap.pdf, id=252, 727.71875pt x 422.07687pt>
 File: Fig/geo_zap.pdf Graphic file (type pdf)
 <use Fig/geo_zap.pdf>
-Package pdftex.def Info: Fig/geo_zap.pdf  used on input line 578.
+Package pdftex.def Info: Fig/geo_zap.pdf  used on input line 583.
 (pdftex.def)             Requested size: 247.5pt x 143.54932pt.
 
-Overfull \hbox (8.53583pt too wide) in paragraph at lines 578--579
+Overfull \hbox (8.53583pt too wide) in paragraph at lines 583--584
 [][] 
  []
 
-
-Underfull \vbox (badness 1558) has occurred while \output is active []
-
- [9 <./Fig/zienk.pdf> <./Fig/fig_MF.pdf> <./Fig/fig_HF.pdf> <./Fig/fig_disp.pdf
->]
 <Fig/vertical_cut.pdf, id=253, 1774.37906pt x 2104.8738pt>
 File: Fig/vertical_cut.pdf Graphic file (type pdf)
 <use Fig/vertical_cut.pdf>
-Package pdftex.def Info: Fig/vertical_cut.pdf  used on input line 586.
+Package pdftex.def Info: Fig/vertical_cut.pdf  used on input line 591.
 (pdftex.def)             Requested size: 445.49698pt x 528.46541pt.
 <Fig/pressure.pdf, id=254, 516.92224pt x 402.45155pt>
 File: Fig/pressure.pdf Graphic file (type pdf)
 <use Fig/pressure.pdf>
-Package pdftex.def Info: Fig/pressure.pdf  used on input line 599.
+Package pdftex.def Info: Fig/pressure.pdf  used on input line 604.
 (pdftex.def)             Requested size: 247.5pt x 192.69556pt.
 
-Overfull \hbox (8.53583pt too wide) in paragraph at lines 599--600
+Overfull \hbox (8.53583pt too wide) in paragraph at lines 604--605
 [][] 
  []
 
 
-Overfull \hbox (2.20297pt too wide) in paragraph at lines 607--608
+Overfull \hbox (2.20297pt too wide) in paragraph at lines 612--613
 \OT1/cmr/m/n/10 bor-hood) re-duce the spu-ri-ous smooth-ing out of the shear
- []
-
-
-Overfull \hbox (1.14737pt too wide) in paragraph at lines 614--615
-\OT1/cmr/m/n/10 ried out is a large con-sol-i-da-tion that was pro-posed firstl
-y
  []
 
 [10 <./Fig/geo_zap.pdf>]
@@ -713,314 +732,184 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11 <./Fig/vertical_cut.pdf>]
-Overfull \hbox (4.61966pt too wide) in paragraph at lines 635--636
+
+LaTeX Warning: Citation ` BlancPastor2012' on page 12 undefined on input line 6
+22.
+
+
+LaTeX Warning: Citation ` Torabi2020' on page 12 undefined on input line 622.
+
+
+Overfull \hbox (19.30789pt too wide) in paragraph at lines 625--627
+\OT1/cmr/m/n/8.5 MSCA-RISE, Grant Agree-ment No 101007851 (DISCO2-STORE),
+ []
+
+
+Overfull \hbox (3.65398pt too wide) in paragraph at lines 625--627
+\OT1/cmr/m/n/8.5 the ad-min-is-tra-tive and tech-ni-cal sup-port of the ETSI Ca
+minos,
+ []
+
+
+Overfull \hbox (6.54152pt too wide) in paragraph at lines 625--627
+\OT1/cmr/m/n/8.5 Canales y Puer-tos, from the Uni-ver-si-dad Polit^^Secnica de 
+Madrid,
+ []
+
+
+Underfull \vbox (badness 1117) has occurred while \output is active []
+
+
+Overfull \hbox (4.61966pt too wide) in paragraph at lines 638--639
 \OT1/cmr/m/n/10 Mean-while su-per-vi-sion, project ad-min-is-tra-tion and fund-
 
  []
 
 [12 <./Fig/pressure.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 704--706
+Underfull \hbox (badness 10000) in paragraph at lines 707--709
 
  []
 
 (./exp_up.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 46--53
-[]\OT1/cmr/m/n/8.5 Borja, R.I., Ta-m-agnini, C.: Cam-Clay plas-tic-ity
- []
-
-
-Underfull \hbox (badness 3088) in paragraph at lines 46--53
-\OT1/cmr/m/n/8.5 part III: Ex-ten-sion of the in-finites-i-mal model to
- []
-
-
-Underfull \hbox (badness 1609) in paragraph at lines 46--53
-\OT1/cmr/m/n/8.5 in-clude fi-nite strains.  Com-puter Meth-ods in Ap-
- []
-
-
-Underfull \hbox (badness 4765) in paragraph at lines 46--53
-\OT1/cmr/m/n/8.5 plied Me-chan-ics and En-gi-neer-ing \OT1/cmr/bx/n/8 155\OT1/c
-mr/m/n/8.5 (1-2), 73--95
- []
-
-
-Overfull \hbox (28.01782pt too wide) in paragraph at lines 46--53
-\OT1/cmr/m/n/8.5 http://linkinghub.elsevier.com/retrieve/pii/S0045782597001412 
-
- []
-
-
-Underfull \hbox (badness 5563) in paragraph at lines 55--61
-[]\OT1/cmr/m/n/8.5 Borja, R.I., Ta-m-agnini, C., Alarc^^Son, E.: Elasto-
- []
-
-
-Underfull \hbox (badness 4779) in paragraph at lines 55--61
-\OT1/cmr/m/n/8.5 plas-tic con-sol-i-da-tion at fi-nite strain. Part 2: fi-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--61
-\OT1/cmr/m/n/8.5 nite el-e-ment im-ple-men-ta-tion and nu-mer-i-cal ex-
- []
-
-
-Underfull \hbox (badness 2547) in paragraph at lines 55--61
-\OT1/cmr/m/n/8.5 am-ples.  Com-puter Meth-ods in Ap-plied Me-chan-
- []
-
-
-Underfull \hbox (badness 2762) in paragraph at lines 55--61
-\OT1/cmr/m/n/8.5 ics and En-gi-neer-ing \OT1/cmr/bx/n/8 159\OT1/cmr/m/n/8.5 , 1
-03--122 (1998).  URL
- []
-
-
-Overfull \hbox (53.3987pt too wide) in paragraph at lines 55--61
-\OT1/cmr/m/n/8.5 http://www.sciencedirect.com/science/article/pii/S004578259880
-1059 
- []
-
-
-Underfull \hbox (badness 1762) in paragraph at lines 94--99
+Underfull \hbox (badness 1762) in paragraph at lines 92--97
 []\OT1/cmr/m/n/8.5 Diebels, S., Ehlers, W.: Dy-namic anal-y-sis of fully
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--99
+Underfull \hbox (badness 10000) in paragraph at lines 92--97
 \OT1/cmr/m/n/8.5 DOI 10.1002/(SICI)1097-0207(19960115)39:1<81::AID-
  []
 
-
-Underfull \hbox (badness 1424) in paragraph at lines 115--122
+[13]
+Underfull \hbox (badness 1424) in paragraph at lines 120--127
 []\OT1/cmr/m/n/8.5 Huang, D., Wei^^Yen-fels, C., Wrig-gers, P.: Mod-elling
  []
 
 
-Underfull \hbox (badness 1043) in paragraph at lines 136--141
+Underfull \hbox (badness 1043) in paragraph at lines 141--146
 \OT1/cmr/m/n/8.5 mesh-free ap-prox-i-ma-tion schemes for fluid and plas-
  []
 
-[13]
-Underfull \hbox (badness 1215) in paragraph at lines 170--176
+
+Underfull \hbox (badness 1215) in paragraph at lines 175--179
 []\OT1/cmr/m/n/8.5 Molinos, M., Navas, P., Man-zanal, D., Pas-tor, M.:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--176
+Underfull \hbox (badness 10000) in paragraph at lines 175--179
 \OT1/cmr/m/n/8.5 Lo-cal max-i-mum en-tropy ma-te-rial point method
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--176
+Underfull \hbox (badness 10000) in paragraph at lines 175--179
 \OT1/cmr/m/n/8.5 ap-plied to quasi-brittle frac-ture.  En-gi-neer-ing
  []
 
 
-Underfull \hbox (badness 3792) in paragraph at lines 170--176
+Underfull \hbox (badness 3792) in paragraph at lines 175--179
 \OT1/cmr/m/n/8.5 Frac-ture Me-chan-ics \OT1/cmr/bx/n/8 241\OT1/cmr/m/n/8.5 , 10
 7394 (2021).  DOI 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--176
-\OT1/cmr/m/n/8.5 https://doi.org/10.1016/j.engfracmech.2020.107394.
- []
-
-
-Overfull \hbox (78.01558pt too wide) in paragraph at lines 170--176
-\OT1/cmr/m/n/8.5 URL https://www.sciencedirect.com/science/article/pii/S0013794
-420309723 
- []
-
-
-Underfull \hbox (badness 1237) in paragraph at lines 178--186
-[]\OT1/cmr/m/n/8.5 Molinos, M., Navas, P., Pas-tor, M., Stickle, M.M.:
- []
-
-
-Underfull \hbox (badness 1762) in paragraph at lines 178--186
-\OT1/cmr/m/n/8.5 On the dy-namic as-sess-ment of the local-maximum
- []
-
-
-Underfull \hbox (badness 1436) in paragraph at lines 178--186
-\OT1/cmr/m/n/8.5 en-tropy ma-te-rial point method through an ex-plicit
- []
-
-
-Underfull \hbox (badness 1527) in paragraph at lines 178--186
-\OT1/cmr/m/n/8.5 pre-dic-tor{corrector scheme.  Com-puter Meth-ods in
- []
-
-
-Overfull \hbox (56.96107pt too wide) in paragraph at lines 178--186
-\OT1/cmr/m/n/8.5 https://www.sciencedirect.com/science/article/pii/S00457825203
-06976 
- []
-
-
-Underfull \hbox (badness 2990) in paragraph at lines 219--226
+Underfull \hbox (badness 2990) in paragraph at lines 221--228
 []\OT1/cmr/m/n/8.5 Navas, P., Pas-tor, M., Yag^^?ue, A., Stickle, M.M.,
  []
 
 
-Underfull \hbox (badness 3118) in paragraph at lines 219--226
+Underfull \hbox (badness 3118) in paragraph at lines 221--228
 \OT1/cmr/m/n/8.5 Man-zanal, D., Moli-nos, M.: Fluid sta-bi-liza-tion of
  []
 
 
-Underfull \hbox (badness 3088) in paragraph at lines 219--226
+Underfull \hbox (badness 3088) in paragraph at lines 221--228
 \OT1/cmr/m/n/8.5 the u-w biot's for-mu-la-tion at large strain.  In-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--226
+Underfull \hbox (badness 10000) in paragraph at lines 221--228
 \OT1/cmr/m/n/8.5 ter-na-tional Jour-nal for Nu-mer-i-cal and An-a-lyt-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--226
+Underfull \hbox (badness 10000) in paragraph at lines 221--228
 \OT1/cmr/m/n/8.5 i-cal Meth-ods in Ge-ome-chan-ics \OT1/cmr/bx/n/8 45\OT1/cmr/m
 /n/8.5 (3), 336--352
  []
 
 
-Overfull \hbox (6.73656pt too wide) in paragraph at lines 219--226
+Overfull \hbox (6.73656pt too wide) in paragraph at lines 221--228
 \OT1/cmr/m/n/8.5 https://onlinelibrary.wiley.com/doi/abs/10.1002/nag.3158 
  []
 
 
-Underfull \hbox (badness 1412) in paragraph at lines 235--241
+Underfull \hbox (badness 1412) in paragraph at lines 237--243
 \OT1/cmr/m/n/8.5 for-ma-tion regime solved through an im-plicit mesh-
  []
 
 
-Underfull \hbox (badness 2856) in paragraph at lines 235--241
+Underfull \hbox (badness 2856) in paragraph at lines 237--243
 \OT1/cmr/m/n/8.5 free scheme.  Com-pu-ta-tional me-chan-ics \OT1/cmr/bx/n/8 62\
 OT1/cmr/m/n/8.5 , 745--
  []
 
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 2
-44.
+46.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8.5> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 244.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 246.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <8.5> not available
-(Font)              size <8> substituted on input line 244.
+(Font)              size <8> substituted on input line 246.
 
 
-Underfull \hbox (badness 1831) in paragraph at lines 306--309
-\OT1/cmr/m/n/8.5 Math-e-mat-ics, Vol-ume 7. Com-pu-ta-tional In-elas-tic-ity,
+Underfull \hbox (badness 2698) in paragraph at lines 266--272
+[]\OT1/cmr/m/n/8.5 Pastor, M., Tayyebi, S.M., Stickle, M.M., Yag[]'ue,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 266--272
+[]\OT1/cmr/m/n/8.5 A., Moli-nos, M., Navas, P., Man-zanal, D.: A
+ []
+
+
+Underfull \hbox (badness 1237) in paragraph at lines 266--272
+\OT1/cmr/m/n/8.5 depth in-te-grated, cou-pled, two-phase model for de-
+ []
+
+
+Underfull \hbox (badness 2644) in paragraph at lines 266--272
+\OT1/cmr/m/n/8.5 bris flow prop-a-ga-tion.  Acta Geotech-nica \OT1/cmr/bx/n/8 O
+n-line
+ []
+
+
+Underfull \hbox (badness 3769) in paragraph at lines 266--272
+\OT1/cmr/m/n/8.5 (2021).  DOI 10.1007/s11440-020-01114-4.  URL
  []
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 329--336
-[]\OT1/cmr/m/n/8.5 Zhang, H.W., Wang, K., Chen, Z.: Ma-te-rial
+Underfull \hbox (badness 1831) in paragraph at lines 316--319
+\OT1/cmr/m/n/8.5 Math-e-mat-ics, Vol-ume 7. Com-pu-ta-tional In-elas-tic-ity,
  []
 
-
-Underfull \hbox (badness 5490) in paragraph at lines 329--336
-\OT1/cmr/m/n/8.5 point method for dy-namic anal-y-sis of sat-u-rated
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 329--336
-\OT1/cmr/m/n/8.5 porous me-dia un-der ex-ter-nal con-tact/impact of
- []
-
-
-Underfull \hbox (badness 1577) in paragraph at lines 329--336
-\OT1/cmr/m/n/8.5 solid bod-ies.  Com-puter Meth-ods in Ap-plied Me-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 329--336
-\OT1/cmr/m/n/8.5 chan-ics and En-gi-neer-ing \OT1/cmr/bx/n/8 198\OT1/cmr/m/n/8.
-5 (17-20), 1456--1472
- []
-
-
-Underfull \hbox (badness 3439) in paragraph at lines 329--336
-\OT1/cmr/m/n/8.5 (2009).  DOI 10.1016/J.CMA.2008.12.006.  URL
- []
-
-
-Overfull \hbox (56.96107pt too wide) in paragraph at lines 329--336
-\OT1/cmr/m/n/8.5 https://www.sciencedirect.com/science/article/pii/S00457825080
-04349 
- []
-
-
-Underfull \hbox (badness 2119) in paragraph at lines 338--345
-\OT1/cmr/m/n/8.5 porous ma-te-ri-als.  Com-puter Meth-ods in Ap-plied
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 338--345
-\OT1/cmr/m/n/8.5 Me-chan-ics and En-gi-neer-ing \OT1/cmr/bx/n/8 362\OT1/cmr/m/n
-/8.5 , 112742 (2020).
- []
-
-
-Overfull \hbox (56.96107pt too wide) in paragraph at lines 338--345
-\OT1/cmr/m/n/8.5 https://www.sciencedirect.com/science/article/pii/S00457825193
-06322 
- []
-
-
-Underfull \hbox (badness 1590) in paragraph at lines 347--355
-\OT1/cmr/m/n/8.5 con-vected par-ti-cle do-main in-ter-po-la-tion method for
- []
-
-
-Underfull \hbox (badness 1348) in paragraph at lines 347--355
-\OT1/cmr/m/n/8.5 cou-pled dy-namic anal-y-sis of fully sat-u-rated porous
- []
-
-
-Underfull \hbox (badness 4995) in paragraph at lines 347--355
-\OT1/cmr/m/n/8.5 ods in Ap-plied Me-chan-ics and En-gi-neer-ing \OT1/cmr/bx/n/8
- 257\OT1/cmr/m/n/8.5 ,
- []
-
-
-Underfull \hbox (badness 6332) in paragraph at lines 347--355
-\OT1/cmr/m/n/8.5 150--163 (2013).  DOI 10.1016/j.cma.2013.02.001.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 347--355
-\OT1/cmr/m/n/8.5 URL http://dx.doi.org/10.1016/j.cma.2013.02.001
- []
-
-
-Overfull \hbox (56.96107pt too wide) in paragraph at lines 347--355
-\OT1/cmr/m/n/8.5 https://www.sciencedirect.com/science/article/pii/S00457825130
-00327 
- []
-
-) [15
-
-] (./exp_up.aux)
+) [15] (./exp_up.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.28pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
- 4565 strings out of 480608
- 63302 string characters out of 5903630
- 315728 words of memory out of 5000000
- 20335 multiletter control sequences out of 15000+600000
- 547604 words of font info for 85 fonts, out of 8000000 for 9000
+ 4816 strings out of 480608
+ 66234 string characters out of 5903630
+ 323319 words of memory out of 5000000
+ 20576 multiletter control sequences out of 15000+600000
+ 548023 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,13n,45p,1447b,336s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,13n,45p,1439b,338s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pf
 b></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy
 7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10
@@ -1049,7 +938,7 @@ xmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2020/texmf
 -dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2020/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb>
-Output written on exp_up.pdf (15 pages, 3570217 bytes).
+Output written on exp_up.pdf (15 pages, 3572219 bytes).
 PDF statistics:
  485 PDF objects out of 1000 (max. 8388607)
  304 compressed objects within 4 object streams

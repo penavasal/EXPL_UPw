@@ -1,57 +1,61 @@
 This is BibTeX, Version 0.99d (TeX Live 2020)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: exp_up.aux
+White space in argument---line 188 of file exp_up.aux
+ : \citation{ODE1,
+ :                 BlancPastor2012, Torabi2020}
+I'm skipping whatever remains of this command
 The style file: spmpsci.bst
 Database file #1: lib2020.bib
-Repeated entry---line 14220 of file lib2020.bib
+Repeated entry---line 14243 of file lib2020.bib
  : @article{Zheng2013
  :                   ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 14248 of file lib2020.bib
+Repeated entry---line 14271 of file lib2020.bib
  : @article{Zhang2009
  :                   ,
 I'm skipping whatever remains of this entry
 Warning--can't use both volume and number fields in Simo2004
 Warning--missing publisher in Simo2004
-You've used 52 entries,
+You've used 54 entries,
             2945 wiz_defined-function locations,
-            1001 strings with 17107 characters,
-and the built_in function-call counts, 27077 in all, are:
-= -- 2278
-> -- 899
+            1017 strings with 17644 characters,
+and the built_in function-call counts, 28127 in all, are:
+= -- 2357
+> -- 953
 < -- 4
-+ -- 370
-- -- 318
-* -- 1840
-:= -- 3670
-add.period$ -- 105
-call.type$ -- 52
-change.case$ -- 312
++ -- 392
+- -- 338
+* -- 1911
+:= -- 3818
+add.period$ -- 111
+call.type$ -- 54
+change.case$ -- 329
 chr.to.int$ -- 0
-cite$ -- 54
-duplicate$ -- 2329
-empty$ -- 2368
-format.name$ -- 367
-if$ -- 5634
+cite$ -- 56
+duplicate$ -- 2420
+empty$ -- 2449
+format.name$ -- 389
+if$ -- 5850
 int.to.chr$ -- 0
-int.to.str$ -- 52
-missing$ -- 570
-newline$ -- 269
-num.names$ -- 104
-pop$ -- 839
+int.to.str$ -- 54
+missing$ -- 596
+newline$ -- 281
+num.names$ -- 108
+pop$ -- 882
 preamble$ -- 1
-purify$ -- 263
+purify$ -- 277
 quote$ -- 0
-skip$ -- 456
+skip$ -- 472
 stack$ -- 0
-substring$ -- 1454
-swap$ -- 1379
+substring$ -- 1466
+swap$ -- 1429
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 202
+type$ -- 208
 warning$ -- 2
-while$ -- 197
-width$ -- 54
-write$ -- 631
-(There were 2 error messages)
+while$ -- 201
+width$ -- 56
+write$ -- 659
+(There were 3 error messages)
