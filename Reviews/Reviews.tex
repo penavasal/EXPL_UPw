@@ -53,7 +53,9 @@ We agree with the reviewer's opinion on this explanation: the explicit schemes a
 
 \item \textit{Fig. 2 -- this quasi-static monotonic loading consolidation problem may be regarded as a problem with low-frequency loading. They why do the three formulations show such significant differences?}\\
 
-The studied problem cannot be considered as a low-frequency one since the load is applied quickly. Meanwhile
+The studied problem cannot be considered as a low-frequency one since the load is applied quickly: a pressure is applied incrementally from 0 to 2-8 MPa from the beginning until $t_f=$0.05 seconds, when the pressure is kept constant. This load was previously employed by Navas \textit{et al.}~\cite{Navas:17b,Navas:17c}, adapting the one proposed by Li, Borja and Regueiro~\cite{LiBorja2004} when inertial terms are involved.
+
+If we assume a that the ramped part of the load can be approximated by a quarter of sinusoidal load, the period $T$ is four times $t_f$, \textit{i.e.}, 0.2 seconds. Taking into account that $\omega=2\pi/T$, we can consider a frequency, $\omega$, of 31.5 rad/s, which can be regarded as a medium-high frequency loading.
 
 \item \textit{Fig. 5 -- the authors studied the (in)applicability of this figure using numerical examples, and this was the most interesting point to me. But it is not explained how the zone boundaries were originally derived by Zienkiewicz and co-workers, and please elaborate on how they were derived. I also suggest that the authors connect this to explain the results in Fig. 2. }\\
 
@@ -185,6 +187,28 @@ Fixed
 Zhang, H.W. and Wang, K.P.  and Chen, Z.
 \newblock{Material point method for dynamic analysis of saturated porous media under external contact/impact of solid bodies}.
 \newblock{Computer Methods in Applied Mechanics and Engineering}, 2009.
+
+\bibitem{Navas:17b}
+Navas, P., Sanavia, L., L{\'{o}}pez-Querol, S., Yu, R.C.: {Explicit meshfree
+  solution for large deformation dynamic problems in saturated porous media.}
+\newblock Acta geotechnica \textbf{13}, 227--242 (2018).
+\newblock \doi{10.1007/s11440-017-0612-7}.
+
+\bibitem{Navas:17c}
+Navas, P., Sanavia, L., L{\'{o}}pez-Querol, S., Yu, R.C.: u-w formulation for
+  dynamic problems in large deformation regime solved through an implicit
+  meshfree scheme.
+\newblock Computational mechanics \textbf{62}, 745--760 (2018).
+\newblock \doi{10.1007/s00466-017-1524-y}.
+
+\bibitem{LiBorja2004}
+Li, C., Borja, R.I., Regueiro, R.A.: {Dynamics of porous media at finite
+  strain}.
+\newblock Computer Methods in Applied Mechanics and Engineering
+  \textbf{193}(36-38), 3837--3870 (2004).
+\newblock \doi{10.1016/j.cma.2004.02.014}
+
+
 
 \end{thebibliography}
 
