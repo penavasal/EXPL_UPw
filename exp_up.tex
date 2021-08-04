@@ -321,10 +321,12 @@ being the underlined terms the ones of the predictor step, which will be called 
 
 About the numerical stability of the proposed methodology, it is guaranteed when the Courant-Friedrichs-Lewy (CFL) condition is satisfied. In particular, the time step, $\Delta t$, should be small enough to ensure that the compressive wave can travel between nodes, i.e. 
 
-  \begin{equation}
-\Delta t < \frac{h}{V_c},
+\begin{equation}
+\label{eq:courant}
+\Delta t < \frac{\textcolor{red}{\Delta x}}{V_c},
 \end{equation}
-where $h$ represents the discretization size and $V_c$ is the \textit{p}-wave velocity (see \cite{zienkiewicz1980}), which is defined by  
+
+where \textcolor{red}{$\Delta x$} represents the \textcolor{red}{minimum} mesh size, \textcolor{blue}{further details about the procurement of this parameter will be given in the following subsection}. \textcolor{blue}{Finally,} $V_c$ is the \textit{p}-wave velocity (see \cite{zienkiewicz1980}), which is defined by  
 \begin{equation}
 V_c=\sqrt{\left( D+\frac{K_f}{n}\right) \frac{1}{\rho}}, \; \; \textrm{where} \;\; D=\frac{2G(1-\nu)}{1-2\nu}.
 \end{equation}\label{ex_2}
@@ -348,7 +350,9 @@ The parameter \textcolor{red}{$\beta_{LME}$} defines the shape of the neighborho
 \textcolor{red}{\beta_{LME}}=\frac{\textcolor{red}{\gamma_{LME}}}{h^2}.
 \end{equation} 
 
-It bears emphasis that $\boldsymbol{\lambda}^*(\bf x)$ comes from the minimization of the function $g(\boldsymbol{\lambda})=\log Z(\bf x, \boldsymbol{\lambda})$ to guarantee the maximum entropy. Moreover, in the remapping of the shape function, before recomputing the aforementioned minimization process, it is necessary to update the neighborhood and the parameter \textcolor{red}{$\beta_{LME,k+1}^p < \beta_{LME,k}^p$} in order to improve the stability.\\
+It bears emphasis that $\boldsymbol{\lambda}^*(\bf x)$ comes from the minimization of the function $g(\boldsymbol{\lambda})=\log Z(\bf x, \boldsymbol{\lambda})$ to guarantee the maximum entropy. Moreover, in the remapping of the shape function, before recomputing the aforementioned minimization process, it is necessary to update the neighborhood and the parameter \textcolor{red}{$\beta_{LME,k+1}^p < \beta_{LME,k}^p$} in order to improve the stability.
+
+\textcolor{blue}{The discretization size, $h$, is an interesting topic when dealing with explicit schemes in the OTM methodology. Although the neighborhood or influence radius is larger than in the traditional FEM, we should take $h$ as the distance between the current node and the closest one since it is the more limiting one. Furthermore, the value of $\Delta x$ expressed in Eq.~\ref{eq:courant} will be obtained as the minimum value of $h$ for each node in the all nodal set.}
 
 By employing the outlined shape functions and applying Galerkin procedure to the weak form of Eqs.~\eqref{eq_uw13} and~\eqref{eq_uw14}
  (See~\cite{Sanavia:02,Sanavia:06} for details), the following matrix equations appear:
