@@ -109,11 +109,11 @@ In this paper an efficient and robust methodology to simulate saturated soils su
 \section{Introduction}
 \label{intro}
 
-Modeling saturated soils under dynamic loads is of crucial importance when researchers deal with fast phenomena, like landslide propagation. Moreover, the more catastrophic 3D problems should also include large deformations. Despite the importance of both aspects, dynamic saturated problems and large deformations, researches focused on these topics at once are limited. One of the main reasons why there is a lack of researches in this paramount issue of geomechanics might be that a powerful and useful methodology requires complex hidromechanical models including inertial terms coupled with hyper-elastoplastic constitutive models where the deformation gradient acts as strain measure. Moreover, as analytical solutions can only be achieved for few idealized configurations, cutting edge numerical techniques must be considered to attain accurate and robust solutions in real-world problems.
+Modeling saturated soils under dynamic loads is of crucial importance when researchers deal with fast phenomena, like landslide propagation. Moreover, the more catastrophic 3D problems should also include large deformations. Despite the importance of both aspects, dynamic saturated problems and large deformations, \textcolor{red}{research} focused on these topics at once \textcolor{red}{is} limited. One of the main reasons why there is a lack of \textcolor{red}{research} in this paramount issue of geomechanics might be that a powerful and useful methodology requires complex \textcolor{red}{hydro-mechanical} models including inertial terms coupled with hyper-elastoplastic constitutive models where the deformation gradient acts as strain measure. Moreover, as analytical solutions can only be achieved for few idealized configurations, cutting edge numerical techniques must be considered to attain accurate and robust solutions in real-world problems.
 
 The fluid saturated phenomenon has been widely studied in the numerical geotechnical field, where a big range of solutions can be found regarding the formulation considered for the coupled problem (either simplified or complete), the assumptions made with or without accelerations and the numerical techniques used to solve the equations, both in the spatial (mesh or meshfree-based techniques) and temporal dimension (explicit or implicit schemes). 
 
-The first formulations aimed to describe the physics behind a saturated porous medium are found in the governing equations introduced by Biot \cite{Biot1956}, later reviewed by Zienkiewicz and coworkers \cite{Zienkiewicz99,zienkiewicz1980,zienkiewicz1984,zienkiewicz1990a}. Similar equations were obtained by Lewis and Schrefler \cite{LewisSchrefler98} within the Hybrid Mixture Theory, in this case, starting from the microscopic scale, improving the consistency and robustness of the formulation. Regarding the inertial terms, both acceleration of fluid and solid phases are employed in the complete formulation, covering a wide range of frequencies~\cite{Jeremic08,Muraleetharan09}. This formulation is usually expressed in terms of the relative water displacements, $w$, which has been proved to be successful ~\cite{LopezQuerolB2006,Navas2016}. However, other researches presents this complete formulation by means of the total displacement of the water, $U$, as a nodal unknown (Ye {\it et al.}~\cite{Ye2014} and Sladek~\etal~\cite{Sladek2014}). Concerning the simplified formulations, the $u-w$ approach is computationally more expensive than the $u-p_w$ since the former employs more degrees of freedom per node. Thus, its utilization is not recommended when the $u-p_w$ formulation is sufficient to capture the complete wave propagation in a saturated soil problem. 
+The first formulations aimed to describe the physics behind a saturated porous medium are found in the governing equations introduced by Biot \cite{Biot1956}, later reviewed by Zienkiewicz and coworkers \cite{Zienkiewicz99,zienkiewicz1980,zienkiewicz1984,zienkiewicz1990a}. Similar equations were obtained by Lewis and Schrefler \cite{LewisSchrefler98} within the Hybrid Mixture Theory, in this case, starting from the microscopic scale, improving the consistency and robustness of the formulation. Regarding the inertial terms, both acceleration of fluid and solid phases are employed in the complete formulation, covering a wide range of frequencies~\cite{Jeremic08,Muraleetharan09}. This formulation is usually expressed in terms of the relative water displacements, $w$, which has been proved to be successful ~\cite{LopezQuerolB2006,Navas2016}. However, other \textcolor{red}{research} presents this complete formulation by means of the total displacement of the water, $U$, as a nodal unknown (Ye {\it et al.}~\cite{Ye2014} and Sladek~\etal~\cite{Sladek2014}). Concerning the simplified formulations, the $u-w$ approach is computationally more expensive than the $u-p_w$ since the former employs more degrees of freedom per node. Thus, its utilization is not recommended when the $u-p_w$ formulation is sufficient to capture the complete wave propagation in a saturated soil problem. 
 The $u-p_w$ (solid displacement -- fluid pressure) formulation is widely used in dynamics to solve different hydromechanical coupled problems due to its simplicity as well as the high accuracy achieved for a great variety of geomechanical problems (e.g. \cite{CaoSanavia:16,zienkiewicz1990a,Zienkiewicz99}) . 
 
 
@@ -123,7 +123,7 @@ The $u-p_w$ (solid displacement -- fluid pressure) formulation is widely used in
 Regarding the application of the Biot's equations under large deformation regime, the first works were  carried out by Diebels and Ehlers ~\cite{DiebelsE:96}, Borja \textit{et al.}~\cite{borja95,borja98} and Armero~\cite{Armero99} who tested their models by simulating the constitutive behavior of the the solid phases with an hyperelastic, Cam-Clay and Drucker-Prager theories respectively.  Around the same period, Ehlers and Eipper ~\cite{Ehlers:99} applied a new Neo-Hookean constitutive model to represent the compaction of the soil up to the solid compaction point. An interesting extension was made by Sanavia~\textit{et al.} to unsaturated soils~\cite{Sanavia:01,Sanavia:02b,Sanavia:02}. Again, most of these models were solved employing implicit schemes where the linearization of the $u-p_w$ equations was necessary. There is a scarcity of examples in the specialized literature of explicit solutions in time for the $u-p_w$ formulation under large deformation regime. However, for saturated porous media undergoing a fast deformation process, this type of time integration schemes are a feasible alternative, as the usual restriction required for the time step to attain a stable solution can be assumed, as far as numerical efficiency is concerned. The present research aims to cover the lack of explicit time integration solutions for the $u-p_w$ formulation undergoing large deformations.
 
 
-In recent years, in the computational mechanics field, large strain approaches go hand in hand with meshfree methods due to their numerous advantage to reproduce large relative displacements. In the geotechnical field, this combination of tools show excellent results in problems such as landslides, liquefaction or other natural disasters. Saturated soils are also modeled through these approaches. Recent promising works can be found in the literature like Pastor {\it et al.}~\cite{Pastor2021} with the Smooth Particle Hydrodynamics (SPH) and the works of Bandara and Soga~\cite{Bandara2016a}, Ceccato and Simonini ~\cite{Ceccato:16} or Zhao and Choo~\cite{Choo2020} with the Material Point Method (MPM). Precisely, with this meshfree scheme, we find excellent contributions to the explicit $u-p_w$ approach (see~\cite{Zhang2009,Zheng2013}). The small strain approach is employed within these researches.
+In recent years, in the computational mechanics field, large strain approaches go hand in hand with meshfree methods due to their numerous advantage to reproduce large relative displacements. In the geotechnical field, this combination of tools show excellent results in problems such as landslides, liquefaction or other natural disasters. Saturated soils are also modeled through these approaches. Recent promising works can be found in the literature like Pastor {\it et al.}~\cite{Pastor2021} with the Smooth Particle Hydrodynamics (SPH) and the works of Bandara and Soga~\cite{Bandara2016a}, Ceccato and Simonini ~\cite{Ceccato:16} or Zhao and Choo~\cite{Choo2020} with the Material Point Method (MPM). Precisely, with this meshfree scheme, we find excellent contributions to the explicit $u-p_w$ approach (see~\cite{Zhang2009,Zheng2013}). The small strain approach is employed within \textcolor{red}{this research}.
 
 The goal of the present research is the proposal of a robust predictor-corrector explicit algorithm for the $u-p_w$ formulation at large strain where the  spacial domain has been discretized into nodes and material points following the Optimal Transportation Meshfree (OTM) scheme of Li {\it et al.}~\cite{li2010}. The shape functions developed by Arroyo and Ortiz~\cite{arroyo2006} based on the principle of maximum entropy~\cite{Sukumar2004} are also employed. 
 
@@ -198,9 +198,9 @@ In addition, $\alpha$ is the Biot's coefficient:
 \alpha=1-\frac{K_T}{K_s}.
 \end{equation}
 where $K_T$ denotes the %\sout{tangential bulk modulus of an isotropic elastic material}
- bulk modulus of the solid skeleton.  Biot's coefficient may be usually assumed equal to one in soils as the grains are much more rigid than the mixture. 
+ bulk modulus of the solid skeleton.  Biot's coefficient may be usually assumed equal to one in soils as the grains are \textcolor{red}{less deformable} than the mixture. 
    
-In the current work, the soil is assumed to be totally saturated, i.e. $V_v$ coincides with the water volume, which results  $S_w$ equals to one and $S_g=0$. As we also consider iso-thermal multiphase media,  $D^s T/D t =0, , k^{rw}=1$, $e^w=0$, consequently, %\sout{$\dot{m}=0$,} 
+In the current work, the soil is assumed to be totally saturated, i.e. $V_v$ coincides with the water volume, which results  $S_w$ equals to one and $S_g=0$. As we also consider iso-thermal multiphase media,  $D^s T/D t =0$, $e^w=0$, consequently, %\sout{$\dot{m}=0$,} 
 $D^s S_w/D t =0$. If  additionally the spatial variation of the fluid density is neglected and we take into consideration Eq.~(\ref{eq_uw4}),  Eq.~(\ref{eq_uw6}) is simplified as,
 \begin{equation}
 \frac{\dot{p_w}}{Q} +  \mbox{div }  \boldsymbol{\dot{u}} + \mbox{div } \boldsymbol{\dot{w}} = 0 \label{eq_uw10},
@@ -333,22 +333,22 @@ V_c=\sqrt{\left( D+\frac{K_f}{n}\right) \frac{1}{\rho}}, \; \; \textrm{where} \;
 \label{subsec:41}
 The Optimal Transportation Meshfree~\cite{li2010,li2014,Huang2019} has been demonstrated to perform reasonably well in geotechnical problems and, specifically, in multiphase problems~\cite{Navas2020}. It is based in the conjunction of material points and nodes. As mentioned before, the shape functions are based on the work of Arroyo and Ortiz~\cite{arroyo2006}, who defined the Local Max-Ent shape function (LME) of the material point $\boldsymbol(x)$ with respect to the neighborhood $\boldsymbol(x_a)$ as follows:
 \begin{equation} \label{eq_N1}
-N_a(\textbf{x})=\frac{\exp\left[ -\beta \; |\bf x-x_a|^2 +  \boldsymbol{\lambda}^*  \cdot  (x-x_a)  \right] } {Z(\textbf{x},\boldsymbol{\lambda}^*(\textbf{x}))},
+N_a(\textbf{x})=\frac{\exp\left[ -\textcolor{red}{\beta_{LME}} \; |\bf x-x_a|^2 +  \boldsymbol{\lambda}^*  \cdot  (x-x_a)  \right] } {Z(\textbf{x},\boldsymbol{\lambda}^*(\textbf{x}))},
 \end{equation}
 where the computation is done along a neighborhood $N_b$ and 
 \begin{equation}\label{eq_N2}
-Z({\bf x}, {\boldsymbol{\lambda}}) = \sum_{a=1}^{Nb}{ \exp \left[ -\beta \, |{\bf x-x_a}|^2 + \boldsymbol{\lambda}  \cdot  \bf {(x-x_a)}         \right]}.
+Z({\bf x}, {\boldsymbol{\lambda}}) = \sum_{a=1}^{Nb}{ \exp \left[ -\textcolor{red}{\beta_{LME}} \, |{\bf x-x_a}|^2 + \boldsymbol{\lambda}  \cdot  \bf {(x-x_a)}         \right]}.
 \end{equation}
 The first derivatives of the shape function can be obtained from the own shape function and its Hessian matrix \textbf{J} by employing the following expression:
 \begin{eqnarray}
 \nabla N^*_a &=& -N^*_a \,  (\textbf{J}^*)^{-1} \,  (\bf x-x_a) \label{eq_N3} ,
 \end{eqnarray}
-The parameter $\beta$ defines the shape of the neighborhood and it is related with the discretization size (or nodal spacing), $h$,  and the constant, $\gamma$, which controls the locality of the shape functions, as follows,
+The parameter \textcolor{red}{$\beta_{LME}$} defines the shape of the neighborhood and it is related with the discretization size (or nodal spacing), $h$,  and the constant, $\textcolor{red}{\gamma_{LME}}$, which controls the locality of the shape functions, as follows,
 \begin{equation}\label{eqLM3}
-\beta=\frac{\gamma}{h^2}.
+\textcolor{red}{\beta_{LME}}=\frac{\textcolor{red}{\gamma_{LME}}}{h^2}.
 \end{equation} 
 
-It bears emphasis that $\boldsymbol{\lambda}^*(\bf x)$ comes from the minimization of the function $g(\boldsymbol{\lambda})=\log Z(\bf x, \boldsymbol{\lambda})$ to guarantee the maximum entropy. Moreover, in the remapping of the shape function, before recomputing the aforementioned minimization process, it is necessary to update the neighborhood and the parameter $\beta_{k+1}^p < \beta_{k}^p$ in order to improve the stability.\\
+It bears emphasis that $\boldsymbol{\lambda}^*(\bf x)$ comes from the minimization of the function $g(\boldsymbol{\lambda})=\log Z(\bf x, \boldsymbol{\lambda})$ to guarantee the maximum entropy. Moreover, in the remapping of the shape function, before recomputing the aforementioned minimization process, it is necessary to update the neighborhood and the parameter \textcolor{red}{$\beta_{LME,k+1}^p < \beta_{LME,k}^p$} in order to improve the stability.\\
 
 By employing the outlined shape functions and applying Galerkin procedure to the weak form of Eqs.~\eqref{eq_uw13} and~\eqref{eq_uw14}
  (See~\cite{Sanavia:02,Sanavia:06} for details), the following matrix equations appear:
@@ -441,7 +441,7 @@ $$
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%
 
-\section{Validation examples}
+\section{\textcolor{red}{Verification} examples}
 \label{sec:5}
 This section is composed by two different problems. The first one deals with a consolidation, either pseudo-static or cyclic one, in order to validate the model in typical porous media applications. The second one, seeking the assessment of the performance of the proposed algorithm in a real geotechnical problem, studies the failure of a vertical wall of saturated soil.
 
@@ -460,7 +460,7 @@ A regular nodal discretization of 0.5 m. size is employed, taking into account t
 \subsubsection{Large strain consolidation}
 \label{sec:5:1:1}
 
-Our goal in this section is the validation of the presented methodology when large deformation occurs. Taking this into consideration, the consolidation problem solved by Li \textit{et al.}~\cite{LiBorja2004}  is performed as a reference. The aforementioned geometry, seen in Fig.~\ref{fig:1}.A, is adopted. The column of soil is loaded following the curve of Fig.~\ref{fig:1}.B; increasing to reach $P_{max}$ at $t_0=0.05$~s, when the pressure is kept constant until the end of the simulation (0.5 s). The soild and water parameters are listed in Tab.~\ref{tab:4}, being the Neo-Hookean material of Eq.~(\ref{eq_nh2}) assumed in this case. 
+Our goal in this section is the \textcolor{red}{verification} of the presented methodology when large deformation occurs. Taking this into consideration, the consolidation problem solved by Li \textit{et al.}~\cite{LiBorja2004}  is performed as a reference. The aforementioned geometry, seen in Fig.~\ref{fig:1}.A, is adopted. The column of soil is loaded following the curve of Fig.~\ref{fig:1}.B; increasing to reach $P_{max}$ at $t_0=0.05$~s, when the pressure is kept constant until the end of the simulation (0.5 s). The soild and water parameters are listed in Tab.~\ref{tab:4}, being the Neo-Hookean material of Eq.~(\ref{eq_nh2}) assumed in this case. 
 %%%%%%%%
 \begin{table}
 \centering
@@ -487,7 +487,7 @@ Our goal in this section is the validation of the presented methodology when lar
 \label{fig:5}      
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%
-The validation is made against the solution proposed by Li \textit{et al.}~\cite{LiBorja2004}. The settlement of the top surface along time is checked for two different values of $P_{max}$, namely 2 and 8 MPa, that provide two different scenarios, small and large deformation regimes. The obtained solutions are seen in Fig.~\ref{fig:5} for the two cases. Three different solutions are depicted: Static $u-p_w$ (Li \textit{et al.}~\cite{LiBorja2004}), Dynamic $u-w$ (Navas \textit{et al.}~\cite{Navas:17b}) and Dynamic $u-p_w$ (present research). At the final of the consolidation, similar values of the settlement are achieved. Since inertial terms are included in the proposed methodology, the comparison along the entire process described by Li \textit{et al.}~\cite{LiBorja2004} is not possible, since in that research the quasi static $u-p_w$ formulation is assumed. Consequently, a ramped loading, contrary to the step-wise one employed in \cite{LiBorja2004}, is necessary in our case  to avoid non-physical sudden loading. Similarly, the results are not comparable against the $u-w$ formulation since fluid acceleration, neglected in the present research, were considered. Because of this fact, in the $u-w$ solution, we can see that the settlement to reach values bigger than the final settlement between 0.18 and 0.3 seconds. It is due to the fluid wave propagation, neglected in the present research.
+The \textcolor{red}{verification} is made against the solution proposed by Li \textit{et al.}~\cite{LiBorja2004}. The settlement of the top surface along time is checked for two different values of $P_{max}$, namely 2 and 8 MPa, that provide two different scenarios, small and large deformation regimes. The obtained solutions are seen in Fig.~\ref{fig:5} for the two cases. Three different solutions are depicted: Static $u-p_w$ (Li \textit{et al.}~\cite{LiBorja2004}), Dynamic $u-w$ (Navas \textit{et al.}~\cite{Navas:17b}) and Dynamic $u-p_w$ (present research). At the final of the consolidation, similar values of the settlement are achieved. Since inertial terms are included in the proposed methodology, the comparison along the entire process described by Li \textit{et al.}~\cite{LiBorja2004} is not possible, since in that research the quasi static $u-p_w$ formulation is assumed. Consequently, a ramped loading, contrary to the step-wise one employed in \cite{LiBorja2004}, is necessary in our case  to avoid non-physical sudden loading. Similarly, the results are not comparable against the $u-w$ formulation since fluid acceleration, neglected in the present research, were considered.  \textcolor{red}{In addition, the existence of displacements larger than the final settlement between 0.18 s. and 0.3 s. can be attributed to the above observation regarding the u-w formulation.} It is due to the fluid wave propagation, neglected in the present research.
 
 Additionally, the obtained settlement is compared, for both loading states (2 and 8 MPa),  against the small strain solution, which was provided also by Li \textit{et al.}~\cite{LiBorja2004}. In Fig. \ref{fig:6} this comparison is plotted. As much is the deformation, as more important is the employment of the Finite Deformation regime since, as it is seen in this application, spurious results can be obtained.
 
@@ -501,7 +501,7 @@ Additionally, the obtained settlement is compared, for both loading states (2 an
 \subsubsection{Dynamic consolidation}
 \label{sec:5:1:2}
 
-Since soil inertial terms are considered in the proposed $u-p_w$ formulation, a dynamic problem has been proposed in order to see the performance of the proposed methodology. An interesting test was firstly studied by Sabetamal~\etal~\cite{Sabetamal:2015} and later by Monforte~\textit{et al.}~\cite{Monforte2019} and Navas~\textit{et al.}~\cite{Navas2016b,Navas2021}. Also the Neo-Hookean material is utilized. The material properties provided in table~\ref{tab:2}, and the sinusoidal load, shown in Fig.~\ref{fig:1},C), are employed. In those researches, complete formulation ($u-w-p_w$ and  $u-w$ )results were provided. In this case, $u-p_w$ solutions of the pore pressure at different locations, for both stabilized and unstabilized, are presented against the stabilized $u-w$ one in Fig.~\ref{fig_con3}. Slightly differences are encountered. Following, possible reasons are detailed.
+Since soil inertial terms are considered in the proposed $u-p_w$ formulation, a dynamic problem has been proposed in order to see the performance of the proposed methodology. An interesting test was firstly studied by Sabetamal~\etal~\cite{Sabetamal:2015} and later by Monforte~\textit{et al.}~\cite{Monforte2019} and Navas~\textit{et al.}~\cite{Navas2016b,Navas2021}. Also the Neo-Hookean material is utilized. The material properties provided in table~\ref{tab:2}, and the sinusoidal load, shown in Fig.~\ref{fig:1},C), are employed. In \textcolor{red}{the aforementioned research}, complete formulation ($u-w-p_w$ and  $u-w$ ) results were provided. In this case, $u-p_w$ solutions of the pore pressure at different locations \sout{, for both stabilized and unstabilized,} are presented against the stabilized $u-w$ one in Fig.~\ref{fig_con3}. Slightly differences are encountered. Following, possible reasons are detailed.
 
 \begin{table}[!t]
 \centering
@@ -576,7 +576,7 @@ On the other hand, the second comparison is made in the settlement. In Sabetamal
 \label{sec:5:2}
 In this Section, the current methodology is applied the drainage of a square domain of saturated soil loaded on the top right half by a rigid footing. This load provokes the failure of the material in a typical vertical cut, whose shear band varies depending on the material properties, described in Section~\ref{sec:3} for a hyper-elastoplastic material. Precisely, the importance of this example lies in fact that, depending on the dilatancy angle, the formation of the shear band and the deformation pattern as well as the pore pressure may vary. For all the cases,  the  friction angle is kept at 20$^\circ$. 
 
-The same problem was previously studied by Sanavia~\textit{et al.}~\cite{Sanavia:01,Sanavia:02b} and Navas~\textit{et al.}~\cite{Navas:17b,Navas:17c} for both quasi static and dynamic regimes respectively. The geometry and material properties are shown in Fig.~\ref{fig:7}. A displacement of 1~m on the loaded boundary, $\Gamma_4$, is imposed  gradually during the simulation, which has been fixed of 50~s. A regular 12x12 nodal discretization is employed, which corresponds to a nodal spacing of 0.833 m. The time step is of 5 ms.
+The same problem was previously studied by Sanavia \textit{et al.}~\cite{Sanavia:01,Sanavia:02b} and Navas~\textit{et al.}~\cite{Navas:17b,Navas:17c} for both quasi static and dynamic regimes respectively. The geometry and material properties are shown in Fig.~\ref{fig:7}. A displacement of 1~m on the loaded boundary, $\Gamma_4$, is imposed  gradually during the simulation, which has been fixed of 50~s. A regular 12x12 nodal discretization is employed, which corresponds to a nodal spacing of 0.833 m. The time step is of 5 ms.
 
 % For one-column wide figures use
 \begin{figure}
@@ -598,7 +598,7 @@ Results are depicted, at the final stage, in Fig.~\ref{fig:8}. In the referred b
 
 About the shear band, it can be observed that there are no big  variations on  the obtained peak values of the equivalent plastic strain when the dilatancy angle changes, being slighlty bigger when the dilatancy angle decreases. However, an important decrease of the shear band slope is noticed when dilatancy decreases. For associate plasticity, $\psi=20^\circ$, the shear band almost reaches the toe of the lateral wall. It should be noticed that the formation of shear bands induce to locking based instabilities. Those should be overcome with the appropriate techniques.
 
-In addition, the effect of the plastic dilatancy (contractancy) is evidenced by the negative (positive) pore pressure within the shear band zone (see Fig.~\ref{fig:8}).  Moreover, in the case of zero dilatancy angle, no marked pore pressure variation is observed within the shear band zone. Similar phenomena were obtained in the cited researches. In order to study the evolution of the principal results of the problem, the history of the pore pressure  in a material point close to the shear band (Point P, see Fig. \ref{fig:7}) have been depicted in Figs. \ref{fig:13}.
+In addition, the effect of the plastic dilatancy (contractancy) is evidenced by the negative (positive) pore pressure within the shear band zone (see Fig.~\ref{fig:8}).  Moreover, in the case of zero dilatancy angle, no marked pore pressure variation is observed within the shear band zone. Similar phenomena were obtained in the cited \textcolor{red}{research}. In order to study the evolution of the principal results of the problem, the history of the pore pressure  in a material point close to the shear band (Point P, see Fig. \ref{fig:7}) have been depicted in  \textcolor{red}{Fig.}~\ref{fig:13}.
 
 \begin{figure}
   \includegraphics[width=0.5\textwidth]{Fig/pressure.pdf}
@@ -607,9 +607,9 @@ In addition, the effect of the plastic dilatancy (contractancy) is evidenced by 
 \end{figure}
 %%%%
 
-For positive dilatancy values, smooth pore pressure evolution is observed. In addition, the peak pressure signals the initiation of plastic strain localization or shear band. The further extension of the shear band is accompanied by the continuous decreasing of the pore pressure. The material with dilatancy equal to 0$^\circ$ experiences a softer decreasing (close to a 0$^\circ$ slope), in this case, due to the dissipation of the pore pressure in the permeable boundary, not because of the shear band. From the same figure it can be seen a very unstable behavior of the soil of contractive angle. This happens since the soil does not admit more load: it is completely failed.
+For positive dilatancy values, smooth pore pressure evolution is observed. In addition, the peak pressure signals the initiation of plastic strain localization or shear band. The further extension of the shear band is accompanied by the continuous decreasing of the pore pressure. The material with dilatancy equal to 0$^\circ$ experiences a softer decreasing (close to a 0$^\circ$ slope), in this case, due to the dissipation of the pore pressure in the permeable boundary, not because of the shear band. From the same figure it can be seen a very unstable behavior of the soil of contractive angle. This happens since the soil does not admit more load: it is completely failed. \textcolor{blue}{In the case of $\psi=20^\circ$, it can be noted in Fig.~\ref{fig:13}  that the negative water pressure within the shear band is smaller than zero, indicating the possible occurrence of cavitation when lower values of -98986 Pa (at ambient temperature) are reached. This phenomenon should be modeled by extending the formulation of this paper to unsaturated conditions in order to properly capture this phenomenon.}
 
-It must be pointed out that, in this research, the sought goal is the assessment of the performance of the proposed algorithm within this geotechnical problem. Other interesting studies of the performance of the Optimal Transportation Method were carried out in~\cite{Navas:17b}. Of coarse, the influence of the size of the nodal discretization was important, getting, with a finer discretization, better resolution of the shear band and better pore pressure distribution. Also regular distributions provide better results. Finally, the importance of the neighborhood size was assessed, concluding that larger values of $\gamma$ (which corresponds to smaller neighborhood) reduce the spurious smoothing out of the shear band, being the best results obtained for $\gamma$=1.4.
+It must be pointed out that, in this research, the sought goal is the assessment of the performance of the proposed algorithm within this geotechnical problem. Other interesting studies of the performance of the Optimal Transportation Method were carried out in~\cite{Navas:17b}. \textcolor{red}{Of course}, the influence of the size of the nodal discretization was important, getting, with a finer discretization, better resolution of the shear band and better pore pressure distribution. Also regular distributions provide better results. Finally, the importance of the neighborhood size was assessed, concluding that larger values of $\gamma$ (which corresponds to smaller neighborhood) reduce the spurious smoothing out of the shear band, being the best results obtained for $\gamma$=1.4.
 
 \section{Conclusions}
 \label{sec:6}
@@ -619,7 +619,7 @@ The robustness of the proposed formulation is assessed by applying it to differe
 
 Finally, in the last case of analysis, a vertical cut is conducted for a hyper-elastoplastic saturated porous material under a Drucker-Prager flow rule. The proposed model is capable to capture the complex pore water pressure evolution within the highly distorted plastic shear band in accordance with the dilatancy of the  material. Furthermore, the results obtained in the present manuscript are in agreement with the work of Sanavia \textit{et al.}\cite{Sanavia:02b} i.e. contractive materials accumulate pore pressure within the shear band  while  in  the  dilatant  shear  band  a  reduction of pore pressure is observed.
 
-One of the main conclusions driven by the good performance of the proposed methodology is its extension to other particle based numerical techniques. Previous researches of the same authors, regarding the Material Point Method, show the excellent fulfillment with Local Max-Ent shape function and an explicit predictor-corrector scheme (see~\cite{Molinos2021,Molinos2021b}), being both numerical techniques employed within this research. The robutness of the explicit scheme here presented encourage the authors to study other coupled formulations as well as the possibility of making dynamic relaxation techniques in order to extend the range of applicability to long simulations. Even though, since the explicit predictor-corrector time integration approach, considered in the present research, seems to capture adequately the complex hydromechanical behavior at large strains, there are other explicit time integration strategies (Runge-Kutta schemes, embedded Runge-Kutta schemes, symplectic algorithms, Taylor-Galerking based techniques, etc.~\cite{ODE1, BlancPastor2012, Torabi2020}) with already proven capabilities in other scientific fields that should be also considered.
+One of the main conclusions driven by the good performance of the proposed methodology is its extension to other particle based numerical techniques. Previous \textcolor{red}{research} of the same authors, regarding the Material Point Method, show the excellent fulfillment with Local Max-Ent shape function and an explicit predictor-corrector scheme (see~\cite{Molinos2021,Molinos2021b}), being both numerical techniques employed within this research. The robutness of the explicit scheme here presented encourage the authors to study other coupled formulations as well as the possibility of making dynamic relaxation techniques in order to extend the range of applicability to long simulations. Even though, since the explicit predictor-corrector time integration approach, considered in the present research, seems to capture adequately the complex hydromechanical behavior at large strains, there are other explicit time integration strategies (Runge-Kutta schemes, embedded Runge-Kutta schemes, symplectic algorithms, Taylor-\textcolor{red}{Galerkin} based techniques, etc.~\cite{ODE1,BlancPastor2012,Torabi2020}) with already proven capabilities in other scientific fields that should be also considered.
 
 \begin{acknowledgements}
 This research was funded by the \textit{Ministerio de Ciencia e Innovaci\'on}, under Grant Number, PID2019-105630GB-I00; and the European
@@ -635,7 +635,7 @@ Research Council-H2020 MSCA-RISE, Grant Agreement No 101007851 (DISCO2-STORE), b
 The authors declare that they have no conflict of interest.
 
 \section*{Author contributions}
-Conceptualization and mathematical methodology, P. Navas and M. M. Stickle. Implementation, M. Molinos and P.Navas. Validation, A. Yag\"ue and D.Manzanal. Meanwhile supervision, project administration and funding acquisition belongs to M. Pastor. All authors have contributed to the writing and original draft preparation and they read and agreed to the published version of the manuscript.
+Conceptualization and mathematical methodology, P. Navas and M. M. Stickle. Implementation, M. Molinos and P.Navas. \textcolor{red}{Verification}, A. Yag\"ue and D.Manzanal. Meanwhile supervision, project administration and funding acquisition belongs to M. Pastor. All authors have contributed to the writing and original draft preparation and they read and agreed to the published version of the manuscript.
 
 %\appendix
 
@@ -663,7 +663,7 @@ Conceptualization and mathematical methodology, P. Navas and M. M. Stickle. Impl
 \item $J=\mbox{det}\boldsymbol{F}$: Jacobian determinant
 \item $k$: intrinsic permeability
 \item $\boldsymbol{k}$: permeability tensor
-\item $K$: bulk modulus
+\item $K_T$: \textcolor{red}{bulk modulus of the solid skeleton}
 \item $K_s$: bulk modulus of the solid grains
 \item $K_w$: bulk modulus of the fluid
 \item $\boldsymbol{M}$ : mass matrix
@@ -685,7 +685,7 @@ Conceptualization and mathematical methodology, P. Navas and M. M. Stickle. Impl
 
 \item $\alpha_{_F}$, $\alpha_{_Q}$ and $\beta$: Drucker-Prager parameters
 \item $\beta$, $\gamma$: time integration schemes parameters
-\item $\beta$, $\gamma$: LME parameters related with the shape of the neighborhood
+\item \textcolor{red}{$\beta_{LME}$, $\gamma_{LME}$}: LME parameters related with the shape of the neighborhood
 \item $\Delta\gamma$: increment of equivalent plastic strain
 \item $\overline{\varepsilon}^p$: equivalent plastic strain
 \item $\boldsymbol{\varepsilon}$: small strain tensor
@@ -725,7 +725,9 @@ Superscripts and subscripts
 %\bibliographystyle{spbasic}      % basic style, author-year citations
 \bibliographystyle{spmpsci}      % mathematics and physical sciences
 %\bibliographystyle{spphys}       % APS-like style for physics
-\bibliography{lib2020}   % name your BibTeX data base
+
+%\bibliography{lib2020}   % name your BibTeX data base
+\bibliography{Biblio_explicit_upw}
 
 \end{document}
 % end of file template.tex
