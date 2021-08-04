@@ -100,7 +100,7 @@
 \maketitle
 
 \begin{abstract}
-In this paper an efficient and robust methodology to simulate saturated soils subjected to low-medium frequency dynamic loadings under large deformation regime is presented. The coupling between solid and fluid phases is solved through the dynamic reduced formulation $u-p_w$ (solid displacement -- pore water pressure) of the Biot's equations. The additional novelty lies in the employment of an explicit time integration scheme that enables accurate solutions of related  geomechanical problems without the usually high computational cost associated with the implicit counterparts. Shape functions based on the elegant Local Maximum Entropy approach, through the Optimal Transportation Meshfree framework, are considered to solve numerically different dynamic problems in fluid saturated porous media.
+In this paper an efficient and robust methodology to simulate saturated soils subjected to low-medium frequency dynamic loadings under large deformation regime is presented. The coupling between solid and fluid phases is solved through the dynamic reduced formulation $u-p_w$ (solid displacement -- pore water pressure) of the Biot's equations. The additional novelty lies in the employment of an explicit \textcolor{blue}{two-steps Newmark predictor-corrector} time integration scheme that enables accurate solutions of related geomechanical problems \textcolor{blue}{at large strain} without the usually high computational cost associated with the implicit counterparts. Shape functions based on the elegant Local Maximum Entropy approach, through the Optimal Transportation Meshfree framework, are considered to solve numerically different dynamic problems in fluid saturated porous media.
 \keywords{Biot's equations \and Meshfree \and Newmark Predictor-Corrector \and Explicit approach \and Large strains}
 % \PACS{PACS code1 \and PACS code2 \and more}
 % \subclass{MSC code1 \and MSC code2 \and more}
@@ -142,12 +142,6 @@ relative displacement of the fluid phase with respect to the solid one, $\boldsy
 \end{equation}
 where $S_w$ is the degree of water saturation and $n$ the soil porosity.  Note that $\boldsymbol{  \left(U-u\right) }$ is usually  termed as $\boldsymbol{u}^{ws}$ in the literature~\cite{LewisSchrefler98}. 
 
-In the calculation of the internal forces of the soil, the Terzaghi's effective stress theory  \cite{Terzaghi1925} will be followed, which is defined as follows:
-\begin{equation}\label{eq_uw5}
- \boldsymbol{ \sigma} =\boldsymbol{ \sigma'} - \alpha p_{w}\textbf{I},
-\end{equation}
-where $ \boldsymbol{ \sigma'} $ and  $\boldsymbol{ \sigma}$ are the respective effective and total Cauchy stress tensors (positive in tension), whereas $\textbf{I}$ is the second order unit tensor.  Contrary, pore pressure $p_w$, is assumed positive for compression.
-
 Let $\rho$, $\rho_{w}$ and $\rho_{s}$ respectively represent the mixture, fluid phase and solid particle densities,   the mixture density can be  defined as function of the porosity:
 \begin{equation}\label{eq_uw2}
 \rho=n S_w \rho_{w}+(1-n) \rho_s.
@@ -157,12 +151,6 @@ In the above equations, the porosity, $n$, is the ratio  between the voids volum
 n=\frac{V_v}{V_T}=\frac{V_v}{V_v+V_s},
 \end{equation}
 where $V_s$ is the volume of the solid grains.
-
-Meanwhile, the volumetric compressibility of the mixture, $Q$ \cite{Zienkiewicz99} is calculated as
-\begin{equation}\label{eq_uw4}
-Q = \left[ \frac{1-n}{K_s} + \frac{n}{K_w} \right]^{-1},
-\end{equation}
-where $K_s$ is the bulk modulus of  the solid grains, whereas  $K_w$ is  the compressive modulus of the fluid phase (usually water).
 
 Next, we first  explain in detail the derivation of mass balance and linear momentum equations for a fluid saturated multiphase media. Then the final $u-p_w$ formulation is presented. The following equations are first given by Lewis and Schrefler~\cite{LewisSchrefler98}. In this research, $D^s/Dt$ denotes the material time derivative with respect to the solid, considering:
 $$
@@ -195,13 +183,20 @@ where the right hand side term represents the quantity of water lost through eva
 
 In addition, $\alpha$ is the Biot's coefficient:
 \begin{equation}\label{eq_uw7}
-\alpha=1-\frac{K_T}{K_s}.
+\alpha=1-\frac{K}{K_s}.
 \end{equation}
-where $K_T$ denotes the %\sout{tangential bulk modulus of an isotropic elastic material}
+where $K$ denotes the %\sout{tangential bulk modulus of an isotropic elastic material}
  bulk modulus of the solid skeleton.  Biot's coefficient may be usually assumed equal to one in soils as the grains are \textcolor{red}{less deformable} than the mixture. 
    
 In the current work, the soil is assumed to be totally saturated, i.e. $V_v$ coincides with the water volume, which results  $S_w$ equals to one and $S_g=0$. As we also consider iso-thermal multiphase media,  $D^s T/D t =0$, $e^w=0$, consequently, %\sout{$\dot{m}=0$,} 
-$D^s S_w/D t =0$. If  additionally the spatial variation of the fluid density is neglected and we take into consideration Eq.~(\ref{eq_uw4}),  Eq.~(\ref{eq_uw6}) is simplified as,
+$D^s S_w/D t =0$. {\color{blue}Taking into account all these assumptions, the volumetric compressibility of the mixture, $Q$ \cite{Zienkiewicz99}, can be calculated as
+\begin{equation}\label{eq_uw4}
+Q = \left[ \frac{1-n}{K_s} + \frac{n}{K_w} \right]^{-1},
+\end{equation}
+where $K_s$ is the bulk modulus of  the solid grains, whereas  $K_w$ is  the compressive modulus of the fluid phase (usually water).
+}
+
+If  additionally the spatial variation of the fluid density is neglected and we take into consideration Eq.~(\ref{eq_uw4}),  Eq.~(\ref{eq_uw6}) is simplified as,
 \begin{equation}
 \frac{\dot{p_w}}{Q} +  \mbox{div }  \boldsymbol{\dot{u}} + \mbox{div } \boldsymbol{\dot{w}} = 0 \label{eq_uw10},
 \end{equation}
@@ -224,7 +219,16 @@ On the other hand, according to Lewis and Schrefler~\cite{LewisSchrefler98},   t
 \begin{equation}\label{eq_uw13}
 -\rho\ddot{\boldsymbol{u}} - \rho_w\ddot{\boldsymbol{w}} + \mbox{div } \boldsymbol{\sigma}+\rho\boldsymbol{g}=\boldsymbol{0},
 \end{equation}
-where the convective terms, related to the acceleration terms, have been neglected, which is normal in soils. Plugging Eq.~(\ref{eq_uw5}) into Eq.~(\ref{eq_uw13}), the linear momentum equation can be written as follows
+where the convective terms, related to the acceleration terms, have been neglected, which is normal in soils. 
+
+{\color{blue}In the calculation of the internal forces of the soil, the Terzaghi's effective stress theory  \cite{Terzaghi1925} will be followed, which is defined as follows:
+\begin{equation}\label{eq_uw5}
+ \boldsymbol{ \sigma} =\boldsymbol{ \sigma'} - p_{w}\textbf{I},
+\end{equation}
+where $ \boldsymbol{ \sigma'} $ and  $\boldsymbol{ \sigma}$ are the respective effective and total Cauchy stress tensors (positive in tension), whereas $\textbf{I}$ is the second order unit tensor.  Contrary, pore pressure $p_w$, is assumed positive for compression.
+}
+
+Plugging Eq.~(\ref{eq_uw5}) into Eq.~(\ref{eq_uw13}), the linear momentum equation can be written as follows
 \begin{equation}\label{eq_uw14}
 \mbox{div }\left[ \boldsymbol{ \sigma'} - p_{w} \, \textbf{I} \right]-\rho\boldsymbol{\ddot{u}}-\rho_w\boldsymbol{\ddot{w}}+\rho\boldsymbol{g}=\boldsymbol{0}.
 \end{equation}
@@ -328,29 +332,29 @@ About the numerical stability of the proposed methodology, it is guaranteed when
 
 where \textcolor{red}{$\Delta x$} represents the \textcolor{red}{minimum} mesh size, \textcolor{blue}{further details about the procurement of this parameter will be given in the following subsection}. \textcolor{blue}{Finally,} $V_c$ is the \textit{p}-wave velocity (see \cite{zienkiewicz1980}), which is defined by  
 \begin{equation}
-V_c=\sqrt{\left( D+\frac{K_f}{n}\right) \frac{1}{\rho}}, \; \; \textrm{where} \;\; D=\frac{2G(1-\nu)}{1-2\nu}.
+V_c=\sqrt{\left( D+\frac{K_w}{n}\right) \frac{1}{\rho}}, \; \; \textrm{where} \;\; D=\frac{2G(1-\nu)}{1-2\nu}.
 \end{equation}\label{ex_2}
 
 \subsection{Spatial discretization}
 \label{subsec:41}
 The Optimal Transportation Meshfree~\cite{li2010,li2014,Huang2019} has been demonstrated to perform reasonably well in geotechnical problems and, specifically, in multiphase problems~\cite{Navas2020}. It is based in the conjunction of material points and nodes. As mentioned before, the shape functions are based on the work of Arroyo and Ortiz~\cite{arroyo2006}, who defined the Local Max-Ent shape function (LME) of the material point $\boldsymbol(x)$ with respect to the neighborhood $\boldsymbol(x_a)$ as follows:
 \begin{equation} \label{eq_N1}
-N_a(\textbf{x})=\frac{\exp\left[ -\textcolor{red}{\beta_{LME}} \; |\bf x-x_a|^2 +  \boldsymbol{\lambda}^*  \cdot  (x-x_a)  \right] } {Z(\textbf{x},\boldsymbol{\lambda}^*(\textbf{x}))},
+N_a(\textbf{x})=\frac{\exp\left[ -\textcolor{red}{\beta_{_{LME}}} \; |\bf x-x_a|^2 +  \boldsymbol{\lambda}^*  \cdot  (x-x_a)  \right] } {Z(\textbf{x},\boldsymbol{\lambda}^*(\textbf{x}))},
 \end{equation}
 where the computation is done along a neighborhood $N_b$ and 
 \begin{equation}\label{eq_N2}
-Z({\bf x}, {\boldsymbol{\lambda}}) = \sum_{a=1}^{Nb}{ \exp \left[ -\textcolor{red}{\beta_{LME}} \, |{\bf x-x_a}|^2 + \boldsymbol{\lambda}  \cdot  \bf {(x-x_a)}         \right]}.
+Z({\bf x}, {\boldsymbol{\lambda}}) = \sum_{a=1}^{Nb}{ \exp \left[ -\textcolor{red}{\beta_{_{LME}}} \, |{\bf x-x_a}|^2 + \boldsymbol{\lambda}  \cdot  \bf {(x-x_a)}         \right]}.
 \end{equation}
 The first derivatives of the shape function can be obtained from the own shape function and its Hessian matrix \textbf{J} by employing the following expression:
 \begin{eqnarray}
 \nabla N^*_a &=& -N^*_a \,  (\textbf{J}^*)^{-1} \,  (\bf x-x_a) \label{eq_N3} ,
 \end{eqnarray}
-The parameter \textcolor{red}{$\beta_{LME}$} defines the shape of the neighborhood and it is related with the discretization size (or nodal spacing), $h$,  and the constant, $\textcolor{red}{\gamma_{LME}}$, which controls the locality of the shape functions, as follows,
+The parameter \textcolor{red}{$\beta_{_{LME}}$} defines the shape of the neighborhood and it is related with the discretization size (or nodal spacing), $h$,  and the constant, $\textcolor{red}{\gamma__{LME}}$, which controls the locality of the shape functions, as follows,
 \begin{equation}\label{eqLM3}
-\textcolor{red}{\beta_{LME}}=\frac{\textcolor{red}{\gamma_{LME}}}{h^2}.
+\textcolor{red}{\beta__{LME}}=\frac{\textcolor{red}{\gamma__{LME}}}{h^2}.
 \end{equation} 
 
-It bears emphasis that $\boldsymbol{\lambda}^*(\bf x)$ comes from the minimization of the function $g(\boldsymbol{\lambda})=\log Z(\bf x, \boldsymbol{\lambda})$ to guarantee the maximum entropy. Moreover, in the remapping of the shape function, before recomputing the aforementioned minimization process, it is necessary to update the neighborhood and the parameter \textcolor{red}{$\beta_{LME,k+1}^p < \beta_{LME,k}^p$} in order to improve the stability.
+It bears emphasis that $\boldsymbol{\lambda}^*(\bf x)$ comes from the minimization of the function $g(\boldsymbol{\lambda})=\log Z(\bf x, \boldsymbol{\lambda})$ to guarantee the maximum entropy. Moreover, in the remapping of the shape function, before recomputing the aforementioned minimization process, it is necessary to update the neighborhood and the parameter \textcolor{red}{$\beta_{_{LME,k+1}}^p < \beta_{_{LME,k}}^p$} in order to improve the stability.
 
 \textcolor{blue}{The discretization size, $h$, is an interesting topic when dealing with explicit schemes in the OTM methodology. Although the neighborhood or influence radius is larger than in the traditional FEM, we should take $h$ as the distance between the current node and the closest one since it is the more limiting one. Furthermore, the value of $\Delta x$ expressed in Eq.~\ref{eq:courant} will be obtained as the minimum value of $h$ for each node in the all nodal set.}
 
@@ -387,7 +391,7 @@ $$
 \boldsymbol{\sigma'}_{k+*}=\boldsymbol{\sigma'}(\boldsymbol{F}_{k+*})=\boldsymbol{\sigma'}(\boldsymbol{F}(\boldsymbol{u}_{k+*}))
 $$
 
-Moreover, the approximation of the logarithmic strain as the measure to be employed in the reference configuration has been demonstrated to provide good performance when large deformations are modeled (see~\cite{Gavagnin2020,Borja1997,Borja1998a}). In the present research, the tensor $\mathbf{b}$, the Left Cauchy-Green strain tensor ($\mathbf{b}=\mathbf{F}\mathbf{F}^T$) depends on the displacement on the predicted step as follows:
+Moreover, the approximation of the logarithmic strain as the measure to be employed in the reference configuration has been demonstrated to provide good performance when large deformations are modeled (see~\cite{Sanavia:02,Borja1997,Borja1998a}). In the present research, the tensor $\mathbf{b}$, the Left Cauchy-Green strain tensor ($\mathbf{b}=\mathbf{F}\mathbf{F}^T$) depends on the displacement on the predicted step as follows:
  $$
  \mathbf{b}_{k+*}=\mathbf{b}(\mathbf{F}_{k+*})=\mathbf{b}(\mathbf{F}(\boldsymbol{u}_{k+*}))
  $$
@@ -491,7 +495,7 @@ Our goal in this section is the \textcolor{red}{verification} of the presented m
 \label{fig:5}      
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%
-The \textcolor{red}{verification} is made against the solution proposed by Li \textit{et al.}~\cite{LiBorja2004}. The settlement of the top surface along time is checked for two different values of $P_{max}$, namely 2 and 8 MPa, that provide two different scenarios, small and large deformation regimes. The obtained solutions are seen in Fig.~\ref{fig:5} for the two cases. Three different solutions are depicted: Static $u-p_w$ (Li \textit{et al.}~\cite{LiBorja2004}), Dynamic $u-w$ (Navas \textit{et al.}~\cite{Navas:17b}) and Dynamic $u-p_w$ (present research). At the final of the consolidation, similar values of the settlement are achieved. Since inertial terms are included in the proposed methodology, the comparison along the entire process described by Li \textit{et al.}~\cite{LiBorja2004} is not possible, since in that research the quasi static $u-p_w$ formulation is assumed. Consequently, a ramped loading, contrary to the step-wise one employed in \cite{LiBorja2004}, is necessary in our case  to avoid non-physical sudden loading. Similarly, the results are not comparable against the $u-w$ formulation since fluid acceleration, neglected in the present research, were considered.  \textcolor{red}{In addition, the existence of displacements larger than the final settlement between 0.18 s. and 0.3 s. can be attributed to the above observation regarding the u-w formulation.} It is due to the fluid wave propagation, neglected in the present research.
+The \textcolor{red}{verification} is made against the solution proposed by Li \textit{et al.}~\cite{LiBorja2004}. The settlement of the top surface along time is checked for two different values of $P_{max}$, namely 2 and 8 MPa, that provide two different scenarios, small and large deformation regimes. The obtained solutions are seen in Fig.~\ref{fig:5} for the two cases. Three different solutions are depicted: Static $u-p_w$ (Li \textit{et al.}~\cite{LiBorja2004}), Dynamic $u-w$ (Navas \textit{et al.}~\cite{Navas:17b}) and Dynamic $u-p_w$ (present research). At the final of the consolidation, similar values of the settlement are achieved. Since inertial terms are included in the proposed methodology, the comparison along the entire process described by Li \textit{et al.}~\cite{LiBorja2004} is not possible, since in that research the quasi static $u-p_w$ formulation is assumed. Consequently, a ramped loading, contrary to the step-wise one employed in \cite{LiBorja2004}, is necessary in our case  to avoid non-physical sudden loading. Similarly, the results are not comparable against the $u-w$ formulation since fluid acceleration, neglected in the present research, were considered.  \textcolor{blue}{In addition, the existence of displacements larger than the final settlement between 0.18 s. and 0.3 s. can be attributed to the above observation regarding the u-w formulation. Since the application of the load is very quick, an impact fluid wave appears, whose propagation is neglected in the proposed formulation.}
 
 Additionally, the obtained settlement is compared, for both loading states (2 and 8 MPa),  against the small strain solution, which was provided also by Li \textit{et al.}~\cite{LiBorja2004}. In Fig. \ref{fig:6} this comparison is plotted. As much is the deformation, as more important is the employment of the Finite Deformation regime since, as it is seen in this application, spurious results can be obtained.
 
@@ -505,7 +509,7 @@ Additionally, the obtained settlement is compared, for both loading states (2 an
 \subsubsection{Dynamic consolidation}
 \label{sec:5:1:2}
 
-Since soil inertial terms are considered in the proposed $u-p_w$ formulation, a dynamic problem has been proposed in order to see the performance of the proposed methodology. An interesting test was firstly studied by Sabetamal~\etal~\cite{Sabetamal:2015} and later by Monforte~\textit{et al.}~\cite{Monforte2019} and Navas~\textit{et al.}~\cite{Navas2016b,Navas2021}. Also the Neo-Hookean material is utilized. The material properties provided in table~\ref{tab:2}, and the sinusoidal load, shown in Fig.~\ref{fig:1},C), are employed. In \textcolor{red}{the aforementioned research}, complete formulation ($u-w-p_w$ and  $u-w$ ) results were provided. In this case, $u-p_w$ solutions of the pore pressure at different locations \sout{, for both stabilized and unstabilized,} are presented against the stabilized $u-w$ one in Fig.~\ref{fig_con3}. Slightly differences are encountered. Following, possible reasons are detailed.
+Since soil inertial terms are considered in the proposed $u-p_w$ formulation, a dynamic problem has been proposed in order to see the performance of the proposed methodology. An interesting test was firstly studied by Sabetamal~\etal~\cite{Sabetamal:2015} and later by Monforte~\textit{et al.}~\cite{Monforte2019} and Navas~\textit{et al.}~\cite{Navas2016b,Navas2021}. Also the Neo-Hookean material is utilized. The material properties provided in table~\ref{tab:2}, and the sinusoidal load, shown in Fig.~\ref{fig:1},C), are employed. In \textcolor{red}{the aforementioned research}, complete formulation ($u-w-p_w$ and  $u-w$ ) results were provided. In this case, $u-p_w$ solutions of the pore pressure at different locations are presented against the stabilized $u-w$ one in Fig.~\ref{fig_con3}. Slightly differences are encountered. Following, possible reasons are detailed.
 
 \begin{table}[!t]
 \centering
@@ -611,9 +615,41 @@ In addition, the effect of the plastic dilatancy (contractancy) is evidenced by 
 \end{figure}
 %%%%
 
-For positive dilatancy values, smooth pore pressure evolution is observed. In addition, the peak pressure signals the initiation of plastic strain localization or shear band. The further extension of the shear band is accompanied by the continuous decreasing of the pore pressure. The material with dilatancy equal to 0$^\circ$ experiences a softer decreasing (close to a 0$^\circ$ slope), in this case, due to the dissipation of the pore pressure in the permeable boundary, not because of the shear band. From the same figure it can be seen a very unstable behavior of the soil of contractive angle. This happens since the soil does not admit more load: it is completely failed. \textcolor{blue}{In the case of $\psi=20^\circ$, it can be noted in Fig.~\ref{fig:13}  that the negative water pressure within the shear band is smaller than zero, indicating the possible occurrence of cavitation when lower values of -98986 Pa (at ambient temperature) are reached. This phenomenon should be modeled by extending the formulation of this paper to unsaturated conditions in order to properly capture this phenomenon.}
+For positive dilatancy values, smooth pore pressure evolution is observed. In addition, the peak pressure signals the initiation of plastic strain localization or shear band. The further extension of the shear band is accompanied by the continuous decreasing of the pore pressure. The material with dilatancy equal to 0$^\circ$ experiences a softer decreasing (close to a 0$^\circ$ slope), in this case, due to the dissipation of the pore pressure in the permeable boundary, not because of the shear band. From the same figure it can be seen a very unstable behavior of the soil of contractive angle. This happens since the soil does not admit more load: it is completely failed. \textcolor{blue}{In the case of $\psi=20^\circ$, it can be noted in Fig.~\ref{fig:13}  that the negative water pressure within the shear band is smaller than zero, indicating the possible occurrence of cavitation when lower values of -98986 Pa (at ambient temperature) are reached. This phenomenon should be modeled by extending the formulation of this work to unsaturated conditions in order to properly capture this phenomenon.}
 
-It must be pointed out that, in this research, the sought goal is the assessment of the performance of the proposed algorithm within this geotechnical problem. Other interesting studies of the performance of the Optimal Transportation Method were carried out in~\cite{Navas:17b}. \textcolor{red}{Of course}, the influence of the size of the nodal discretization was important, getting, with a finer discretization, better resolution of the shear band and better pore pressure distribution. Also regular distributions provide better results. Finally, the importance of the neighborhood size was assessed, concluding that larger values of $\gamma$ (which corresponds to smaller neighborhood) reduce the spurious smoothing out of the shear band, being the best results obtained for $\gamma$=1.4.
+It must be pointed out that, in this research, the sought goal is the assessment of the performance of the proposed algorithm within this geotechnical problem. Other interesting studies of the performance of the Optimal Transportation Method were carried out in~\cite{Navas:17b}.  Also regular distributions provide better results. Finally, the importance of the neighborhood size was assessed, concluding that larger values of $\gamma$ (which corresponds to smaller neighborhood) reduce the spurious smoothing out of the shear band, being the best results obtained for $\gamma$=1.4. \textcolor{blue}{Of course, the influence of the size of the nodal discretization was important, getting, with a finer discretization, better resolution of the shear band and better pore pressure distribution. Following, the influence of the mesh size together with the time step is provided.}
+
+{\color{blue}
+\subsubsection{Study of the discretization size vs. time step}
+
+Three different meshes, with different discretization size, have been employed: 12x12 nodes ($h=0.833$m), 14x14 nodes ($h=0.714$m) and 16x16 nodes ($h=0.625$m). For this study, the case with $\psi=0^\circ$ is employed. About the results, according as the mesh gets finer, the maximum percentage of the CFL condition able to be employed becomes smaller. In Fig.~\ref{fig:dt1} the computational costs of all the simulations from 5\% of CFL to 25\% (when it was possible) are given. It can be observed how the computational time increases exponentially as the time step decreases. Moreover, whether the discretization size gets finer, the time of the simulation increases dramatically as well. 
+
+\begin{figure}
+  \includegraphics[width=0.45\textwidth]{Fig/Tiempos_VC.pdf}
+\caption{Evolution of the pore pressure along the time in the point P.}
+\label{fig:dt1}      
+\end{figure}
+
+Thus, the question of how good is the discretization size for the present problem arises. In Fig.~\ref{fig:dt2}, the pore pressure (in Pa) and equivalent plastic strain at 50~s of the square domain for the cases 16x16 and $\Delta t=5\%$ CFL and 12x12 and $\Delta t=25\%$ CFL are depicted, \textit{i.e.}, the largest and the shorter simulations of this study. This comparison gives us the idea of which is the improvement of refine the time and spatial discretizations. On the one hand, the pore pressure presents very similar distributions, what let us think that the coarse distribution, with a time step small enough, is enough to capture the fluid pressure. However, the definition of the shear band is better as the nodal size becomes finer. Moreover, since it is more localized, for the same energy, the values the equivalent plastic strain of the finer shear bands are bigger. 
+
+\begin{figure*}
+\centering
+  \includegraphics[width=0.7\textwidth]{Fig/12-16.pdf}
+\caption{Pore pressure (in Pa) and equivalent plastic strain at 50~s of the square domain for the cases 16x16 and $\Delta t=5\%$ CFL and 12x12 and $\Delta t=25\%$ CFL.}
+\label{fig:dt2}      
+\end{figure*}
+%%%
+
+Up to 25\% for 12x12, 20\% for 14x14 and 15\% for 16x16, the simulation becomes unstable. It is important to remark this issue as one drawback of the proposed methodology when the material reaches its failure. The simulation behaves stable until the material plastifies. In Fig.~\ref{fig:dt3} the distribution of pore pressure and equivalent plastic strain is seen for the final of the simulation (aproximately 10 s.). The pore pressure distribution affect the constitutive behavior, leading to a spurious plastic zone. This pore pressure distribution is the typical one for undrained-incompressible materials: alternate negative-positive values. Although the problem is not in the undrained-incompressible limit, it is necessary the stabilization due to the behavior of the material once the plastification is reached. According with the obtained results of this study, future work will be lead to the stabilization of the proposed formulation.
+
+\begin{figure}
+  \includegraphics[width=0.50\textwidth]{Fig/failed.pdf}
+\caption{Pore pressure (in MPa) and equivalent plastic strain at 10~s of the square domain for the mesh 12x12 and $\Delta t=30\%\,CFL$.}
+\label{fig:dt3}      
+\end{figure}
+
+Finally, as a conclusion of this study, it must be pointed out that, for the appropriate capture of the pore pressure distribution is not necessary to refine the mesh but it is necessary to employ small time steps. Moreover, if the problem needs to refine the mesh for any other reason (such as the capture of the shear band), the necessity of very small time steps is required. Thus, parallelization techniques should be employed in order to get accurate results in an adequate computational time.
+}
 
 \section{Conclusions}
 \label{sec:6}
@@ -639,7 +675,7 @@ Research Council-H2020 MSCA-RISE, Grant Agreement No 101007851 (DISCO2-STORE), b
 The authors declare that they have no conflict of interest.
 
 \section*{Author contributions}
-Conceptualization and mathematical methodology, P. Navas and M. M. Stickle. Implementation, M. Molinos and P.Navas. \textcolor{red}{Verification}, A. Yag\"ue and D.Manzanal. Meanwhile supervision, project administration and funding acquisition belongs to M. Pastor. All authors have contributed to the writing and original draft preparation and they read and agreed to the published version of the manuscript.
+Conceptualization and mathematical methodology, P. Navas and M. M. Stickle. Implementation, M. Molinos and P.Navas. Validation, A. Yag\"ue and D.Manzanal. Meanwhile supervision, project administration and funding acquisition belongs to M. Pastor. All authors have contributed to the writing and original draft preparation and they read and agreed to the published version of the manuscript.
 
 %\appendix
 
@@ -667,7 +703,7 @@ Conceptualization and mathematical methodology, P. Navas and M. M. Stickle. Impl
 \item $J=\mbox{det}\boldsymbol{F}$: Jacobian determinant
 \item $k$: intrinsic permeability
 \item $\boldsymbol{k}$: permeability tensor
-\item $K_T$: \textcolor{red}{bulk modulus of the solid skeleton}
+\item $K$: \textcolor{red}{bulk modulus of the solid skeleton}
 \item $K_s$: bulk modulus of the solid grains
 \item $K_w$: bulk modulus of the fluid
 \item $\boldsymbol{M}$ : mass matrix
@@ -689,7 +725,7 @@ Conceptualization and mathematical methodology, P. Navas and M. M. Stickle. Impl
 
 \item $\alpha_{_F}$, $\alpha_{_Q}$ and $\beta$: Drucker-Prager parameters
 \item $\beta$, $\gamma$: time integration schemes parameters
-\item \textcolor{red}{$\beta_{LME}$, $\gamma_{LME}$}: LME parameters related with the shape of the neighborhood
+\item \textcolor{red}{$\beta__{LME}$, $\gamma__{LME}$}: LME parameters related with the shape of the neighborhood
 \item $\Delta\gamma$: increment of equivalent plastic strain
 \item $\overline{\varepsilon}^p$: equivalent plastic strain
 \item $\boldsymbol{\varepsilon}$: small strain tensor
