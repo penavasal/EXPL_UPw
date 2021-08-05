@@ -349,9 +349,9 @@ The first derivatives of the shape function can be obtained from the own shape f
 \begin{eqnarray}
 \nabla N^*_a &=& -N^*_a \,  (\textbf{J}^*)^{-1} \,  (\bf x-x_a) \label{eq_N3} ,
 \end{eqnarray}
-The parameter \textcolor{red}{$\beta_{_{LME}}$} defines the shape of the neighborhood and it is related with the discretization size (or nodal spacing), $h$,  and the constant, $\textcolor{red}{\gamma__{LME}}$, which controls the locality of the shape functions, as follows,
+The parameter \textcolor{red}{$\beta_{_{LME}}$} defines the shape of the neighborhood and it is related with the discretization size (or nodal spacing), $h$,  and the constant, $\textcolor{red}{\gamma_{_{LME}}}$, which controls the locality of the shape functions, as follows,
 \begin{equation}\label{eqLM3}
-\textcolor{red}{\beta__{LME}}=\frac{\textcolor{red}{\gamma__{LME}}}{h^2}.
+\textcolor{red}{\beta_{_{LME}}}=\frac{\textcolor{red}{\gamma_{_{LME}}}}{h^2}.
 \end{equation} 
 
 It bears emphasis that $\boldsymbol{\lambda}^*(\bf x)$ comes from the minimization of the function $g(\boldsymbol{\lambda})=\log Z(\bf x, \boldsymbol{\lambda})$ to guarantee the maximum entropy. Moreover, in the remapping of the shape function, before recomputing the aforementioned minimization process, it is necessary to update the neighborhood and the parameter \textcolor{red}{$\beta_{_{LME,k+1}}^p < \beta_{_{LME,k}}^p$} in order to improve the stability.
@@ -617,7 +617,7 @@ In addition, the effect of the plastic dilatancy (contractancy) is evidenced by 
 
 For positive dilatancy values, smooth pore pressure evolution is observed. In addition, the peak pressure signals the initiation of plastic strain localization or shear band. The further extension of the shear band is accompanied by the continuous decreasing of the pore pressure. The material with dilatancy equal to 0$^\circ$ experiences a softer decreasing (close to a 0$^\circ$ slope), in this case, due to the dissipation of the pore pressure in the permeable boundary, not because of the shear band. From the same figure it can be seen a very unstable behavior of the soil of contractive angle. This happens since the soil does not admit more load: it is completely failed. \textcolor{blue}{In the case of $\psi=20^\circ$, it can be noted in Fig.~\ref{fig:13}  that the negative water pressure within the shear band is smaller than zero, indicating the possible occurrence of cavitation when lower values of -98986 Pa (at ambient temperature) are reached. This phenomenon should be modeled by extending the formulation of this work to unsaturated conditions in order to properly capture this phenomenon.}
 
-It must be pointed out that, in this research, the sought goal is the assessment of the performance of the proposed algorithm within this geotechnical problem. Other interesting studies of the performance of the Optimal Transportation Method were carried out in~\cite{Navas:17b}.  Also regular distributions provide better results. Finally, the importance of the neighborhood size was assessed, concluding that larger values of $\gamma$ (which corresponds to smaller neighborhood) reduce the spurious smoothing out of the shear band, being the best results obtained for $\gamma$=1.4. \textcolor{blue}{Of course, the influence of the size of the nodal discretization was important, getting, with a finer discretization, better resolution of the shear band and better pore pressure distribution. Following, the influence of the mesh size together with the time step is provided.}
+It must be pointed out that, in this research, the sought goal is the assessment of the performance of the proposed algorithm within this geotechnical problem. Other interesting studies of the performance of the Optimal Transportation Method were carried out in~\cite{Navas:17b}.  Also regular distributions provide better results. Finally, the importance of the neighborhood size was assessed, concluding that larger values of \textcolor{red}{$\gamma_{_{LME}}$} (which corresponds to smaller neighborhood) reduce the spurious smoothing out of the shear band, being the best results obtained for \textcolor{red}{$\gamma_{_{LME}}$}=1.4. \textcolor{blue}{Of course, the influence of the size of the nodal discretization was important, getting, with a finer discretization, better resolution of the shear band and better pore pressure distribution. Following, the influence of the mesh size together with the time step is provided.}
 
 {\color{blue}
 \subsubsection{Study of the discretization size vs. time step}
@@ -723,9 +723,9 @@ Conceptualization and mathematical methodology, P. Navas and M. M. Stickle. Impl
 \item $\boldsymbol{w}$: relative displacement vector of the water with respect to the solid
 \item $Z(\boldsymbol{x},\boldsymbol{\lambda})$: denominator of the exponential shape function
 
-\item $\alpha_{_F}$, $\alpha_{_Q}$ and $\beta$: Drucker-Prager parameters
+\item $\alpha_{F}$, $\alpha_{Q}$ and $\beta$: Drucker-Prager parameters
 \item $\beta$, $\gamma$: time integration schemes parameters
-\item \textcolor{red}{$\beta__{LME}$, $\gamma__{LME}$}: LME parameters related with the shape of the neighborhood
+\item \textcolor{red}{$\beta_{_{LME}}$, $\gamma_{_{LME}}$}: LME parameters related with the shape of the neighborhood
 \item $\Delta\gamma$: increment of equivalent plastic strain
 \item $\overline{\varepsilon}^p$: equivalent plastic strain
 \item $\boldsymbol{\varepsilon}$: small strain tensor
