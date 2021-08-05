@@ -35,7 +35,7 @@ We  are grateful to the reviewers for taking their time  to review our work. The
 {\it
 This manuscript presents a meshfree formulation for dynamic poromechanics at large strains. The formulation is based on a reduced two-field ($u-p_w$) form in which the relative acceleration between the solid and fluid phases are neglected, which may be justified for low-frequency loading. For temporal discretization of the formulation, the authors use an explicit Newmark method, and for spatial discretization, they use a local maximum entropy (max-ent) in the Optimal Transportation Framework (OTM). The resultant formulation is studied with two types of numerical examples: consolidation and vertical cut. The methodology studied in this paper is certainly attractive. I'm not sure, however, whether the numerical method and formulation indeed have novelty that deserves publication. For example, the explicit time integration scheme in this work, which the authors phrased as "novel," appears to be just a standard explicit Newmark scheme. Other aspects were also adopted from existing works. For example, the two-field formulation for low-frequency dynamics was first proposed by Zienkiewicz and co-workers, and the local max-ent OTM for poromechanics was proposed by the authors a few years ago. So to be quite honest, I don't really find anything new in terms of the numerical method and formulation.}\\
 
-We would like to thank the reviewer to take his/her time to assess our manuscript. We agree that Max-Ent OTM methodology within poromechanics problems and the traditional predictor-corrector Newmark scheme are not new developments. However, the novelty lies on the application of this dynamic $u-p_w$ formulation with this explicit scheme. The most recent works on explicit poromechanics schemes are written in a Forward-Euler manner (\cite{ZHANG_et_al_2009}), that shows less stability than the predictor-corrector schemes. This two-step methodology allows to reach time steps closer than the CFL condition with accurate results. Moreover, contrary to other similar works, the methodology proposed in this manuscript is written in a finite strain approach, not seen in the most recent works of dynamic poromechanics (unless the ones the reviewer cites of the same authors).\\
+We would like to thank the reviewer to take his/her time to assess our manuscript. We agree that Max-Ent OTM methodology within poromechanics problems and the traditional predictor-corrector Newmark scheme are not new developments. However, the novelty lies on the application of this dynamic $u-p_w$ formulation with this explicit scheme at finite strains. The most recent works on explicit poromechanics schemes are written in a Forward-Euler manner (\cite{ZHANG_et_al_2009}), that shows less stability than the predictor-corrector schemes. This two-step methodology allows to reach time steps closer than the CFL condition with accurate results. Moreover, contrary to other similar works, the methodology proposed in this manuscript is written in a finite strain approach, not seen in the most recent works of dynamic poromechanics (unless the ones the reviewer cites of the same authors).\\
 
 \textit{Instead, I found that the results of the numerical examples are interesting and may yield new findings if they are analyzed more deeply. Examples of potential discussion topics include:}:
 
@@ -43,7 +43,7 @@ We would like to thank the reviewer to take his/her time to assess our manuscrip
 
 \item \textit{Is the CFL condition given in Eq. (29) valid for the current approach? The authors didn't show evidence whether Eq. (29) works accurately for the current method. The answer to this question is not so obvious for the current meshfree method.}\\
 
-The discretization size, $h$, is an interesting topic when dealing with explicit schemes in the OTM methodology. Although the neighborhood or influence radius is larger than in the traditional FEM, we should take $h$ as the distance between the current node and the closest one since it is the more limiting one. Indeed, the employment of $h$ in this manner has been treated in different OTM researches as well as in the ``Vertical Cut" example as suggested by the reviewer later. This explanation has been included in the revised version of the original manuscript.
+The discretization size, $h$, is an interesting topic when dealing with explicit schemes in the OTM methodology. Although the neighborhood or influence radius is larger than in the traditional FEM~\cite{li2010}, we should take $h$ as the distance between the current node and the closest one since it is the more limiting one. Indeed, the employment of $h$ in this manner has been treated in different OTM researches as well as in the ``Vertical Cut" example as suggested by the reviewer later. This explanation has been included in the revised version of the original manuscript.
 
 
 \item \textit{For the numerical examples considered, is the explicit method really more efficient than an implicit method with larger time steps? Actually explicit methods are much easier to use as the authors explained, but their maximum time step size allowed is often too small for practical purposes. This is why many researchers have studied semi-implicit and fully-implicit methods mentioned in the Introduction. In my opinion, the authors did not fully discuss the drawbacks of the explicit method. I would recommend that the authors show how the explicit method become unstable as the time step becomes larger (also related to my question 1).}\\
@@ -55,7 +55,7 @@ We agree with the reviewer's opinion on this explanation: the explicit schemes a
 
 The studied problem cannot be considered as a low-frequency one since the load is applied quickly: a pressure is applied incrementally from 0 to 2-8 MPa from the beginning until $t_f=$0.05 seconds, when the pressure is kept constant. This load was previously employed by Navas \textit{et al.}~\cite{Navas:17b,Navas:17c}, adapting the one proposed by Li, Borja and Regueiro~\cite{LiBorja2004} when inertial terms are involved.
 
-If we assume a that the ramped part of the load can be approximated by a quarter of sinusoidal load, the period $T$ is four times $t_f$, \textit{i.e.}, 0.2 seconds. Taking into account that $\omega=2\pi/T$, we can consider a frequency, $\omega$, of 31.5 rad/s, which can be regarded as a medium-high frequency loading.
+If we assume that the ramped part of the load can be approximated by a quarter of sinusoidal load, the associated period $T$ would be four times $t_f$, \textit{i.e.}, 0.2 seconds. Taking into account that $\omega=2\pi/T$, we can consider a frequency, $\omega$, of 31.5 rad/s, which can be regarded as a medium-high frequency loading. This relatively fast loading process explains the discrepancies appearing in Fig 2.
 
 \item \textit{Fig. 5 -- the authors studied the (in)applicability of this figure using numerical examples, and this was the most interesting point to me. But it is not explained how the zone boundaries were originally derived by Zienkiewicz and co-workers, and please elaborate on how they were derived. I also suggest that the authors connect this to explain the results in Fig. 2. }\\
 
@@ -70,7 +70,7 @@ The principal result obtained by Zienkiewicz and coworkers in 1980 is Fig. 5 of 
     \item In Zone III the three formulations display different results. This zone can be considered for extremely rapid phenomena. 
 \end{enumerate}
 
-As suggested by the reviewer, results in Fig. 2 have been linked with Fig 5. of the manuscript. By considering the set of parameters displayed in Table 1, the large deformation consolidation validation case falls within Zone III. As we mentioned before, we can approximate the frequency of the load to 31.5 rad/s, which is a considerable frequency taking into account the nature of the problem. From the problem parameters, can be obtained $\pi_1 \thickapprox1.0$ and $\pi_2 \thickapprox 1.0e3$, what is plotted in the following figure:
+As suggested by the reviewer, results in Fig. 2 have been linked with Fig 5. of the manuscript. By considering the set of parameters displayed in Table 1, the large deformation consolidation validation case falls within Zone III. As we mentioned before, we can approximate the frequency of the load to 31.5 rad/s, which is a considerable high frequency, taking into account the nature of the problem. From the problem parameters, it can be obtained $\pi_1 \approx 1.0$ and $\pi_2 \approx 1.0e3$, what is plotted in the following figure:
 
 \begin{figure}[h]
 \centering
@@ -83,11 +83,11 @@ As suggested by the reviewer, results in Fig. 2 have been linked with Fig 5. of 
 
 \item \textit{For the ``Vertical Cut" example, I suggest the authors use two different spatial discretization sizes (i.e. different "h"s) and numerical show whether the problem is mesh-sensitive and how the maximum time step size changes according to the value of "h" (and whether Eq. (29) holds accurately).}\\
 
-Further analysis of this example has been added to the original section.
+Further analysis of this example has been added to the original section within the manuscript.\\
 
 \end{enumerate}
  
-\textit{Other types, etc.}
+\textit{Other typos, etc.}
 
 \begin{enumerate}
     \item \textit{"The additional novelty" in abstract: again, it's unsure whether the numerical method in this paper is really novel.}\\
@@ -171,7 +171,7 @@ This paragraph has been added in order to expose the academic purpose of this ex
 
 \item \textit{Nomenclature: $\beta$ and $\gamma$ are time integration parameters and LME parameters. The meaning is clear, but, for sake of clarity, different symbols could be adopted. If the author agrees with this remark, some equations need to be modified accordingly.}\\
 
-Changed to $\beta_{LME}$ and $\gamma_{LME}$.x
+Changed to $\beta__{LME}$ and $\gamma__{LME}$.
 
 \item \textit{Typos: ''hidromechanical'' (page 1, line 27, second column). ''Figs.'' (line 15 page 10 right column). The citation at line 54 page 12.}\\
 
@@ -207,6 +207,13 @@ Li, C., Borja, R.I., Regueiro, R.A.: {Dynamics of porous media at finite
 \newblock Computer Methods in Applied Mechanics and Engineering
   \textbf{193}(36-38), 3837--3870 (2004).
 \newblock \doi{10.1016/j.cma.2004.02.014}
+
+\bibitem{li2010}
+Li, B., Habbal, F., Ortiz, M.: {Optimal transportation meshfree approximation
+  schemes for fluid and plastic flows}.
+\newblock International Journal for Numerical Methods in Engineering
+  \textbf{83}(June), 1541--1579 (2010).
+\newblock \doi{10.1002/nme}
 
 
 
